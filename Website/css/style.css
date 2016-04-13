@@ -1,0 +1,128 @@
+
+header{
+	margin: auto;
+	margin-top: 50px;
+	position: relative;
+	height: 100vh;
+	width: 100%;
+	max-width: 1000px;
+	background-image: url("../imagenes/logo.png");
+	background-position: center 0 ;
+	background-repeat: no-repeat;
+}
+.nav-wrapper .button-collapse .material-icons{
+	font-size: 40px;
+	margin-left: 10px;
+
+}
+.container{
+	margin: auto;
+	width: 100%;
+	max-width: 1000px;
+}
+#redes{
+	height: 60px;
+	width: 70px;
+	margin-left: -5px;
+}
+#login{
+	margin-left: -100px;
+	float: right;
+}
+.justify{
+	text-align: justify;
+}
+
+.border-right{
+	border-right: 1px solid #666666
+}
+p.white{
+	font-size: 30px;
+
+}
+@media only screen and (max-width: 600px){
+	.border-right{
+		border: none;
+	}
+	header{
+		height: 500px;
+		background-image: url("../imagenes/logocel.png");
+		background-size: 100%;
+		background-position: left;
+		background-position: center 550;
+	}
+	h2{
+		font-size: 39px;
+	}
+	#mensaje{
+		min-width: 155px;
+		max-width: 155px;
+	}
+	#titulo{
+		font-size: 24px !important;
+	}
+	div .card.z-depth-2.row{
+		height: 500px;
+	}
+	#iconos{
+		margin-left: 40px;
+	}
+	.menu-fixed{
+		margin-top: 5px;
+		position: fixed;
+		z-index: 1000;
+		top: 0;
+		width: 100%;
+		max-width: 945px;
+		left: 0;
+	}
+	.menu-fixed ul li a{
+		margin-left:0px;
+		padding: 2px;
+	}
+	p.white{
+		font-size: 20px;
+	}
+	#documento , #contrasena{
+		width: 85%;
+	}
+}
+#contacto{
+	margin-top: 65px;
+	padding: 20px;
+	min-height: 520px;
+	height: 650px;
+}
+#titulo{
+	font-size: 38px;
+}
+#textarea1{
+	max-height: 230px;
+}
+div .card.z-depth-2.row{
+	height: 550px;
+}
+#logocont{
+	width: 700px;
+}
+#enviar{
+	margin-top: 30px;
+}
+#btn_red{
+	margin-top: 15px;
+	display: block;
+}
+.menu-fixed{
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+	width: 100%;
+	max-width: 1000px;
+}
+#login label{
+	font-size: 18px;
+	color: black;
+}
+nav div ul li a{
+	margin-right: 10px;
+}
