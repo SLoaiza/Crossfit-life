@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 19-05-2016 a las 23:07:54
+-- Tiempo de generación: 20-05-2016 a las 00:16:40
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -44,6 +44,20 @@ CREATE TABLE `actividad` (
 CREATE TABLE `actividad_x_rutina` (
   `rut_cod` varchar(10) NOT NULL,
   `act_cod` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cita`
+--
+
+CREATE TABLE `cita` (
+  `cita_cod` int(11) NOT NULL,
+  `usu_cod` varchar(10) NOT NULL,
+  `nom_med` varchar(50) NOT NULL,
+  `cita_fecha` varchar(10) NOT NULL,
+  `cita_hora` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -203,6 +217,13 @@ ALTER TABLE `actividad_x_rutina`
   ADD KEY `act_cod` (`act_cod`);
 
 --
+-- Indices de la tabla `cita`
+--
+ALTER TABLE `cita`
+  ADD PRIMARY KEY (`cita_cod`),
+  ADD KEY `usu_cod` (`usu_cod`);
+
+--
 -- Indices de la tabla `permiso`
 --
 ALTER TABLE `permiso`
@@ -278,6 +299,12 @@ ALTER TABLE `actividad`
 ALTER TABLE `actividad_x_rutina`
   ADD CONSTRAINT `actividad_x_rutina_ibfk_1` FOREIGN KEY (`rut_cod`) REFERENCES `rutina` (`rut_cod`),
   ADD CONSTRAINT `actividad_x_rutina_ibfk_2` FOREIGN KEY (`act_cod`) REFERENCES `actividad` (`act_cod`);
+
+--
+-- Filtros para la tabla `cita`
+--
+ALTER TABLE `cita`
+  ADD CONSTRAINT `cita_ibfk_1` FOREIGN KEY (`usu_cod`) REFERENCES `usuario` (`usu_cod`);
 
 --
 -- Filtros para la tabla `permiso_x_rol`
