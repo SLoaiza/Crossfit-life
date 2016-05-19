@@ -35,6 +35,7 @@
 					</div>
 				</div>
 				<div class="col s12 m6">
+					<form action="../../WEBAPP/Controller/controller.php" method="POST" id="login">
 						<label for="documento" class="text-black">Nº Documento:</label>
 						<input type="text" placeholder="Ingrese numero de documento" id="documento" name="log_doc">
 						<br>
@@ -50,14 +51,12 @@
 					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons fa fa-bars"></i></a>
 					<ul class="hide-on-med-and-down">
 						<li><a href="#cabeza" class="black-text">Inicio</a></li>
-						<li><a href=".slider" class="black-text">Publicidad</a></li>
 						<li><a href="#quienes_somos" class="black-text">Quienes Somos</a></li>
 						<li><a href="#slider2" class="black-text">Recomendaciones De Salud</a></li>
 						<li><a href="#contactar" class="black-text">Contactenos</a></li>
 					</ul>
 					<ul class="side-nav" id="mobile-demo">
 						<li><a href="#cabeza" class="black-text"><i class="fa fa-home"></i>Inicio</a></li>
-						<li><a href=".slider" class="black-text"><i class="fa fa-bullhorn"></i>Publicidad</a></li>
 						<li><a href="#quienes_somos" class="black-text"><i class="fa fa-users"></i>Quienes Somos</a></li>
 						<li><a href="#slider2" class="black-text"><i class="fa fa-comments"></i>Recomendaciones</a></li>
 						<li><a href="#contactar" class="black-text"><i class="fa fa-envelope"></i>Contactenos</a></li>

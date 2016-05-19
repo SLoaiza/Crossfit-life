@@ -1,6 +1,6 @@
 <?php 
-	require_once("../modelo/conexionbd.php");
-	require_once("../modelo/gestiones.php");
+	require_once("../Model/conexionbd.php");
+	require_once("../Model/gestiones.php");
 	$accion = $_REQUEST["action"];
 	switch ($accion) {
 	case 'INGRESAR':
@@ -13,10 +13,12 @@
 		}else{
 	 		try {
 	 			$usuario = GestionUsuario::Login($ndoc ,$pass);	
-	 			if($usuario[0] == '212'){
-	 				echo "hola";
-	 			}else{
-	 				echo "Chao";
+	 			if($usuario[2] == '1'){
+	 				header("Location: ../../Website/html/SuperAdmin.php");
+	 			}elseif ($usuario[2] == '2') {
+	 				echo "hola instructor";
+	 			}elseif($usuario[2] == '3'){
+	 				echo "hola usuario";
 	 			}
 
 	 		} catch (Exception $e) {
