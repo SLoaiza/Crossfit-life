@@ -1,6 +1,6 @@
 <?php 
-	require_once("../../modelo/conexionbd.php");
-	require_once("../../modelo/gestiones.php");
+	require_once("../../WEBAPP/Model/conexionbd.php");
+	require_once("../../WEBAPP/Model/gestiones.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -35,7 +35,6 @@
 					</div>
 				</div>
 				<div class="col s12 m6">
-					<form action="../../controlador/controller.php" method="POST" id="login">
 						<label for="documento" class="text-black">Nº Documento:</label>
 						<input type="text" placeholder="Ingrese numero de documento" id="documento" name="log_doc">
 						<br>
