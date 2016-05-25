@@ -11,20 +11,25 @@
 		case 'registro':
 			include_once('contenido/registro.php');
 		break;
-		case 'enmora':
-			# code...
+<<<<<<< HEAD
+=======
+		// Santiago
+		case 'regiemple':
+			include_once('contenido/registroempleado.php');
+		// Santiago
 		break;
+>>>>>>> origin/master
 		case 'citas':
-			# code...
+			include_once('contenido/citas.php');
 		break;
 		case 'usuarios':
 			# code...
 		break;
 		case 'valoracion':
-			# code...
+			include_once('contenido/valoraciones.php');
 		break;
 		case 'roles':
-			# code...
+			include_once('contenido/roles.php');
 		break;
 		case 'planes':
 		//mauro

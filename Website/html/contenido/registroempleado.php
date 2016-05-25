@@ -28,8 +28,7 @@
 								</td>
 								<td>
 									<label for="edad">Edad</label>
-									<br>
-									<input type="text" name="edad" id="edad" maxlength="2" style="width: 60px; font-size: 20px;">
+									<input type="text" name="Edad" id="edad">
 								</td>
 							</tr>
 							<tr>
@@ -76,53 +75,36 @@
 					<table>
 						<tr>
 							<td>
-								<div class="col m12 s12">
-									<label for="pass">Contraseña</label>
-									<input type="text" name="password" id="pass">
-									<br>
-									Nivel: <i></i>
-								</div>
+								<label for="pass">Contraseña</label>
+								<input type="text" name="password" id="pass">
+								<br>
+								Nivel: <i></i>
 							</td>
-							<td >
-								<div class="col m6 s6">
-									<label for="cpass">Confirme su Contraseña</label>
-									<input type="text" name="confirmpassword" id="cpass">
-									<br>
-									Coincide: <i></i>
-								</div>
+							<td>
+								<label for="cpass">Confirme su Contraseña</label>
+								<input type="text" name="confirmpassword" id="cpass">
+								<br>
+								Coincide: <i></i>
 							</td>
 						</tr>
 						<tr>
 							<td>
 								<div class="input-field col s12">
 								    <select>
-								      <option value="" disabled selected>Seleccione un Plan</option>
-								      <option value="1"></option>
-								      <option value="2"></option>
-								      <option value="3"></option>
+								      <option value="" disabled selected>Seleccione un rol</option>
+								      <option value="1">Recepcionista</option>
+								      <option value="2">Instructor</option>
 								    </select>
-								    <label>Seleccione Plan</label>
+								    <label>Seleccione rol</label>
 								  </div>
-							</td>
-							<td>
-								<div class="col m6 s6">
-									<label for="jvInicio">Fecha de inicio</label>
-									<input type="date" class="datepicker" placeholder="Inicio del plan" id="jvInicio">
-								</div>
-								<div class="col m6 s6">
-									<label for="jvFinalizacion">Fecha de finalizacion</label>
-									<input type="date" class="datepicker" placeholder="Finalizacion del plan" id="jvFinalizacion">
-								</div>
 							</td>
 						</tr>
 					</table>
 				</div>
 				<center>
-					<input type="submit" name="action" id="registrar" value="Registrar">
+					<button type="submit" name="button" value="GuardarEmp">Guardar</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="submit" name="action" id="cancelar" value="Cancelar">
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="submit" id="limpiar" value="Limpiar" onclick="">
+					<button type="submit" name="button" onclick="limpiar()">Cancelar</button>
 				</center>
 			</div>
 		</div>
