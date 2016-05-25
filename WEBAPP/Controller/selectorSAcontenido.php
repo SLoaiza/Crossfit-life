@@ -1,4 +1,4 @@
-<?php 
+<?php
 	switch ($seccion) {
 		case 'inicio':
 			echo "string";
@@ -9,8 +9,10 @@
 		case 'registro':
 			include_once('contenido/registro.php');
 		break;
-		case 'enmora':
-			# code...
+		// Santiago
+		case 'regiemple':
+			include_once('contenido/registroempleado.php');
+		// Santiago
 		break;
 		case 'citas':
 			# code...
