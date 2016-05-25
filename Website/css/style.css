@@ -10,6 +10,9 @@ header{
 	background-position: center 0 ;
 	background-repeat: no-repeat;
 }
+body{
+	background-color: #e3f2fd;
+}
 .nav-wrapper .button-collapse .material-icons{
 	font-size: 40px;
 	margin-left: 10px;
@@ -19,6 +22,7 @@ header{
 	margin: auto;
 	width: 100%;
 	max-width: 1000px;
+
 }
 #redes{
 	height: 60px;
@@ -89,12 +93,13 @@ p.white{
 }
 #contacto{
 	margin-top: 65px;
-	padding: 20px;
+	padding: 5px 20px 20px;
 	min-height: 520px;
 	height: 650px;
 }
 #titulo{
 	font-size: 38px;
+	margin-bottom: 30px;
 }
 #textarea1{
 	max-height: 230px;
@@ -104,6 +109,7 @@ div .card.z-depth-2.row{
 }
 #logocont{
 	width: 700px;
+	margin-bottom: -50px;
 }
 #enviar{
 	margin-top: 30px;
@@ -117,7 +123,7 @@ div .card.z-depth-2.row{
 	z-index: 1000;
 	top: 0;
 	width: 100%;
-	max-width: 1000px;
+	/*max-width: 1000px;*/
 }
 #login label{
 	font-size: 18px;
@@ -129,4 +135,21 @@ nav div ul li a{
 
 .side-nav i{
 	margin-right: 5px;
+}
+#registro{
+	padding: 40px;
+}
+#ingreso{
+	height: 500px;
+}
+#cingreso{
+	padding: 20px;
+	height: 330px;
+}
+#nosotros{
+	padding: 30px;
+}
+
+#dropdown1{
+	width: 170px !important;
 }

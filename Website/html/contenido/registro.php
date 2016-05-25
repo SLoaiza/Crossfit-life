@@ -1,7 +1,7 @@
 <div class="row">
 	<form action="../../WEBAPP/Controller/controller.php" method="POST">
 		<div class="col m10 s10 offset-m1 offset-s1">
-			<div class="card">
+			<div class="card" id="registro">
 				<div class="card-title">
 					<h5>Datos Personales</h5>
 				</div>
@@ -63,7 +63,7 @@
 			</div>
 		</div>
 		<div class="col m10 s10 offset-m1 offset-s1">
-			<div class="card">
+			<div class="card" id="registro">
 				<div class="card-title">
 					<h5>Datos de la Cuenta</h5>
 				</div>

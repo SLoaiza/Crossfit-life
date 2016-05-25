@@ -21,7 +21,7 @@
 </head>
 <body>
 	
-  <div class="container">
+  <div class="container-fluid ">
     <?php include('menus/menuSadmin.php');?>
     <?php include('../../WEBAPP/Controller/selectorSAcontenido.php');?>
   </div>

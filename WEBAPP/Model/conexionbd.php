@@ -1,7 +1,7 @@
 <?php 
 	 	class ConexionDB{
 	private static $dbhost="localhost";
-	private static $dbname="crossfitlife";
+	private static $dbname="test";
 	private static $dbuser="root";
 	private static $dbpass="";
 	private static $conn=null;

@@ -18,7 +18,7 @@
 </head>
 <!--scrolltop fixed jquery-->
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		<header id="cabeza">
 			<div class="row">
 				<div class="col s12 m5">
@@ -149,22 +149,20 @@
 			</section>
 		</div>
 		<div class="row">
-			<div class="col s12 m6">
+			<div class="col s12 m6" id="nosotros">
 				<img src="../imagenes/logo.png" alt="" id="logocont" class="responsive-img">
 				<section id="contactar">
 					<p style="font-size: 19px;">
 						Contacte con el departamento de atención al cliente de Crossfit Life, para cualquier duda que tenga o para cualquier aclaración que necesite.
 					</p>
-					<br>
 					<p style="font-size: 19px;">
 						Correo electrónico:
 					</p>
-					<br>
 					<p style="font-size: 19px;">
 						Teléfono:
 					</p>
 				</section>
-				<br><br>
+				<br>
 				<section id="redescont">
 					<a href="#" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/fb.png" alt="" id="redes"></a>
 					<a href="#" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/tw.png" alt="" id="redes"></a>
@@ -184,7 +182,7 @@
 					          <textarea id="textarea1" length="500" class="materialize-textarea" maxlength="500"></textarea>
 					          <label for="textarea1" >Mensaje</label>
 					        </div>
-							<input type="button" class="col s12 m4waves-effect waves-light btn orange darken-3" value="Enviar" style="height: 40px;" id="enviar">
+							<input type="button" class="col s12 m4waves-effect waves-light btn orange darken-3" value="Enviar" style="height: 40px; width: 120px;" id="enviar">
 						</form>
 					</section>
 				</div>

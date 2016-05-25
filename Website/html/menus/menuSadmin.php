@@ -6,8 +6,8 @@
 			<li><a href="SuperAdmin.php?seccion=inicio" class="black-text">Inicio</a></li>
 			<li><a href="SuperAdmin.php?seccion=ingreso" class="black-text">Ingresos Al Gimnasio</a></li>
 			<li><a href="SuperAdmin.php?seccion=registro" class="black-text">Registrar Cliente</a></li>
-			<li><a href="SuperAdmin.php?seccion=enmora" class="black-text">Clientes En Mora</a></li>
-			<li><a class="dropdown-button black-text" href="#!" data-activates="dropdown1"><i class="fa fa-caret-down"></i>Gestiones</a></li>
+			<li><a href="SuperAdmin.php?seccion=enmora" class="black-text">Registrar Empleados</a></li>
+			<li><a class="dropdown-button black-text" href="#!" data-activates="dropdown1"><i class="fa fa-caret-down"></i>&nbsp;&nbsp;Gestiones</a></li>
 		</ul>
 		<ul class="side-nav" id="mobile-demo">
 			<li><a href="#cabeza" class="black-text"><i class="fa fa-home"></i>Inicio</a></li>
@@ -26,9 +26,8 @@
 
 
 
-		<ul id="dropdown1" class="dropdown-content" style="width: 170px;">
+		<ul id="dropdown1" class="dropdown-content"  >
 		  	<li><a href="SuperAdmin.php?seccion=citas" class="black-text">Citas Medicas</a></li>
-			<li><a href="SuperAdmin.php?seccion=usuarios" class="black-text">Usuarios</a></li>
 			<li><a href="SuperAdmin.php?seccion=valoracion" class="black-text">Valoraciones</a></li>
 			<li><a href="SuperAdmin.php?seccion=roles" class="black-text">Roles</a></li>
 			<li><a href="SuperAdmin.php?seccion=planes" class="black-text">Planes</a></li>
