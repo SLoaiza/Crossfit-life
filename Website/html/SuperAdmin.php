@@ -1,3 +1,10 @@
+<?php 
+    if (isset($_GET["seccion"])) {
+       $seccion=$_GET["seccion"];
+    }else{
+       $seccion="";
+    }
+ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,36 +20,38 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 </head>
 <body>
-	<?php include('menus/menuSadmin.php'); ?>
+	
+  <div class="container">
+    <?php include('menus/menuSadmin.php');?>
+    <?php include('../../WEBAPP/Controller/selectorSAcontenido.php');?>
+  </div>
+  
+
+
+
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<!-- Compiled and minified JavaScript -->
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
 	<script type="text/javascript">
 		$(document).ready(function(){
-     		$('.slider').slider({full_width: true});
+        $('select').material_select();
+        $(".dropdown-button").dropdown();
+        $('#textarea1').trigger('autoresize');
+        $('input#input_text, textarea#textarea1').characterCounter();
+        var altura = $('.menu').offset().top;
+        $(window).on('scroll',function(){
+          if($(window).scrollTop()>altura){
+            $('.menu').addClass('menu-fixed');
+          }else{
+            $('.menu').removeClass('menu-fixed');
+            
+          }
+        })
+        $(".button-collapse").sideNav();
  		});
 
-
- 		$('#textarea1').trigger('autoresize');
-
- 		
- 		$(document).ready(function() {
-    		$('input#input_text, textarea#textarea1').characterCounter();
-  		});
-
-  		$(document).ready(function(){
-  			var altura = $('.menu').offset().top;
-  			$(window).on('scroll',function(){
-  				if($(window).scrollTop()>altura){
-  					$('.menu').addClass('menu-fixed');
-  				}else{
-  					$('.menu').removeClass('menu-fixed');
-						
-  				}
-  			})
-  		});
-  		$(".button-collapse").sideNav();
+  		
 	</script>
 </body>
 </html>

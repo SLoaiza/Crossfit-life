@@ -13,11 +13,11 @@
 		}else{
 	 		try {
 	 			$usuario = GestionUsuario::Login($ndoc ,$pass);	
-	 			if($usuario[2] == '1'){
+	 			if($usuario[4] == '1'){
 	 				header("Location: ../../Website/html/SuperAdmin.php");
-	 			}elseif ($usuario[2] == '2') {
+	 			}elseif ($usuario[4] == '2') {
 	 				echo "hola instructor";
-	 			}elseif($usuario[2] == '3'){
+	 			}elseif($usuario[4] == '3'){
 	 				echo "hola usuario";
 	 			}
 

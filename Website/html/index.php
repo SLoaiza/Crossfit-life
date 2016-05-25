@@ -181,7 +181,7 @@
 							<input type="text" class="col s12 m12" placeholder="Ingrese correo electronico" id="correo">
 							<br>
 							<div class="input-field col s12">
-					          <textarea id="textarea1" length="" class="materialize-textarea"></textarea>
+					          <textarea id="textarea1" length="500" class="materialize-textarea" maxlength="500"></textarea>
 					          <label for="textarea1" >Mensaje</label>
 					        </div>
 							<input type="button" class="col s12 m4waves-effect waves-light btn orange darken-3" value="Enviar" style="height: 40px;" id="enviar">
