@@ -1,7 +1,9 @@
-<?php 
+<?php
 	switch ($seccion) {
 		case 'inicio':
-			echo "string";
+			//mauro
+			include_once('contenido/inicio.php');
+
 		break;
 		case 'ingreso':
 			include_once('contenido/ingreso.php');
@@ -25,7 +27,8 @@
 			# code...
 		break;
 		case 'planes':
-			# code...
+		//mauro
+			include_once('contenido/registro.php');
 		break;
 		case 'recursos':
 			# code...

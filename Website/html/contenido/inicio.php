@@ -1,3 +1,7 @@
+<?php
+	require_once("../../WEBAPP/Model/conexionbd.php");
+	require_once("../../WEBAPP/Model/gestiones.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,11 +18,11 @@
 </head>
 <!--scrolltop fixed jquery-->
 <body>
-	<div class="container">
+	<div class="container-fluid">
 		<header id="cabeza">
 			<div class="row">
 				<div class="col s12 m5">
-					<div class="row" id="iconos">
+					<div class="row" id="icon_ini">
 						<div class="col s4 m12">
 							<a href="#" class="btn-floating btn-large" id="btn_red"><img src="../imagenes/fb.png" alt="" id="redes"></a>
 						</div>
@@ -30,16 +34,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="col s12 m6">
-					<form action="POST" id="login">
-						<label for="documento" class="text-black">Nº Documento:</label>
-						<input type="text" placeholder="Ingrese numero de documento" id="documento">
-						<br>
-						<label for="contrasena" class="text-black">Contraseña:</label>
-						<input type="password" placeholder="Ingrese Contraseña" id="contrasena">
-						<input type="button" class="waves-effect waves-light btn orange darken-3" value="INGRESAR" style="height: 40px;">
-					</form>
-				</div>
+
 			</div>
 		</header>
 		<nav class="z-depth-2 m12 s12 menu">
@@ -47,14 +42,12 @@
 					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons fa fa-bars"></i></a>
 					<ul class="hide-on-med-and-down">
 						<li><a href="#cabeza" class="black-text">Inicio</a></li>
-						<li><a href=".slider" class="black-text">Publicidad</a></li>
 						<li><a href="#quienes_somos" class="black-text">Quienes Somos</a></li>
 						<li><a href="#slider2" class="black-text">Recomendaciones De Salud</a></li>
 						<li><a href="#contactar" class="black-text">Contactenos</a></li>
 					</ul>
 					<ul class="side-nav" id="mobile-demo">
 						<li><a href="#cabeza" class="black-text"><i class="fa fa-home"></i>Inicio</a></li>
-						<li><a href=".slider" class="black-text"><i class="fa fa-bullhorn"></i>Publicidad</a></li>
 						<li><a href="#quienes_somos" class="black-text"><i class="fa fa-users"></i>Quienes Somos</a></li>
 						<li><a href="#slider2" class="black-text"><i class="fa fa-comments"></i>Recomendaciones</a></li>
 						<li><a href="#contactar" class="black-text"><i class="fa fa-envelope"></i>Contactenos</a></li>
@@ -147,22 +140,20 @@
 			</section>
 		</div>
 		<div class="row">
-			<div class="col s12 m6">
+			<div class="col s12 m6" id="nosotros">
 				<img src="../imagenes/logo.png" alt="" id="logocont" class="responsive-img">
 				<section id="contactar">
 					<p style="font-size: 19px;">
 						Contacte con el departamento de atención al cliente de Crossfit Life, para cualquier duda que tenga o para cualquier aclaración que necesite.
 					</p>
-					<br>
 					<p style="font-size: 19px;">
 						Correo electrónico:
 					</p>
-					<br>
 					<p style="font-size: 19px;">
 						Teléfono:
 					</p>
 				</section>
-				<br><br>
+				<br>
 				<section id="redescont">
 					<a href="#" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/fb.png" alt="" id="redes"></a>
 					<a href="#" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/tw.png" alt="" id="redes"></a>
@@ -179,10 +170,10 @@
 							<input type="text" class="col s12 m12" placeholder="Ingrese correo electronico" id="correo">
 							<br>
 							<div class="input-field col s12">
-					          <textarea id="textarea1" length="" class="materialize-textarea"></textarea>
+					          <textarea id="textarea1" length="500" class="materialize-textarea" maxlength="500"></textarea>
 					          <label for="textarea1" >Mensaje</label>
 					        </div>
-							<input type="button" class="col s12 m4waves-effect waves-light btn orange darken-3" value="Enviar" style="height: 40px;" id="enviar">
+							<input type="button" class="col s12 m4waves-effect waves-light btn orange darken-3" value="Enviar" style="height: 40px; width: 120px;" id="enviar">
 						</form>
 					</section>
 				</div>
@@ -211,7 +202,7 @@
   					$('.menu').addClass('menu-fixed');
   				}else{
   					$('.menu').removeClass('menu-fixed');
-						
+
   				}
   			})
   		});

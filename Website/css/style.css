@@ -71,6 +71,10 @@ p.white{
 	#iconos{
 		margin-left: 40px;
 	}
+	/*mauro*/
+	#icon_ini{
+		display: inline-block;
+	}
 	.menu-fixed{
 		margin-top: 5px;
 		position: fixed;
