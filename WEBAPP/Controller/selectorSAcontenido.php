@@ -9,11 +9,8 @@
 		case 'registro':
 			include_once('contenido/registro.php');
 		break;
-		case 'enmora':
-			# code...
-		break;
 		case 'citas':
-			# code...
+			include_once('contenido/citas.php');
 		break;
 		case 'usuarios':
 			# code...

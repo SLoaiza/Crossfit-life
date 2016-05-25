@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="card-panel teal" id="ingreso">
+	<div class="" id="ingreso">
 		<center>
 			<div class="col m6 s6">
 				<div class="card" id="cingreso">
@@ -41,8 +41,11 @@
 										<td>
 											<input type="text" disabled="" name="fecha" placeholder="Fecha">
 										</td>
-										<td colspan="2">
-											<input type="text" disabled="" name="enmora" placeholder="En Mora">
+										<td>
+											<input type="text" disabled="" name="plan" placeholder="Plan">
+										</td>
+										<td>
+											<input type="text" disabled="" name="Estado" placeholder="Estado">
 										</td>
 									</tr>
 								</tbody>
@@ -56,14 +59,30 @@
 			</div>
 		</center>
 		<div class="col m12 s12">
-			<div class="card">
+			<div class="card" id="casual">
 				<div class="card-title">
 					Usuario Casual
 				</div>
 				<div class="card_content">
 					<form action="../../WEBAPP/Controller/controller.php" method="POST">
-						<label for=""></label>
-						<input type="text"></input>
+						<div class="col m3 s3">
+							<label for="">Numero de Documento</label>
+							<input type="text" name="jvInvndoc" ></input>
+						</div>
+						<div class="col m3 s3">
+							<label for="">Nombres</label>
+							<input type="text" name="jvInvnom" ></input>
+						</div>
+						<div class="col m3 s3">
+							<label for="">Apellidos</label>
+							<input type="text" name="jvInvape" ></input>
+						</div>
+						<div class="col m3 s3">
+							<label for="">Telefono</label>
+							<input type="text" name="jvInvtel" ></input>
+						</div>
+						<br>
+						<input type="submit" name="action" value="Ingresar" />
 					</form>
 				</div>
 			</div>

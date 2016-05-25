@@ -10,7 +10,7 @@ header{
 	background-position: center 0 ;
 	background-repeat: no-repeat;
 }
-body{
+body , #ingreso{
 	background-color: #e3f2fd;
 }
 .nav-wrapper .button-collapse .material-icons{
@@ -140,7 +140,8 @@ nav div ul li a{
 	padding: 40px;
 }
 #ingreso{
-	height: 500px;
+	padding: 10px;
+	height: 600px;
 }
 #cingreso{
 	padding: 20px;
@@ -152,4 +153,8 @@ nav div ul li a{
 
 #dropdown1{
 	width: 170px !important;
+}
+#casual{
+	padding: 30px;
+	height: 200px;
 }

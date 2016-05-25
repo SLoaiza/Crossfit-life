@@ -26,6 +26,11 @@
 									<label for="ndoc">Nº Documento de Identidad</label>
 									<input type="text" name="Ndoc" id="ndoc">
 								</td>
+								<td>
+									<label for="edad">Edad</label>
+									<br>
+									<input type="text" name="edad" id="edad" maxlength="2" style="width: 60px; font-size: 20px;">
+								</td>
 							</tr>
 							<tr>
 								<td>
@@ -71,30 +76,23 @@
 					<table>
 						<tr>
 							<td>
-								<label for="pass">Contraseña</label>
-								<input type="text" name="password" id="pass">
-								<br>
-								Nivel: <i></i>
+								<div class="col m12 s12">
+									<label for="pass">Contraseña</label>
+									<input type="text" name="password" id="pass">
+									<br>
+									Nivel: <i></i>
+								</div>
 							</td>
-							<td>
-								<label for="cpass">Confirme su Contraseña</label>
-								<input type="text" name="confirmpassword" id="cpass">
-								<br>
-								Coincide: <i></i>
+							<td >
+								<div class="col m6 s6">
+									<label for="cpass">Confirme su Contraseña</label>
+									<input type="text" name="confirmpassword" id="cpass">
+									<br>
+									Coincide: <i></i>
+								</div>
 							</td>
 						</tr>
 						<tr>
-							<td>
-								<div class="input-field col s12">
-								    <select>
-								      <option value="" disabled selected>Seleccione un rol</option>
-								      <option value="1">Cliente</option>
-								      <option value="2">Recepcionista</option>
-								      <option value="3">Instructor</option>
-								    </select>
-								    <label>Seleccione rol</label>
-								  </div>
-							</td>
 							<td>
 								<div class="input-field col s12">
 								    <select>
@@ -105,6 +103,16 @@
 								    </select>
 								    <label>Seleccione Plan</label>
 								  </div>
+							</td>
+							<td>
+								<div class="col m6 s6">
+									<label for="jvInicio">Fecha de inicio</label>
+									<input type="date" class="datepicker" placeholder="Inicio del plan" id="jvInicio">
+								</div>
+								<div class="col m6 s6">
+									<label for="jvFinalizacion">Fecha de finalizacion</label>
+									<input type="date" class="datepicker" placeholder="Finalizacion del plan" id="jvFinalizacion">
+								</div>
 							</td>
 						</tr>
 					</table>

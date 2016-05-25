@@ -41,7 +41,7 @@
 						<br>
 						<label for="contrasena" class="text-black">Contraseña:</label>
 						<input type="password" placeholder="Ingrese Contraseña" id="contrasena" name="log_pass">
-						<input type="submit" class="waves-effect waves-light btn orange darken-3" value="INGRESAR" style="height: 40px;" name="action">
+						<button type="submit" class="waves-effect waves-light btn orange darken-3" value="INGRESAR" style="height: 40px;" name="action">INGRESAR</button>
 					</form>
 				</div>
 			</div>

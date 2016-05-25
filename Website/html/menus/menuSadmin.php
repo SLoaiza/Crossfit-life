@@ -13,10 +13,8 @@
 			<li><a href="#cabeza" class="black-text"><i class="fa fa-home"></i>Inicio</a></li>
 			<li><a href=".slider" class="black-text"><i class="fa fa-sign-in"></i>Ingresos</a></li>
 			<li><a href="#quienes_somos" class="black-text"><i class="fa fa-user-plus"></i>Nuevo Cliente</a></li>
-			<li><a href="#slider2" class="black-text"><i class="fa fa-info-circle"></i>En Mora</a></li>
 			<li><a href="#slider2" class="black-text"><i class="fa fa-heartbeat"></i>Citas Medicas</a></li>
 			<li><a href="#slider2" class="black-text">Citas Medicas</a></li>
-			<li><a href="#slider2" class="black-text">Usuarios</a></li>
 			<li><a href="#slider2" class="black-text">Valoraciones</a></li>
 			<li><a href="#slider2" class="black-text">Roles</a></li>
 			<li><a href="#slider2" class="black-text">Planes</a></li>
