@@ -28,14 +28,14 @@
 	break;
 	// Santiago
 	case 'GuardarEmp':
-		$nrod = $_POST["ndoc"];
+		$nrod = $_POST["nrodoc"];
 		$edad = $_POST["edad"];
 		$nom = $_POST["nombres"];
-		$ape = $_POST["apellidos"];
-		$tel = $_POST["telefono"];
-		$cel = $_POST["celular"];
-		$corr = $_POST["correo"];
-		$dire = $_POST["direccion"];
+		$ape = $_POST["apellido"];
+		$tel = $_POST["tel"];
+		$cel = $_POST["cel"];
+		$corr = $_POST["mail"];
+		$dire = $_POST["dir"];
 		if($nrod=="" and $edad=="" and $nom=="" and $ape=="" and $tel=="" and $cel=="" and $corr=="" and $dire==""){
 			echo "<script>alert('Por favor ingrese datos');</script>";
 		}elseif ($nrod=="" or $edad=="" or $nom=="" or $ape=="" or $tel=="" or $cel=="" or $corr=="" or $dire=="") {
