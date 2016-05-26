@@ -13,11 +13,13 @@
 		}else{
 	 		try {
 	 			$usuario = GestionUsuario::Login($ndoc ,$pass);
-	 			if($usuario[0] == '1023'){
+	 			if($usuario[2] == '1'){
 	 				header("Location: ../../Website/html/SuperAdmin.php");
-	 			}elseif ($usuario[0] == '1111') {
+	 			}elseif ($usuario[2] == '2') {
+	 				echo "hola Admin";
+	 			}elseif($usuario[2] == '3'){
 	 				echo "hola instructor";
-	 			}elseif($usuario[0] == '2222'){
+	 			}elseif($usuario[2] == '4'){
 	 				echo "hola usuario";
 	 			}
 
@@ -49,8 +51,37 @@
  		 		}
 			}
 	break;
-	default:
-		# code...
+	case'RegistrarUsuario':
+		$cedula=$_POST["NdocUsujv"];
+		$rol=$_POST["rolUsujv"];
+		$edad=$_POST["edadUsujv"];
+		$nombres=$_POST["NombresUsujv"];
+		$apellidos=$_POST["ApellidosUsujv"];
+		$telefono=$_POST["telefonoUsujv"];
+		$celular=$_POST["celularUsujv"];
+		$correo=$_POST["correoUsujv"];
+		$dir=$_POST["direccionUsujv"];
+		$pass=$_POST["passwordUsujv"];
+		$confirmpass=$_POST["confirmpasswordUsujv"];
+		$estado=$_POST["EstadoUsujv"];
+		$fecharegistro=date("Y-m-d");
+		// $codigo_plan=$_POST["planUsujv"];
+		$inicio=$_POST["FInicioPlanUsujv"];
+		$fin=$_POST["FFinPlanUsujv"];
+
+		if ($cedula=="" or $rol=="" or $edad=="" or $nombres=="" or $apellidos=="" or
+		$telefono=="" or $celular=="" or $correo=="" or $dir=="" or $pass=="" or
+		$confirmpass=="" or $estado=="" ) {
+			echo "<script>alert('Faltan Campos Por Rellenar');</script>";
+		}else{
+			try {
+				$usuario = GestionUsuario::GuardarUsu($cedula,$rol,$edad,$nombres,$apellidos,$telefono,$celular,$correo,$dir,$pass,$estado,$fecharegistro,$inicio,$fin);
+				echo "Guardar con exito";
+ 		 		} catch (Exception $e) {
+ 		 		echo $e;
+ 		 		}
+			}
+		// echo $fecharegistro;
 		break;
 	}
  ?>

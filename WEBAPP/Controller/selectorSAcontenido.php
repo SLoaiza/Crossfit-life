@@ -11,14 +11,11 @@
 		case 'registro':
 			include_once('contenido/registro.php');
 		break;
-<<<<<<< HEAD
-=======
 		// Santiago
 		case 'regiemple':
 			include_once('contenido/registroempleado.php');
 		// Santiago
 		break;
->>>>>>> origin/master
 		case 'citas':
 			include_once('contenido/citas.php');
 		break;

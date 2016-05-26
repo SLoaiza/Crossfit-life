@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-05-2016 a las 00:16:40
+-- Tiempo de generación: 27-05-2016 a las 00:33:08
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `crossfitlife`
+-- Base de datos: `crossfitlife-db`
 --
 
 -- --------------------------------------------------------
@@ -127,6 +127,14 @@ CREATE TABLE `rol` (
   `rol_fecha` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `rol`
+--
+
+INSERT INTO `rol` (`rol_cod`, `rol_nom`, `rol_fecha`) VALUES
+('1', 'Administrador', '26/05/2016'),
+('4', 'Cliente', '26/05/2016');
+
 -- --------------------------------------------------------
 
 --
@@ -164,20 +172,29 @@ CREATE TABLE `seguimiento` (
 
 CREATE TABLE `usuario` (
   `usu_cod` varchar(15) NOT NULL,
-  `plan_cod` varchar(10) NOT NULL,
+  `plan_cod` varchar(10) DEFAULT NULL,
   `rol_cod` varchar(10) NOT NULL,
   `usu_clave` varchar(12) NOT NULL,
   `usu_nom` varchar(50) NOT NULL,
   `usu_ape` varchar(50) NOT NULL,
-  `usu_tel` varchar(20) NOT NULL,
-  `usu_cel` varchar(20) NOT NULL,
-  `usu_mail` varchar(40) NOT NULL,
+  `usu_tel` varchar(20) DEFAULT NULL,
+  `usu_cel` varchar(20) DEFAULT NULL,
+  `usu_mail` varchar(40) DEFAULT NULL,
   `usu_dir` varchar(30) DEFAULT NULL,
   `usu_estado` varchar(10) NOT NULL,
-  `usu_nick` varchar(20) DEFAULT NULL,
   `usu_edad` int(11) NOT NULL,
-  `usu_fecha` varchar(10) NOT NULL
+  `usu_fecha` date NOT NULL,
+  `usu_inicio_plan` varchar(10) DEFAULT NULL,
+  `usu_fin_plan` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`usu_cod`, `plan_cod`, `rol_cod`, `usu_clave`, `usu_nom`, `usu_ape`, `usu_tel`, `usu_cel`, `usu_mail`, `usu_dir`, `usu_estado`, `usu_edad`, `usu_fecha`, `usu_inicio_plan`, `usu_fin_plan`) VALUES
+('1023', NULL, '1', 'Admin', 'Administrador', 'Todos', NULL, NULL, NULL, NULL, 'Activo', 0, '2016-05-26', NULL, NULL),
+('457784641ss', NULL, '4', 'dfsdfsds', 'mauricio', 'calle', '3622204', '3216318706', 'sdfsdf', 'asdasd', 'Activo', 20, '2016-05-27', '', '');
 
 -- --------------------------------------------------------
 

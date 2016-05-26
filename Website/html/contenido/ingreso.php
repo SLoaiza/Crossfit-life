@@ -7,7 +7,7 @@
 						<h5>Ingreso De Usuarios Al Gimnasio</h5>
 					</div>
 					<div class="card-content">
-						<form action="../../WEBAPP/Controller/controller.php" method="POST">
+						<form action="../../../WEBAPP/Controller/controller.php" method="POST">
 							<label for="">Ingrese Numero De Documento</label>
 							<br>
 							<input type="text" name="ndoc" style="text-align: center; font-size: 16px; width: 200px;">
@@ -23,7 +23,7 @@
 						<h5>Datos De Usuario</h5>
 					</div>
 					<div class="card-content">
-						<form action="../../WEBAPP/Controller/controller.php" method="POST">
+						<form action="../../../WEBAPP/Controller/controller.php" method="POST">
 							<table>
 								<tbody>
 									<tr>
@@ -64,7 +64,7 @@
 					Usuario Casual
 				</div>
 				<div class="card_content">
-					<form action="../../WEBAPP/Controller/controller.php" method="POST">
+					<form action="../../../WEBAPP/Controller/controller.php" method="POST">
 						<div class="col m3 s3">
 							<label for="">Numero de Documento</label>
 							<input type="text" name="jvInvndoc" ></input>

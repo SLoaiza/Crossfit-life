@@ -10,56 +10,44 @@
 						<tbody>
 							<tr>
 								<td>
-									<input type="radio" id="rdTI" name="group1" value="targeta">
-									<label for="rdTI">T.I</label>
-									&nbsp;&nbsp;&nbsp;
-									<input type="radio" id="rdCC" name="group1" value="cedula">
-									<label for="rdCC">C.C</label>
-									&nbsp;&nbsp;&nbsp;
-									<input type="radio" id="rdOTRO" name="group1"
-									value="otro">
-									<label for="rdOTRO">OTRO</label>
-								</td>
-							</tr>
-							<tr>
-								<td>
 									<label for="ndoc">Nº Documento de Identidad</label>
-									<input type="text" name="Ndoc" id="ndoc">
+									<input type="text" name="NdocUsujv" id="ndoc" required="">
+									<input name="rolUsujv" value="4" hidden="">
 								</td>
 								<td>
 									<label for="edad">Edad</label>
 									<br>
-									<input type="text" name="edad" id="edad" maxlength="2" style="width: 60px; font-size: 20px;">
+									<input type="text" name="edadUsujv" id="edad" maxlength="2" style="width: 60px; font-size: 20px;" required="">
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<label for="nombres">Nombres Completos</label>
-									<input type="text" name="Nombres" id="nombres">
+									<input type="text" name="NombresUsujv" id="nombres" required="">
 								</td>
 								<td>
 									<label for="apellidos">Apellidos Completos</label>
-									<input type="text" name="Apellidos" id="apellidos">
+									<input type="text" name="ApellidosUsujv" id="apellidos">
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<label for="telefono">Telefono Fijo</label>
-									<input type="text" name="telefono" id="telefono">
+									<input type="text" name="telefonoUsujv" id="telefono">
 								</td>
 								<td>
 									<label for="celular">Numero Celular</label>
-									<input type="text" name="celular" id="celular">
+									<input type="text" name="celularUsujv" id="celular">
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<label for="mail">Correo Electronico</label>
-									<input type="text" name="correo" id="correo">
+									<input type="text" name="correoUsujv" id="correo">
 								</td>
 								<td>
 									<label for="direccion">Direccion de residencia</label>
-									<input type="text" name="direccion" id="direccion">
+									<input type="text" name="direccionUsujv" id="direccion">
 								</td>
 							</tr>
 						</tbody>
@@ -78,7 +66,7 @@
 							<td>
 								<div class="col m12 s12">
 									<label for="pass">Contraseña</label>
-									<input type="text" name="password" id="pass">
+									<input type="text" name="passwordUsujv" id="pass">
 									<br>
 									Nivel: <i></i>
 								</div>
@@ -86,7 +74,7 @@
 							<td >
 								<div class="col m6 s6">
 									<label for="cpass">Confirme su Contraseña</label>
-									<input type="text" name="confirmpassword" id="cpass">
+									<input type="text" name="confirmpasswordUsujv" id="cpass">
 									<br>
 									Coincide: <i></i>
 								</div>
@@ -95,11 +83,12 @@
 						<tr>
 							<td>
 								<div class="input-field col s12">
-								    <select>
-								      <option value="" disabled selected>Seleccione un Plan</option>
-								      <option value="1"></option>
-								      <option value="2"></option>
-								      <option value="3"></option>
+								    <select name="planUsujv">
+								      <option value="0" disabled selected>Seleccione un Plan</option>
+											<option value="0">-Ninguno-</option>
+								      <option value="1">2x1</option>
+								      <option value="2">uno viejo y uno nuevo</option>
+								      <option value="3">familiar</option>
 								    </select>
 								    <label>Seleccione Plan</label>
 								  </div>
@@ -107,22 +96,21 @@
 							<td>
 								<div class="col m6 s6">
 									<label for="jvInicio">Fecha de inicio</label>
-									<input type="date" class="datepicker" placeholder="Inicio del plan" id="jvInicio">
+									<input type="date" class="datepicker" placeholder="Inicio del plan" id="jvInicio" name="FInicioPlanUsujv">
 								</div>
 								<div class="col m6 s6">
 									<label for="jvFinalizacion">Fecha de finalizacion</label>
-									<input type="date" class="datepicker" placeholder="Finalizacion del plan" id="jvFinalizacion">
+									<input type="date" class="datepicker" placeholder="Finalizacion del plan" id="jvFinalizacion" name="FFinPlanUsujv">
 								</div>
 							</td>
 						</tr>
 					</table>
+					<input name="EstadoUsujv" value="Activo" hidden="">
 				</div>
 				<center>
-					<input type="submit" name="action" id="registrar" value="Registrar">
+					<button type="submit" name="action" value="RegistrarUsuario">Registrar</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="submit" name="action" id="cancelar" value="Cancelar">
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<input type="submit" id="limpiar" value="Limpiar" onclick="">
+					<button type="submit" onclick="limpiar()">Limpiar</button>
 				</center>
 			</div>
 		</div>
