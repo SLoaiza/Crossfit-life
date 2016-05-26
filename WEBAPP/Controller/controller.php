@@ -30,21 +30,23 @@
 	break;
 	// Santiago
 	case 'GuardarEmp':
-		$nrod = $_POST["ndoc"];
+		$nrod = $_POST["nrodoc"];
 		$edad = $_POST["edad"];
 		$nom = $_POST["nombres"];
-		$ape = $_POST["apellidos"];
-		$tel = $_POST["telefono"];
-		$cel = $_POST["celular"];
-		$corr = $_POST["correo"];
-		$dire = $_POST["direccion"];
-		if($nrod=="" and $edad=="" and $nom=="" and $ape=="" and $tel=="" and $cel=="" and $corr=="" and $dire==""){
+		$ape = $_POST["apellido"];
+		$tel = $_POST["tel"];
+		$cel = $_POST["cel"];
+		$corr = $_POST["mail"];
+		$dire = $_POST["dir"];
+		$rol = $_POST["rolusu"];
+		
+		if($nrod=="" and $edad=="" and $nom=="" and $ape=="" and $tel=="" and $cel=="" and $corr=="" and $dire=="" and $rol==""){
 			echo "<script>alert('Por favor ingrese datos');</script>";
-		}elseif ($nrod=="" or $edad=="" or $nom=="" or $ape=="" or $tel=="" or $cel=="" or $corr=="" or $dire=="") {
+		}elseif ($nrod=="" or $edad=="" or $nom=="" or $ape=="" or $rol=="") {
 			echo "<script>alert('Falta un campo por llenar, Por favor Verifica!');</script>";
 		}else{
 			try {
-				$usuario = GestionUsuario::GuardarEmp($usu_cod, $usu_edad, $usu_nom, $usu_ape, $usu_tel, $usu_cel, $usu_mail, $usu_dir);
+				$usuario = GestionUsuario::GuardarEmp($nrod, $edad, $nom, $ape, $tel, $cel, $corr, $dire, $rol);
 				echo "Guardar con exito";
  		 		} catch (Exception $e) {
  		 		echo $e;

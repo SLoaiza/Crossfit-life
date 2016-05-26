@@ -1,7 +1,7 @@
 <div class="row">
-	<form action="../../WEBAPP/Controller/controller.php" method="POST">
+	<form action="../../WEBAPP/Controller/controller.php" method="post">
 		<div class="col m10 s10 offset-m1 offset-s1">
-			<div class="card" id="registro">
+			<div class="card" id="registroempleado">
 				<div class="card-title">
 					<h5>Datos Personales</h5>
 				</div>
@@ -23,42 +23,42 @@
 							</tr>
 							<tr>
 								<td>
-									<label for="ndoc">Nº Documento de Identidad</label>
-									<input type="text" name="Ndoc" id="ndoc">
+									<label for="nrodoc">Nº Documento de Identidad</label>
+									<input type="text" name="nrodoc" id="nrodoc">
 								</td>
 								<td>
 									<label for="edad">Edad</label>
-									<input type="text" name="Edad" id="edad">
+									<input type="text" name="edad" id="edad">
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<label for="nombres">Nombres Completos</label>
-									<input type="text" name="Nombres" id="nombres">
+									<input type="text" name="nombres" id="nombres">
 								</td>
 								<td>
-									<label for="apellidos">Apellidos Completos</label>
-									<input type="text" name="Apellidos" id="apellidos">
+									<label for="apellido">Apellidos Completos</label>
+									<input type="text" name="apellido" id="apellido">
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="telefono">Telefono Fijo</label>
-									<input type="text" name="telefono" id="telefono">
+									<label for="tel">Telefono Fijo</label>
+									<input type="text" name="tel" id="tel">
 								</td>
 								<td>
-									<label for="celular">Numero Celular</label>
-									<input type="text" name="celular" id="celular">
+									<label for="celular">Número Celular</label>
+									<input type="text" name="cel" id="cel">
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<label for="mail">Correo Electronico</label>
-									<input type="text" name="correo" id="correo">
+									<input type="text" name="mail" id="mail">
 								</td>
 								<td>
-									<label for="direccion">Direccion de residencia</label>
-									<input type="text" name="direccion" id="direccion">
+									<label for="dir">Direccion de residencia</label>
+									<input type="text" name="dir" id="dir">
 								</td>
 							</tr>
 						</tbody>
@@ -90,9 +90,9 @@
 						<tr>
 							<td>
 								<div class="input-field col s12">
-								    <select>
-								      <option value="" disabled selected>Seleccione un rol</option>
-								      <option value="1">Recepcionista</option>
+								    <select name="rolusu">
+								      <option  disabled selected>Seleccione un rol</option>
+								      <option value="1" >Recepcionista</option>
 								      <option value="2">Instructor</option>
 								    </select>
 								    <label>Seleccione rol</label>
@@ -102,9 +102,9 @@
 					</table>
 				</div>
 				<center>
-					<button type="submit" name="button" value="GuardarEmp">Guardar</button>
+					<button type="submit" name="action" value="GuardarEmp">Guardar</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button type="submit" name="button" onclick="limpiar()">Cancelar</button>
+					<button type="submit" name="action" onclick="limpiar()">Cancelar</button>
 				</center>
 			</div>
 		</div>
