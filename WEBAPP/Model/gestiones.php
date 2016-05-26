@@ -11,12 +11,12 @@
 		return $result;
 		}
 // Santiago
-		function GuardarEmp($usu_cod, $usu_edad, $usu_nom, $usu_ape, $usu_tel, $usu_cel, $usu_mail, $usu_dir){
+		function GuardarEmp($nrod, $edad, $nom, $ape, $tel, $cel, $corr, $dire, $rol){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$consulta = "INSERT INTO usuarios (usu_cod,usu_nom,usu_ape,usu_tel,usu_cel,usu_mail,usu_dir) values (?,?,?,?,?,?,?)";
+			$consulta = "INSERT INTO usuario (usu_cod,usu_edad,usu_nom,usu_ape,usu_tel,usu_cel,usu_mail,usu_dir, rol_cod) values (?,?,?,?,?,?,?,?,?)";
 			$query= $pdo->prepare($consulta);
-			$query->execute(array($usu_cod, $usu_edad, $usu_nom, $usu_ape, $usu_tel, $usu_cel, $usu_mail, $usu_dir));
+			$query->execute(array($nrod, $edad, $nom, $ape, $tel, $cel, $corr, $dire, $rol));
 
 			ConexionBD::CerrarBD();
 		}

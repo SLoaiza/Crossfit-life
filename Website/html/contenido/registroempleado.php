@@ -90,9 +90,9 @@
 						<tr>
 							<td>
 								<div class="input-field col s12">
-								    <select>
-								      <option value="" disabled selected>Seleccione un rol</option>
-								      <option value="1">Recepcionista</option>
+								    <select name="rolusu">
+								      <option  disabled selected>Seleccione un rol</option>
+								      <option value="1" >Recepcionista</option>
 								      <option value="2">Instructor</option>
 								    </select>
 								    <label>Seleccione rol</label>
