@@ -10,51 +10,38 @@
 						<tbody>
 							<tr>
 								<td>
-									<input type="radio" id="rdTI" name="group1" value="targeta">
-									<label for="rdTI">T.I</label>
-									&nbsp;&nbsp;&nbsp;
-									<input type="radio" id="rdCC" name="group1" value="cedula">
-									<label for="rdCC">C.C</label>
-									&nbsp;&nbsp;&nbsp;
-									<input type="radio" id="rdOTRO" name="group1"
-									value="otro">
-									<label for="rdOTRO">OTRO</label>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="ndoc">Nº Documento de Identidad</label>
-									<input type="text" name="Ndoc" id="ndoc">
+									<label for="ndoc">Codigo de valoracion</label>
+									<input type="text" name=vlrcion_cod" id="ndoc">
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="nombres">Nombres Completos</label>
-									<input type="text" name="Nombres" id="nombres">
-								</td>
-								<td>
-									<label for="apellidos">Apellidos Completos</label>
-									<input type="text" name="Apellidos" id="apellidos">
+									<label for="Peso">Peso</label>
+									<input type="text" name="vlrcion_peso" id="apellidos">
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="telefono">Telefono Fijo</label>
-									<input type="text" name="telefono" id="telefono">
+									<label for="estatura">Estatura</label>
+									<input type="text" name="vlrcion_estatura" id="telefono">
 								</td>
 								<td>
-									<label for="celular">Numero Celular</label>
-									<input type="text" name="celular" id="celular">
+									<label for="imc">(IMC) Indice de masa corporal)</label>
+									<input type="text" name="vlrcion_IMC" id="celular">
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="mail">Correo Electronico</label>
-									<input type="text" name="correo" id="correo">
+									<label for="clasificacion">Clasificacion</label>
+									<input type="text" name="vlrcion_clasificacion" id="correo">
 								</td>
 								<td>
-									<label for="direccion">Direccion de residencia</label>
-									<input type="text" name="direccion" id="direccion">
+									<label for="recomendacion">Recomendacion</label>
+									<input type="text" name="vlrcion_recom" id="direccion">
 								</td>
 							</tr>
 						</tbody>

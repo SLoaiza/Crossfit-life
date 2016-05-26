@@ -1,7 +1,7 @@
 <div class="row">
 	<form action="../../WEBAPP/Controller/controller.php" method="POST">
 		<div class="col m10 s10 offset-m1 offset-s1">
-			<div class="card" id="registro">
+			<div class="card" id="roles">
 				<div class="card-title">
 					<h5>Datos Personales</h5>
 				</div>
@@ -34,31 +34,31 @@
 							</tr>
 							<tr>
 								<td>
-									<label for="nombres">Nombres Completos</label>
+									<label for="nombres">Codigo de usaurio</label>
 									<input type="text" name="Nombres" id="nombres">
 								</td>
 								<td>
-									<label for="apellidos">Apellidos Completos</label>
+									<label for="apellidos">Peso</label>
 									<input type="text" name="Apellidos" id="apellidos">
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="telefono">Telefono Fijo</label>
+									<label for="telefono">Estatura</label>
 									<input type="text" name="telefono" id="telefono">
 								</td>
 								<td>
-									<label for="celular">Numero Celular</label>
+									<label for="celular">(IMC) Indice de masa corporal</label>
 									<input type="text" name="celular" id="celular">
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<label for="mail">Correo Electronico</label>
+									<label for="mail">Casificacion</label>
 									<input type="text" name="correo" id="correo">
 								</td>
 								<td>
-									<label for="direccion">Direccion de residencia</label>
+									<label for="direccion">Recomendacion</label>
 									<input type="text" name="direccion" id="direccion">
 								</td>
 							</tr>
