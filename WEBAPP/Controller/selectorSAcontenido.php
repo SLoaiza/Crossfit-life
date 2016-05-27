@@ -3,33 +3,23 @@
 		case 'inicio':
 			//mauro
 			include_once('contenido/inicio.php');
-
 		break;
+		// mauro
 		case 'ingreso':
 			include_once('contenido/ingreso.php');
 		break;
+
 		case 'registro':
 			include_once('contenido/registro.php');
 		break;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
->>>>>>> origin/master
+
 		// Santiago
 		case 'regiemple':
 			include_once('contenido/registroempleado.php');
 		// Santiago
 		break;
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/master
->>>>>>> origin/master
 		case 'citas':
 			include_once('contenido/citas.php');
 		break;
@@ -44,8 +34,9 @@
 		break;
 		case 'planes':
 		//mauro
-			include_once('contenido/registro.php');
+			include_once('contenido/planes.php');
 		break;
+		// mauro
 		case 'recursos':
 			# code...
 		break;

@@ -20,40 +20,13 @@
 <body>
 	<div class="container-fluid">
 		<header id="cabeza">
-			<div class="row">
-				<div class="col s12 m5">
-					<div class="row" id="icon_ini">
-						<div class="col s4 m12">
-							<a href="#" class="btn-floating btn-large" id="btn_red"><img src="../imagenes/fb.png" alt="" id="redes"></a>
-						</div>
-						<div class="col s4 m12">
-							<a href="#" class="btn-floating btn-large" id="btn_red"><img src="../imagenes/tw.png" alt="" id="redes"></a>
-						</div>
-						<div class="col s4 m12">
-							<a href="#" class="btn-floating btn-large" id="btn_red"><img src="../imagenes/yt.png" alt="" id="redes"></a>
-						</div>
-					</div>
-				</div>
-
-			</div>
+			<section id="redescont">
+					<a href="#" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/fb.png" alt="" id="redes"></a>
+					<a href="#" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/tw.png" alt="" id="redes"></a>
+					<a href="#" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/yt.png" alt="" id="redes"></a>
+				</section>
 		</header>
-		<nav class="z-depth-2 m12 s12 menu">
-				<div class="nav-wrapper orange z-depth-2">
-					<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons fa fa-bars"></i></a>
-					<ul class="hide-on-med-and-down">
-						<li><a href="#cabeza" class="black-text">Inicio</a></li>
-						<li><a href="#quienes_somos" class="black-text">Quienes Somos</a></li>
-						<li><a href="#slider2" class="black-text">Recomendaciones De Salud</a></li>
-						<li><a href="#contactar" class="black-text">Contactenos</a></li>
-					</ul>
-					<ul class="side-nav" id="mobile-demo">
-						<li><a href="#cabeza" class="black-text"><i class="fa fa-home"></i>Inicio</a></li>
-						<li><a href="#quienes_somos" class="black-text"><i class="fa fa-users"></i>Quienes Somos</a></li>
-						<li><a href="#slider2" class="black-text"><i class="fa fa-comments"></i>Recomendaciones</a></li>
-						<li><a href="#contactar" class="black-text"><i class="fa fa-envelope"></i>Contactenos</a></li>
-					</ul>
-				</div>
-			</nav>
+		
 		<div class="row">
 			<div class="col s12 m12" >
 				<div class="slider">
