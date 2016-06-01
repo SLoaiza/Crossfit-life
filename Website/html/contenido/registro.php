@@ -22,59 +22,31 @@
 							</tr>
 							<tr>
 								<td>
-<<<<<<< HEAD
 									<label for="nombres">Nombres Completos</label>
 									<input type="text" name="NombresUsujv" id="nombres" required="">
 								</td>
 								<td>
 									<label for="apellidos">Apellidos Completos</label>
 									<input type="text" name="ApellidosUsujv" id="apellidos">
-=======
-									<label for="nombres">Codigo de usaurio</label>
-									<input type="text" name="Nombres" id="nombres">
-								</td>
-								<td>
-									<label for="apellidos">Peso</label>
-									<input type="text" name="Apellidos" id="apellidos">
->>>>>>> origin/master
 								</td>
 							</tr>
 							<tr>
 								<td>
-<<<<<<< HEAD
 									<label for="telefono">Telefono Fijo</label>
 									<input type="text" name="telefonoUsujv" id="telefono">
 								</td>
 								<td>
 									<label for="celular">Numero Celular</label>
 									<input type="text" name="celularUsujv" id="celular">
-=======
-									<label for="telefono">Estatura</label>
-									<input type="text" name="telefono" id="telefono">
-								</td>
-								<td>
-									<label for="celular">(IMC) Indice de masa corporal</label>
-									<input type="text" name="celular" id="celular">
->>>>>>> origin/master
-								</td>
 							</tr>
 							<tr>
 								<td>
-<<<<<<< HEAD
 									<label for="mail">Correo Electronico</label>
 									<input type="text" name="correoUsujv" id="correo">
 								</td>
 								<td>
 									<label for="direccion">Direccion de residencia</label>
 									<input type="text" name="direccionUsujv" id="direccion">
-=======
-									<label for="mail">Casificacion</label>
-									<input type="text" name="correo" id="correo">
-								</td>
-								<td>
-									<label for="direccion">Recomendacion</label>
-									<input type="text" name="direccion" id="direccion">
->>>>>>> origin/master
 								</td>
 							</tr>
 						</tbody>

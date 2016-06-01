@@ -1,3 +1,6 @@
+<?php 
+	$consulta = GestionUsuario::ConsultarIngresado();
+ ?>
 <div class="row">
 	<div class="" id="ingreso">
 		<center>
@@ -7,12 +10,12 @@
 						<h5>Ingreso De Usuarios Al Gimnasio</h5>
 					</div>
 					<div class="card-content">
-						<form action="../../../WEBAPP/Controller/controller.php" method="POST">
+						<form action="../../WEBAPP/Controller/controller.php" method="POST">
 							<label for="">Ingrese Numero De Documento</label>
 							<br>
-							<input type="text" name="ndoc" style="text-align: center; font-size: 16px; width: 200px;">
+							<input type="text" name="NdocIngresoUsuJV" required="" style="text-align: center; font-size: 16px; width: 200px;">
 							<br>
-							<input type="submit" name="action" value="Consultar">
+							<button type="submit" name="action" value="ConsultarIngresado">Consultar</button>
 						</form>
 					</div>
 				</div>
@@ -23,18 +26,27 @@
 						<h5>Datos De Usuario</h5>
 					</div>
 					<div class="card-content">
-						<form action="../../../WEBAPP/Controller/controller.php" method="POST">
+						<form action="../../WEBAPP/Controller/controller.php" method="POST">
 							<table>
 								<tbody>
+									<?php
+										// foreach ($consulta as $row) {
+										//  	echo "<tr>
+										// 			<td>
+										// 				<input type='text' disabled='' name='NDocIngresoUsuJV' placeholder='Nº Documento' value='".$row["usu_cod"]."'
+										// 			</td>
+										//  		</tr>";
+										//  } 
+								 	?>
 									<tr>
 										<td>
-											<input type="text" disabled="" name="ndoc" placeholder="Nº Documento">
+											<input type="text" disabled="" name="NDocIngresoUsuJV" placeholder="Nº Documento">
 										</td>
 										<td>
-											<input type="text" disabled="" name="nombres" placeholder="Nombres">
+											<input type="text" disabled="" name="nombresIngresoUsuJV" placeholder="Nombres">
 										</td>
 										<td>
-											<input type="text" disabled="" name="apellidos" placeholder="Apellidos">
+											<input type="text" disabled="" name="apellidosIngresoUsuJV" placeholder="Apellidos">
 										</td>
 									</tr>
 									<tr>

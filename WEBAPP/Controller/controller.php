@@ -70,20 +70,21 @@
 		// $codigo_plan=$_POST["planUsujv"];
 		$inicio=$_POST["FInicioPlanUsujv"];
 		$fin=$_POST["FFinPlanUsujv"];
-
-		if ($cedula=="" or $rol=="" or $edad=="" or $nombres=="" or $apellidos=="" or
-		$telefono=="" or $celular=="" or $correo=="" or $dir=="" or $pass=="" or
-		$confirmpass=="" or $estado=="" ) {
-			echo "<script>alert('Faltan Campos Por Rellenar');</script>";
-		}else{
-			try {
-				$usuario = GestionUsuario::GuardarUsu($cedula,$rol,$edad,$nombres,$apellidos,$telefono,$celular,$correo,$dir,$pass,$estado,$fecharegistro,$inicio,$fin);
-				echo "Guardar con exito";
- 		 		} catch (Exception $e) {
- 		 		echo $e;
- 		 		}
-			}
-		// echo $fecharegistro;
-		break;
+		try {
+			$usuario = GestionUsuario::GuardarUsu($cedula,$rol,$edad,$nombres,$apellidos,$telefono,$celular,$correo,$dir,$pass,$estado,$fecharegistro);
+			echo "Guardar con exito";
+		 } catch (Exception $e) {
+		 	echo $e;
+		 }
+	break;
+	case 'ConsultarIngresado':
+		$documento = $_POST["NdocIngresoUsuJV"];
+		try {
+			$consulta = GestionUsuario::ConsultarIngresado($documento);
+			echo $documento;
+		} catch (Exception $e) {
+			echo $e;
+		}
+	break;
 	}
  ?>
