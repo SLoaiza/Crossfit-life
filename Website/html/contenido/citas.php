@@ -1,62 +1,117 @@
 <div class="row">
-	<div class="card">
+	<div class="card" id="asignaciondecitas">
 		<div class="card-title">
 			<h4>Asignacion de citas para Valoracion</h4>
 		</div>
 		<div class="card-content">
-			<form action="../../../WEBAPP/Controller/controller.php" method="POST">
-				<table>
-					<tr>
-						<td>
-							<label for="doc">Numero De Documento</label>
-							<input type="text" id="doc" name="jvtxtCTdoc"/>
-						</td>
-						<td>
-							<button type="submit" name="action" value="Consultarparacita"> Consultar </button>
-						</td>
-					</tr>
-				</table>
+			<form action="../../WEBAPP/Controller/controller.php" method="POST">
+				<div class="col m8 s12">
+					<table>
+						<thead>
+							<h4>Datos Personales</h4>
+							<br>
+							<div class="row">
+								<div class="col m2 s12">
+									Codigo Cita: <input type="text" readonly="" name="codigoCitaUsuJv" value="<?php 
+										date_default_timezone_set('America/Bogota');
+										$numero=rand();
+										$año=date("Y");
+										$mes=date("m")-1;
+										$dia=date("d")+1;
+										$hora=date("His");
+										$codigo=$mes.$dia.substr($año, -2).substr("$numero", -1).$hora;
+										echo $codigo;
+									 ?>">
+								</div>
+							</div>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<label for="NdocumentoCitaUsuJv">Numero De Documento</label>
+									<input type="text" name="NdocumentoCitaUsuJv" id="NdocumentoCitaUsuJv" required="">
+								</td>
+								<td>
+									<label for="NombreCitaUsuJv">Nombre Completo</label>
+									<input type="text" required="">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<label for="NombreCitaUsuJv">Apellido Completo</label>
+									<input type="text" required="">
+								</td>
+								<td>
+									<label for="NombreCitaUsuJv">Numero De Contacto</label>
+									<input type="text" required="">
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div class="col m4 s12">
+					<table>
+						<thead>
+							<h4>Fecha y Hora</h4>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<label for="FechaCitaUsuJv">Fecha</label>
+									<input type="date" name="FechaCitaUsuJv" id="FechaCitaUsuJv" class="datepicker" required="">
+								</td>
+								<td>
+									<label for="HoraCitaUsuJv">Hora</label>
+									<input type="time" name="HoraCitaUsuJv" id="HoraCitaUsuJv" required="">
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<button type="submit" name="action" value="asignarcita">Asignar Cita</button>
+								</td>
+								<td>
+									<button type="reset">Cancelar</button>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</form>
-			<table>
-				<tbody>
-					<tr>
-						<td>
-							<input type="text" disabled="" name="cedulaUsuCitajv" placeholder="Nº Documento" value=""></input>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<input type="text" disabled="" name="nombreUsuCitajv" placeholder="Nombre" value=""></input>
-						</td>
-						<td>
-							<input type="text" disabled="" name="apellidoUsuCitajv" placeholder="Apellido" value=""></input>
-						</td>
-						<td>
-							<input type="text" disabled="" name="edadUsuCitajv" placeholder="Edad" value=""></input>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<label for="jvFCita">Fecha De Cita</label>
-							<input type="date" class="datepicker" placeholder="Inicio del plan" id="jvFCita" name="jvFCita">
-						</td>
-						<td>
-							<button type="submit" name="action"></button>
-						</td>
-					</tr>
-				</tbody>
-			</table>
-			<table id="citas">
+			<table id="datatable" style="border:solid 1px;">
 				<thead>
 					<tr>
+						<td>Codigo</td>
 						<td>Nº Documento</td>
 						<td>Nombres</td>
 						<td>Apellidos</td>
-						<td>Fecha De Cita</td>
+						<td>Fecha</td>
 						<td>Hora</td>
 					</tr>
 				</thead>
+				<tbody>
+					<?php 
+						$item = 1;
+						foreach ($datosdecita as $row) {
+							echo "<tr>
+									<td>".$row["cita_cod"]."</td>
+									<td>".$row["usu_cod"]."</td>
+									<td>".$row["usu_nom"]."</td>
+									<td>".$row["usu_ape"]."</td>
+									<td>".$row["cita_fecha"]."</td>
+									<td>".$row["cita_hora"]."</td>
+								  </tr>";
+							$item++;
+						}
+
+					 ?>
+				</tbody>
 			</table>
 		</div>
 	</div>
 </div>
+<script>
+	$("#datatable").dataTable( {
+        "language": {"url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"}
+    });
+
+</script>

@@ -1,6 +1,3 @@
-<?php 
-	$consulta = GestionUsuario::ConsultarIngresado();
- ?>
 <div class="row">
 	<div class="" id="ingreso">
 		<center>
@@ -15,7 +12,7 @@
 							<br>
 							<input type="text" name="NdocIngresoUsuJV" required="" style="text-align: center; font-size: 16px; width: 200px;">
 							<br>
-							<button type="submit" name="action" value="ConsultarIngresado">Consultar</button>
+							<button type="submit" name="action" value="ConsultarIngresado" onclick="insertar()">Consultar</button>
 						</form>
 					</div>
 				</div>
@@ -29,18 +26,9 @@
 						<form action="../../WEBAPP/Controller/controller.php" method="POST">
 							<table>
 								<tbody>
-									<?php
-										// foreach ($consulta as $row) {
-										//  	echo "<tr>
-										// 			<td>
-										// 				<input type='text' disabled='' name='NDocIngresoUsuJV' placeholder='Nº Documento' value='".$row["usu_cod"]."'
-										// 			</td>
-										//  		</tr>";
-										//  } 
-								 	?>
 									<tr>
 										<td>
-											<input type="text" disabled="" name="NDocIngresoUsuJV" placeholder="Nº Documento">
+											<input type="text" disabled="" name="NDocIngresoUsuJV" placeholder="Nº Documento" id="doc">
 										</td>
 										<td>
 											<input type="text" disabled="" name="nombresIngresoUsuJV" placeholder="Nombres">
@@ -76,25 +64,25 @@
 					Usuario Casual
 				</div>
 				<div class="card_content">
-					<form action="../../../WEBAPP/Controller/controller.php" method="POST">
+					<form action="../../WEBAPP/Controller/controller.php" method="POST">
 						<div class="col m3 s3">
 							<label for="">Numero de Documento</label>
-							<input type="text" name="jvInvndoc" ></input>
+							<input type="text" name="jvInvndoc" required=""></input>
 						</div>
 						<div class="col m3 s3">
 							<label for="">Nombres</label>
-							<input type="text" name="jvInvnom" ></input>
+							<input type="text" name="jvInvnom" required=""></input>
 						</div>
 						<div class="col m3 s3">
 							<label for="">Apellidos</label>
-							<input type="text" name="jvInvape" ></input>
+							<input type="text" name="jvInvape" required=""></input>
 						</div>
 						<div class="col m3 s3">
 							<label for="">Telefono</label>
-							<input type="text" name="jvInvtel" ></input>
+							<input type="text" name="jvInvtel" required=""></input>
 						</div>
 						<br>
-						<input type="submit" name="action" value="Ingresar" />
+						<button type="submit" name="action" value="IngresoUsuarioCasual">Ingresar</button>
 					</form>
 				</div>
 			</div>

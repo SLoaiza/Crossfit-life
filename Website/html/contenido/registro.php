@@ -1,7 +1,7 @@
 <div class="row">
 	<form action="../../WEBAPP/Controller/controller.php" method="POST">
 		<div class="col m10 s10 offset-m1 offset-s1">
-			<div class="card" id="roles">
+			<div class="card" id="registro">
 				<div class="card-title">
 					<h5>Datos Personales</h5>
 				</div>
@@ -67,7 +67,7 @@
 									<label for="pass">Contraseña</label>
 									<input type="text" name="passwordUsujv" id="pass">
 									<br>
-									Nivel: <i></i>
+									Nivel: <span id="nivelpass"></span>
 								</div>
 							</td>
 							<td >
@@ -75,16 +75,16 @@
 									<label for="cpass">Confirme su Contraseña</label>
 									<input type="text" name="confirmpasswordUsujv" id="cpass">
 									<br>
-									Coincide: <i></i>
+									Coincide: <span id="coincidepass"></span>
 								</div>
 							</td>
 						</tr>
 						<tr>
 							<td>
 								<div class="input-field col s12">
-								    <select name="planUsujv">
+								    <select name="tipoplanUsujv" id="planUsujv" required="">
 								      <option value="0" disabled selected>Seleccione un Plan</option>
-											<option value="0">-Ninguno-</option>
+									  <option value="0">-Ninguno-</option>
 								      <option value="1">2x1</option>
 								      <option value="2">uno viejo y uno nuevo</option>
 								      <option value="3">familiar</option>
@@ -109,9 +109,44 @@
 				<center>
 					<button type="submit" name="action" value="RegistrarUsuario">Registrar</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button type="submit" onclick="limpiar()">Limpiar</button>
+					<button type="reset" >Limpiar</button>
 				</center>
 			</div>
 		</div>
 	</form>
 </div>
+<script>
+	$("#pass").focusout(function(){
+      var pass=document.getElementById('pass').value;
+      if (pass.length==0) {
+      	alert('Por Favor Digite Contraseña.');
+      }else if(pass.length>0 && pass.length<=7){
+      	alert('La contraseña debe de ser con un minimo de 8 digitos.');
+      	$("#nivelpass").text("Muy Bajo");
+      	document.getElementById('nivelpass').style.color="#d50000";
+      }else if(pass.length<=8){
+      	$("#nivelpass").text("Bajo");
+      	document.getElementById('nivelpass').style.color="#c62828";
+      }else if(pass.length<=12){
+      	$("#nivelpass").text("Medio");
+      	document.getElementById('nivelpass').style.color="#01579b";
+      }else if(pass.length<=15){
+      	$("#nivelpass").text("Alto");
+      	document.getElementById('nivelpass').style.color="#9e9d24";
+      }
+    });
+    $("#cpass").focusout(function(){
+      var pass=document.getElementById('pass').value;
+      var coincidepass=document.getElementById('cpass').value;
+     
+      if (pass==coincidepass) {
+      	$("#coincidepass").text("Coincide");
+      	document.getElementById('#coincidepass').style.color="#827717";
+      }else{
+      	$("#coincidepass").text("No Coincide");
+      	document.getElementById('#coincidepass').style.color="#d50000";
+      }
+    
+    });
+
+</script>

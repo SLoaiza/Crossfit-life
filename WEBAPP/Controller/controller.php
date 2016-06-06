@@ -1,4 +1,5 @@
 <?php
+	date_default_timezone_set('America/Bogota');
 	require_once("../Model/conexionbd.php");
 	require_once("../Model/gestiones.php");
 	$accion = $_REQUEST["action"];
@@ -67,24 +68,74 @@
 		$confirmpass=$_POST["confirmpasswordUsujv"];
 		$estado=$_POST["EstadoUsujv"];
 		$fecharegistro=date("Y-m-d");
-		// $codigo_plan=$_POST["planUsujv"];
+		$codigo_plan=$_POST["tipoplanUsujv"];
+		// 	if (isset($codigo_plan)) {
+		// 		$codigo_plan
+		// 	}
+		//  	if ($codigo_plan=="0") {
+		//  		$codigo_plan="NaN";
+		// }
+		// error
 		$inicio=$_POST["FInicioPlanUsujv"];
-		$fin=$_POST["FFinPlanUsujv"];
-		try {
-			$usuario = GestionUsuario::GuardarUsu($cedula,$rol,$edad,$nombres,$apellidos,$telefono,$celular,$correo,$dir,$pass,$estado,$fecharegistro);
-			echo "Guardar con exito";
-		 } catch (Exception $e) {
-		 	echo $e;
-		 }
+	    if ($inicio=="") {
+		 	$inicio="NaN";
+		}
+		 $fin=$_POST["FFinPlanUsujv"];
+		 if ($fin=="") {
+		 	$fin="NaN";
+		}
+	    try {
+		   	$usuario = GestionUsuario::GuardarUsu($cedula,$rol,$edad,$nombres,$apellidos,$telefono,$celular,$correo,$dir,$pass,$estado,$fecharegistro,$inicio,$fin);
+		   	    echo "Guardar con exito";
+		  	header("Location:../../Website/html/SuperAdmin.php?seccion=registro");
+		    } catch (Exception $e) {
+		    	    echo $e;
+		}
 	break;
 	case 'ConsultarIngresado':
-		$documento = $_POST["NdocIngresoUsuJV"];
+		$documentoconsulta = $_POST["NdocIngresoUsuJV"];
 		try {
-			$consulta = GestionUsuario::ConsultarIngresado($documento);
-			echo $documento;
+			$consulta = GestionUsuario::ConsultarIngresado($documentoconsulta);
+			$document = $consulta[0];
+		    $nombre = $consulta[4];
+		    
+			header("Location:../../Website/html/SuperAdmin.php?seccion=ingreso");
+			echo "<script>alert('".$document." ".$nombre."');</script>";
 		} catch (Exception $e) {
 			echo $e;
 		}
+		//echo $documentoconsulta;
+	break;
+	case 'IngresoUsuarioCasual':
+
+		$documentoinv =$_POST["jvInvndoc"];
+		$nombreinv=$_POST["jvInvnom"];
+		$apellidoinv=$_POST["jvInvape"];
+		$telefonoinv=$_POST["jvInvtel"];
+		$fecharegistroinv=date("Y-m-d");
+		$horaregistroinv=date("H:i:s");
+		try {
+			$guardado= GestionUsuario::GuardarUsuCasual($documentoinv,$nombreinv,$apellidoinv,$telefonoinv,$fecharegistroinv,$horaregistroinv);
+			
+		} catch (Exception $e) {
+			echo $e;
+		}
+		echo $horaregistroinv;
+		header("Location:../../Website/html/SuperAdmin.php?seccion=registro");
+	break;
+	case 'asignarcita':
+
+		$codigocita=$_POST["codigoCitaUsuJv"];
+		$Ndocumentocita=$_POST["NdocumentoCitaUsuJv"];
+		$fechacita=$_POST["FechaCitaUsuJv"];
+		$horacita=$_POST["HoraCitaUsuJv"];
+		 try {
+		 	$guardadocita= GestionUsuario::AsignarCita($codigocita,$Ndocumentocita,$fechacita,$horacita);
+			
+		 } catch (Exception $e) {
+		 	echo $e;
+		 }
+		
 	break;
 	}
  ?>
