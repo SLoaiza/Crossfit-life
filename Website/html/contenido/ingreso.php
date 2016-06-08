@@ -52,7 +52,6 @@
 							</table>
 							<tr>
 							<input type="button" name="action" value="Ingreso">
-							<input type="button" name="action" value="Ingreso">
 						</form>
 					</div>
 				</div>

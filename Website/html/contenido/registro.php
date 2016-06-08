@@ -85,9 +85,11 @@
 								    <select name="tipoplanUsujv" id="planUsujv" required="">
 								      <option value="0" disabled selected>Seleccione un Plan</option>
 									  <option value="0">-Ninguno-</option>
-								      <option value="1">2x1</option>
-								      <option value="2">uno viejo y uno nuevo</option>
-								      <option value="3">familiar</option>
+									  <?php 
+									  	foreach ($datosdeplan as $row) {
+									  		echo "<option value=".$row["plan_cod"].">".$row["plan_desc"]."</option>";
+									  	}
+									   ?>
 								    </select>
 								    <label>Seleccione Plan</label>
 								  </div>
@@ -141,10 +143,10 @@
      
       if (pass==coincidepass) {
       	$("#coincidepass").text("Coincide");
-      	document.getElementById('#coincidepass').style.color="#827717";
+      	document.getElementById('coincidepass').style.color="#827717";
       }else{
       	$("#coincidepass").text("No Coincide");
-      	document.getElementById('#coincidepass').style.color="#d50000";
+      	document.getElementById('coincidepass').style.color="#f44336";
       }
     
     });

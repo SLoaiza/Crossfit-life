@@ -67,6 +67,17 @@
 			$pdo= ConexionBD::CerrarBD();
 			echo $codigocita;
 		}
+		function MostrarTodosLosPlanes(){
+			$pdo= ConexionDB::AbrirBD();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql="SELECT * from plan";
+			$query= $pdo->prepare($sql);
+			$query->execute();
+			// $pdo->CerrarBD();
+			$result=$query->fetchALL(PDO::FETCH_BOTH);
+			ConexionDB::CerrarBD();
+			return $result;
+		}
 	}
 
 

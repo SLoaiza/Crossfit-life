@@ -16,8 +16,8 @@
 										date_default_timezone_set('America/Bogota');
 										$numero=rand();
 										$año=date("Y");
-										$mes=date("m")-1;
-										$dia=date("d")+1;
+										$mes=date("m")*1;
+										$dia=date("d")*1;
 										$hora=date("His");
 										$codigo=$mes.$dia.substr($año, -2).substr("$numero", -1).$hora;
 										echo $codigo;
