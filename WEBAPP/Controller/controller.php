@@ -15,7 +15,7 @@
 	 		try {
 	 			$usuario = GestionUsuario::Login($ndoc ,$pass);
 	 			if($usuario[2] == '1'){
-	 				header("Location: ../../Website/html/SuperAdmin.php");
+	 				header("Location: ../../Website/html/SuperAdmin.php?seccion=inicio");
 	 			}elseif ($usuario[2] == '2') {
 	 				echo "hola Admin";
 	 			}elseif($usuario[2] == '3'){
