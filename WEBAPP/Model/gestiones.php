@@ -38,6 +38,9 @@
 			ConexionDB::CerrarBD();
 			return $result;
 		}
+		function MostrarIngresado(){
+			$mostrar = GestionUsuario::ConsultarIngresado(self::$documentoconsulta);
+		}
 		function GuardarUsuCasual($documentoinv,$nombreinv,$apellidoinv,$telefonoinv,$fecharegistroinv,$horaregistroinv){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

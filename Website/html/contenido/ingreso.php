@@ -1,3 +1,23 @@
+<script>
+	function insertar(){
+		
+		<?php 
+		$documentoconsulta="<script>
+			var documento = document.getElementById('NdocIngresoUsuJV').value;
+			document.write(documento);
+		</script>";
+		$datosdeusuario=GestionUsuario::ConsultarIngresado($documentoconsulta);?>	
+		var datos= <?php 
+			foreach ($datosdeplan as $dato) {
+				if($dato[2]=="40000"){
+					echo $dato[2];
+				};
+			}
+		 ?>;
+		alert(datos);
+		/**se tiene que crear un metodo que traiga todos los usuarios, y que muestre solamente los datos donde usu_cod es igual al campo obtenido por javascript**/
+	}
+</script>
 <div class="row">
 	<div class="" id="ingreso">
 		<center>
@@ -6,14 +26,12 @@
 					<div class="card-title">
 						<h5>Ingreso De Usuarios Al Gimnasio</h5>
 					</div>
-					<div class="card-content">
-						<form action="../../WEBAPP/Controller/controller.php" method="POST">
-							<label for="">Ingrese Numero De Documento</label>
-							<br>
-							<input type="text" name="NdocIngresoUsuJV" required="" style="text-align: center; font-size: 16px; width: 200px;">
-							<br>
-							<button type="submit" name="action" value="ConsultarIngresado" onclick="insertar()">Consultar</button>
-						</form>
+					<div class="card-content">	
+						<label for="">Ingrese Numero De Documento</label>
+						<br>
+						<input type="text" id="NdocIngresoUsuJV" name="NdocIngresoUsuJV" required="" style="text-align: center; font-size: 16px; width: 200px;">
+						<br>
+						<button onclick="insertar()">Consultar</button>
 					</div>
 				</div>
 			</div>
