@@ -22,6 +22,8 @@
 	 				echo "hola instructor";
 	 			}elseif($usuario[2] == '4'){
 	 				echo "hola usuario";
+	 			}else{
+	 				header("Location: ../../Website/html/index.php");
 	 			}
 
 	 		} catch (Exception $e) {
@@ -61,9 +63,21 @@
 		$nombres=$_POST["NombresUsujv"];
 		$apellidos=$_POST["ApellidosUsujv"];
 		$telefono=$_POST["telefonoUsujv"];
+		if ($telefono=="") {
+		 	$telefono="NaN";
+		}
 		$celular=$_POST["celularUsujv"];
+		if ($celular=="") {
+		 	$celular="NaN";
+		}
 		$correo=$_POST["correoUsujv"];
+		if ($correo=="") {
+		 	$correo="NaN";
+		}
 		$dir=$_POST["direccionUsujv"];
+		if ($dir=="") {
+		 	$dir="NaN";
+		}
 		$pass=$_POST["passwordUsujv"];
 		$confirmpass=$_POST["confirmpasswordUsujv"];
 		$estado=$_POST["EstadoUsujv"];
@@ -85,12 +99,11 @@
 		 	$fin="NaN";
 		}
 	    try {
-		   	$usuario = GestionUsuario::GuardarUsu($cedula,$rol,$edad,$nombres,$apellidos,$telefono,$celular,$correo,$dir,$pass,$estado,$fecharegistro,$inicio,$fin);
-		   	    echo "Guardar con exito";
-		  	header("Location:../../Website/html/SuperAdmin.php?seccion=registro");
-		    } catch (Exception $e) {
+		   	$usuario = GestionUsuario::GuardarUsu($cedula,$rol,$edad,$nombres,$apellidos,$telefono,$celular,$correo,$dir,$pass,$estado,$fecharegistro,$codigo_plan,$inicio,$fin);
+		} catch (Exception $e){
 		    	    echo $e;
-		}
+	    }
+		// header("Location:../../Website/html/SuperAdmin.php?seccion=registro");
 	break;
 	case 'ConsultarIngresado':
 		$documentoconsulta = $_POST["NdocIngresoUsuJV"];
@@ -136,6 +149,27 @@
 		 	echo $e;
 		 }
 		
+	break;
+	case 'GuardarcambiosJV':
+
+		$codigo=$_POST["UsucodVerUsuJV"];
+		$nombre=$_POST["UsunomVerUsuJV"];
+		$apellido=$_POST["UsuapeVerUsuJV"];
+		$edad=$_POST["UsuedadVerUsuJV"];
+		$telefono=$_POST["UsutelVerUsuJV"];
+		$celular=$_POST["UsucelVerUsuJV"];
+		$mail=$_POST["UsumailVerUsuJV"];
+		$direccion=$_POST["UsudirVerUsuJV"];
+		$estado=$_POST["UsuestadoVerUsuJV"];
+		$plan=$_POST["tipoplanVerUsuJV"];
+		$FIplan=$_POST["FInicioVerUsuJV"];
+		$FFplan=$_POST["FFinVerUsuJV"];
+		try {
+		 	$modificarcliente= GestionUsuario::ModificarCliente($codigo,$nombre,$apellido,$edad,$telefono,$celular,$mail,$direccion,$estado,$plan,$FIplan,$FFplan);
+		} catch (Exception $e) {
+		 	echo $e;
+		}
+		header("Location:../../Website/html/SuperAdmin.php?seccion=AllUsers");
 	break;
 	}
  ?>

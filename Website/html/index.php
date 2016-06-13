@@ -37,10 +37,10 @@
 				<div class="col s12 m6">
 					<form action="../../WEBAPP/Controller/controller.php" method="POST" id="login">
 						<label for="documento" class="text-black">Nº Documento:</label>
-						<input type="text" placeholder="Ingrese numero de documento" id="documento" name="log_doc">
+						<input type="text" placeholder="Ingrese numero de documento" id="documento" name="log_doc" required="">
 						<br>
 						<label for="contrasena" class="text-black">Contraseña:</label>
-						<input type="password" placeholder="Ingrese Contraseña" id="contrasena" name="log_pass">
+						<input type="password" placeholder="Ingrese Contraseña" id="contrasena" name="log_pass" required="">
 						<button type="submit" class="waves-effect waves-light btn orange darken-3" value="INGRESAR" style="height: 40px;" name="action">INGRESAR</button>
 					</form>
 				</div>

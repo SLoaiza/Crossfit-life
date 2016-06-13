@@ -12,8 +12,6 @@
 		case 'registro':
 			include_once('contenido/registro.php');
 		break;
-
-
 		// Santiago
 		case 'regiemple':
 			include_once('contenido/registroempleado.php');
@@ -39,6 +37,15 @@
 		// mauro
 		case 'recursos':
 			# code...
+		break;
+		case 'AllUsers':
+			include_once('contenido/MostrarUsuarios.php');
+		break;
+		case 'VerUsuario':
+			include_once('contenido/VerUsuario.php');
+		break;
+		case 'BorrarUsuario':
+			include_once('contenido/BorrarUsuario.php');
 		break;
 		default:
 			# code...

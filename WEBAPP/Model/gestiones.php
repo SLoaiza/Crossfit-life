@@ -20,13 +20,36 @@
 
 			ConexionBD::CerrarBD();
 		}
-		function GuardarUsu($cedula,$rol,$edad,$nombres,$apellidos,$telefono,$celular,$correo,$dir,$pass,$estado,$fecharegistro,$inicio,$fin){
+		function GuardarUsu($cedula,$rol,$edad,$nombres,$apellidos,$telefono,$celular,$correo,$dir,$pass,$estado,$fecharegistro,$codigo_plan,$inicio,$fin){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$consultausu = "INSERT INTO usuario (usu_cod,rol_cod,usu_clave,usu_nom,usu_ape,usu_tel,usu_cel,usu_mail,usu_dir,usu_estado,usu_edad,usu_fecha,usu_plan_inicio,usu_plan_fin) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";;
+			$consultausu = "INSERT INTO usuario (usu_cod,plan_cod,rol_cod,usu_clave,usu_nom,usu_ape,usu_tel,usu_cel,usu_mail,usu_dir,usu_estado,usu_edad,usu_fecha,usu_plan_inicio,usu_plan_fin) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";;
 			$queryGU= $pdo->prepare($consultausu);
-			$queryGU->execute(array($cedula,$rol,$pass,$nombres, $apellidos,$telefono,$celular,$correo,$dir,$estado,$edad,$fecharegistro,$inicio,$fin));
+			$queryGU->execute(array($cedula,$codigo_plan,$rol,$pass,$nombres, $apellidos,$telefono,$celular,$correo,$dir,$estado,$edad,$fecharegistro,$inicio,$fin));
 			$pdo= ConexionBD::CerrarBD();
+		}
+		function MostrarUsuarios(){
+			$pdo= ConexionDB::AbrirBD();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql="SELECT usuario.usu_cod, usuario.usu_edad,usuario.usu_nom, usuario.usu_ape, usuario.usu_tel, usuario.usu_cel, plan.plan_desc,usuario.usu_estado, usuario.rol_cod,usuario.usu_estado from plan inner join usuario on plan.plan_cod=usuario.plan_cod ORDER BY usuario.usu_nom;";
+			$query= $pdo->prepare($sql);
+			$query->execute();
+			// $pdo->CerrarBD();
+			$result=$query->fetchALL(PDO::FETCH_BOTH);
+			ConexionDB::CerrarBD();
+			return $result;
+		}
+		function MostrarDatosPorcodigo($codigo){
+			$pdo= ConexionDB::AbrirBD();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql="SELECT * FROM usuario where usu_cod=?";
+			$query= $pdo->prepare($sql);
+			$query->execute(array($codigo));
+			// $pdo->CerrarBD();
+
+			$result=$query->fetch(PDO::FETCH_BOTH);
+			ConexionDB::CerrarBD();
+			return $result;
 		}
 		function ConsultarIngresado($documentoconsulta){
 			$pdo= ConexionDB::AbrirBD();
@@ -80,6 +103,15 @@
 			$result=$query->fetchALL(PDO::FETCH_BOTH);
 			ConexionDB::CerrarBD();
 			return $result;
+		}
+		function ModificarCliente($codigo,$nombre,$apellido,$edad,$telefono,$celular,$mail,$direccion,$estado,$plan,$FIplan,$FFplan){
+			$pdo= ConexionDB::AbrirBD();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql="UPDATE usuario set plan_cod=?, usu_nom=? , usu_ape=?, usu_tel=? , usu_cel=? ,usu_mail=? , usu_dir=? ,usu_estado=? , usu_edad=? ,usu_plan_inicio=? ,usu_plan_fin=? where usu_cod=?";
+			$query= $pdo->prepare($sql);
+			$query->execute(array($plan,$nombre,$apellido,$telefono,$celular,$mail,$direccion,$estado,$edad,$FIplan,$FFplan,$codigo));
+			// $pdo->CerrarBD();
+			ConexionDB::CerrarBD();
 		}
 	}
 

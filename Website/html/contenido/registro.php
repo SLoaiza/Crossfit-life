@@ -27,7 +27,7 @@
 								</td>
 								<td>
 									<label for="apellidos">Apellidos Completos</label>
-									<input type="text" name="ApellidosUsujv" id="apellidos">
+									<input type="text" name="ApellidosUsujv" id="apellidos" required="">
 								</td>
 							</tr>
 							<tr>
@@ -65,7 +65,7 @@
 							<td>
 								<div class="col m12 s12">
 									<label for="pass">Contraseña</label>
-									<input type="text" name="passwordUsujv" id="pass">
+									<input type="text" name="passwordUsujv" id="pass" required="" maxlength="15">
 									<br>
 									Nivel: <span id="nivelpass"></span>
 								</div>
@@ -73,7 +73,7 @@
 							<td >
 								<div class="col m6 s6">
 									<label for="cpass">Confirme su Contraseña</label>
-									<input type="text" name="confirmpasswordUsujv" id="cpass">
+									<input type="text" name="confirmpasswordUsujv" id="cpass" required="" maxlength="15">
 									<br>
 									Coincide: <span id="coincidepass"></span>
 								</div>
@@ -83,8 +83,7 @@
 							<td>
 								<div class="input-field col s12">
 								    <select name="tipoplanUsujv" id="planUsujv" required="">
-								      <option value="0" disabled selected>Seleccione un Plan</option>
-									  <option value="0">-Ninguno-</option>
+								      <option value="0" readonly="">Seleccione un Plan</option>
 									  <?php 
 									  	foreach ($datosdeplan as $row) {
 									  		echo "<option value=".$row["plan_cod"].">".$row["plan_desc"]."</option>";

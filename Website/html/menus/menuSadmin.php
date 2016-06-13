@@ -13,10 +13,7 @@
 			<li><a href="#cabeza" class="black-text"><i class="fa fa-home"></i>Inicio</a></li>
 			<li><a href=".slider" class="black-text"><i class="fa fa-sign-in"></i>Ingresos</a></li>
 			<li><a href="#quienes_somos" class="black-text"><i class="fa fa-user-plus"></i>Nuevo Cliente</a></li>
-<<<<<<< HEAD
-=======
 			<li><a href="#slider2" class="black-text"><i class="fa fa-info-circle"></i>Registrar Empleados</a></li>
->>>>>>> origin/master
 			<li><a href="#slider2" class="black-text"><i class="fa fa-heartbeat"></i>Citas Medicas</a></li>
 			<li><a href="#slider2" class="black-text">Citas Medicas</a></li>
 			<li><a href="#slider2" class="black-text">Valoraciones</a></li>
@@ -34,6 +31,7 @@
 			<li><a href="SuperAdmin.php?seccion=roles" class="black-text">Roles</a></li>
 			<li><a href="SuperAdmin.php?seccion=planes" class="black-text">Planes</a></li>
 			<li><a href="SuperAdmin.php?seccion=recursos" class="black-text">Recursos Fisicos</a></li>
+			<li><a href="SuperAdmin.php?seccion=AllUsers" class="black-text">Ver Todos Los Clientes</a></li>
 		</ul>
 	</div>
 </nav>

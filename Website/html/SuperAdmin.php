@@ -4,10 +4,17 @@
     }else{
        $seccion="";
     }
+    if (isset($_GET["actividad"])) {
+      $actividad=$_GET["actividad"];
+    }else{
+      $actividad="";
+    }
   	require_once("../../WEBAPP/Model/conexionbd.php");
   	require_once("../../WEBAPP/Model/gestiones.php");
     $datosdecita=GestionUsuario::MostrarTodasLasCitas();
     $datosdeplan=GestionUsuario::MostrarTodosLosPlanes();
+    $todoslosusuarios=GestionUsuario::MostrarUsuarios();
+
  ?>
 <!DOCTYPE html>
 <html>
