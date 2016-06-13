@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-06-2016 a las 12:41:14
+-- Tiempo de generación: 13-06-2016 a las 17:54:17
 -- Versión del servidor: 5.6.26
 -- Versión de PHP: 5.6.12
 
@@ -113,9 +113,11 @@ CREATE TABLE IF NOT EXISTS `plan` (
 --
 
 INSERT INTO `plan` (`plan_cod`, `factura_cod`, `plan_precio`, `plan_desc`, `plan_dias`, `plan_rango`) VALUES
+('0', '0', '0', '-Ninguno-', '0', '0'),
 ('1', '321654', '50000', 'Familiar 1 mes', '30', '30'),
 ('2', '456785', '36550', 'un mes', '30', '30'),
-('3', '50457', '50000', '2 meses', '60', '60');
+('3', '50457', '50000', '2 meses', '60', '60'),
+('4', '321654', '60000', '3 meses', '90', '90');
 
 -- --------------------------------------------------------
 
@@ -190,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   `usu_cod` varchar(15) NOT NULL,
   `plan_cod` varchar(10) DEFAULT NULL,
   `rol_cod` varchar(10) NOT NULL,
-  `usu_clave` varchar(12) NOT NULL,
+  `usu_clave` varchar(15) NOT NULL,
   `usu_nom` varchar(50) NOT NULL,
   `usu_ape` varchar(50) NOT NULL,
   `usu_tel` varchar(20) DEFAULT NULL,
@@ -209,8 +211,9 @@ CREATE TABLE IF NOT EXISTS `usuario` (
 --
 
 INSERT INTO `usuario` (`usu_cod`, `plan_cod`, `rol_cod`, `usu_clave`, `usu_nom`, `usu_ape`, `usu_tel`, `usu_cel`, `usu_mail`, `usu_dir`, `usu_estado`, `usu_edad`, `usu_fecha`, `usu_plan_inicio`, `usu_plan_fin`) VALUES
-('1023', NULL, '1', '123456', 'jherson', 'vasco', NULL, NULL, NULL, NULL, 'Activo', NULL, '2016-05-29', NULL, NULL),
-('3658', NULL, '4', '123456', 'juan', 'pelaez', '', '', '', '', 'Activo', 30, '2016-06-04', NULL, NULL);
+('1023', '0', '1', '123456', 'jherson', 'vasco', ' ', ' ', ' ', ' ', 'Activo', 15, '2016-05-29', ' ', ' '),
+('1425', '0', '4', '123456789', 'juan andres ', 'perez ochoa', '3622204', '3216549874', 'correo@gmail.com', 'cra 49 # 87 15', 'Activo', 25, '2016-06-13', 'NaN', 'NaN'),
+('3658', '0', '4', '123456789', 'andres ', 'guerra', 'NaN', '3216568712', 'correo2@gmail.com', 'cra 50 # 45b 15', 'Activo', 18, '2016-06-13', '', '');
 
 -- --------------------------------------------------------
 
