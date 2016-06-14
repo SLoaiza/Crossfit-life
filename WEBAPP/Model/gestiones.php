@@ -42,11 +42,10 @@
 		function MostrarDatosPorcodigo($codigo){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql="SELECT * FROM usuario where usu_cod=?";
+			$sql="Select usuario.usu_cod, plan.plan_cod, plan.plan_desc, usuario.usu_nom, usuario.usu_ape, usuario.usu_tel, usuario.usu_cel, usuario.usu_mail, usuario.usu_dir, usuario.usu_estado, usuario.usu_edad from usuario inner join plan on plan.plan_cod=usuario.plan_cod where usu_cod=?";
 			$query= $pdo->prepare($sql);
 			$query->execute(array($codigo));
 			// $pdo->CerrarBD();
-
 			$result=$query->fetch(PDO::FETCH_BOTH);
 			ConexionDB::CerrarBD();
 			return $result;
@@ -110,6 +109,15 @@
 			$sql="UPDATE usuario set plan_cod=?, usu_nom=? , usu_ape=?, usu_tel=? , usu_cel=? ,usu_mail=? , usu_dir=? ,usu_estado=? , usu_edad=? ,usu_plan_inicio=? ,usu_plan_fin=? where usu_cod=?";
 			$query= $pdo->prepare($sql);
 			$query->execute(array($plan,$nombre,$apellido,$telefono,$celular,$mail,$direccion,$estado,$edad,$FIplan,$FFplan,$codigo));
+			// $pdo->CerrarBD();
+			ConexionDB::CerrarBD();
+		}
+		function BorrarUsuario($codigo){
+			$pdo= ConexionDB::AbrirBD();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql="delete from usuario where usu_cod=?";
+			$query= $pdo->prepare($sql);
+			$query->execute(array($codigo));
 			// $pdo->CerrarBD();
 			ConexionDB::CerrarBD();
 		}

@@ -68,7 +68,7 @@
  							<td class="col m3 s3">
  								<label for="">Seleccione un Plan</label>
  								<select name="tipoplanVerUsuJV" id="tipoplanVerUsuJV">
-							      <option value="0">Seleccione un Plan</option>
+							      <option value="<?php echo $usuarios["plan_cod"]; ?>">Plan Actual: <?php echo $usuarios["plan_desc"]; ?></option>
 								  <?php 
 								  	foreach ($datosdeplan as $row) {
 								  		echo "<option value=".$row["plan_cod"].">".$row["plan_desc"]."</option>";

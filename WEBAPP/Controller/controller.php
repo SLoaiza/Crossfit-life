@@ -103,7 +103,7 @@
 		} catch (Exception $e){
 		    	    echo $e;
 	    }
-		// header("Location:../../Website/html/SuperAdmin.php?seccion=registro");
+		header("Location:../../Website/html/SuperAdmin.php?seccion=registro");
 	break;
 	case 'ConsultarIngresado':
 		$documentoconsulta = $_POST["NdocIngresoUsuJV"];
@@ -166,6 +166,16 @@
 		$FFplan=$_POST["FFinVerUsuJV"];
 		try {
 		 	$modificarcliente= GestionUsuario::ModificarCliente($codigo,$nombre,$apellido,$edad,$telefono,$celular,$mail,$direccion,$estado,$plan,$FIplan,$FFplan);
+		} catch (Exception $e) {
+		 	echo $e;
+		}
+		header("Location:../../Website/html/SuperAdmin.php?seccion=AllUsers");
+	break;
+	case 'BorrarUsuario':
+
+		$codigo=$_POST["UsucodBorrarJV"];
+		try {
+		 	$modificarcliente= GestionUsuario::BorrarUsuario($codigo);
 		} catch (Exception $e) {
 		 	echo $e;
 		}
