@@ -31,6 +31,7 @@
   	<link rel="stylesheet" href="../css/style.css">
   	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,100italic,700,900,900italic,700italic,500italic,500,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   	<link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
     
@@ -64,11 +65,59 @@
         
         
     });
+    function reloj(){
+        var reloj= new Date();
+        var hora= reloj.getHours();
+        var min= reloj.getMinutes();
+        var seg= reloj.getSeconds();
+        var actualizar=setTimeout('reloj()',500);
+        if(hora<12){
+          document.getElementById('hora').innerHTML=hora+" : "
+          document.getElementById('min').innerHTML=min+" : "
+          document.getElementById('seg').innerHTML=seg+" am";
+          if (hora<=9) {
+            document.getElementById('hora').innerHTML="0"+hora+" : ";
+          }
+          if (min<=9) {
+            document.getElementById('min').innerHTML="0"+min+" : ";
+          }
+          if (seg<=9) {
+            document.getElementById('seg').innerHTML="0"+seg+" am";
+          };
+        }else if(hora===12){
+          document.getElementById('hora').innerHTML=hora+" : "
+          document.getElementById('min').innerHTML=min+" : "
+          document.getElementById('seg').innerHTML=seg+" m ";
+          if (hora<=9) {
+            document.getElementById('hora').innerHTML="0"+hora+" : ";
+          }
+          if (min<=9) {
+            document.getElementById('min').innerHTML="0"+min+" : ";
+          }
+          if (seg<=9) {
+            document.getElementById('seg').innerHTML="0"+seg+" m";
+          };
+        }else if(hora>12){
+          var hora= reloj.getHours()-12;
+          document.getElementById('hora').innerHTML=hora+" : "
+          document.getElementById('min').innerHTML=min+" : "
+          document.getElementById('seg').innerHTML=seg+" pm ";
+          if (hora<=9) {
+            document.getElementById('hora').innerHTML="0"+hora+" : ";
+          }
+          if (min<=9) {
+            document.getElementById('min').innerHTML="0"+min+" : "
+          }
+          if (seg<=9) {
+            document.getElementById('seg').innerHTML="0"+seg+" pm";
+          };
+        }
+      }
 
 
   </script>
 </head>
-<body>
+<body onLoad="reloj()">
 
   <div class="container-fluid ">
     <?php include('menus/menuSadmin.php');?>

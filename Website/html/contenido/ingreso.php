@@ -1,76 +1,68 @@
-<script>
-	function insertar(){
-		
-		<?php 
-		$documentoconsulta="<script>
-			var documento = document.getElementById('NdocIngresoUsuJV').value;
-			document.write(documento);
-		</script>";
-		$datosdeusuario=GestionUsuario::ConsultarIngresado($documentoconsulta);?>	
-		var datos= <?php 
-			foreach ($datosdeplan as $dato) {
-				if($dato[2]=="40000"){
-					echo $dato[2];
-				};
-			}
-		 ?>;
-		alert(datos);
-		/**se tiene que crear un metodo que traiga todos los usuarios, y que muestre solamente los datos donde usu_cod es igual al campo obtenido por javascript**/
+<?php 
+	$nom_dia=strftime("%A");
+	switch ($nom_dia) {
+		case 'Monday':
+			$nom_dia="Lunes";
+		break;
+		case 'Tuesday':
+			$nom_dia="Martes";
+		break;
+		case 'Wednesday':
+			$nom_dia="Miercoles";
+		break;
+		case 'Thursday':
+			$nom_dia="Jueves";
+		break;
+		case 'Friday':
+			$nom_dia="Viernes";
+		break;
+		case 'Saturday':
+			$nom_dia="Sabado";
+		break;
+		case 'Sunday':
+			$nom_dia="Domingo";
+		break;
 	}
-</script>
-<div class="row">
+?>
+<div class="row" >
 	<div class="" id="ingreso">
 		<center>
-			<div class="col m6 s6">
+			<div class="col m6 s12">
 				<div class="card" id="cingreso">
 					<div class="card-title">
 						<h5>Ingreso De Usuarios Al Gimnasio</h5>
 					</div>
 					<div class="card-content">	
-						<label for="">Ingrese Numero De Documento</label>
-						<br>
-						<input type="text" id="NdocIngresoUsuJV" name="NdocIngresoUsuJV" required="" style="text-align: center; font-size: 16px; width: 200px;">
-						<br>
-						<button onclick="insertar()">Consultar</button>
+						<form action="SuperAdmin.php?seccion=usuingresado" method="POST">
+							<label for="">Ingrese Numero De Documento</label>
+							<br>
+							<input type="text" id="NdocIngresoUsuJV" name="NdocIngresoUsuJV" required="" style="text-align: center; font-size: 16px; width: 200px;">
+							<br>
+							<button name="action" value="ConsultarIngresado">Consultar</button>
+						</form>
 					</div>
 				</div>
 			</div>
-			<div class="col m6 s6">
+			<div class="col m6 s12">
 				<div class="card" id="cingreso">
 					<div class="card-title">
-						<h5>Datos De Usuario</h5>
+						<h5>Fecha Actual</h5>
 					</div>
 					<div class="card-content">
-						<form action="../../WEBAPP/Controller/controller.php" method="POST">
-							<table>
-								<tbody>
-									<tr>
-										<td>
-											<input type="text" disabled="" name="NDocIngresoUsuJV" placeholder="Nº Documento" id="doc">
-										</td>
-										<td>
-											<input type="text" disabled="" name="nombresIngresoUsuJV" placeholder="Nombres">
-										</td>
-										<td>
-											<input type="text" disabled="" name="apellidosIngresoUsuJV" placeholder="Apellidos">
-										</td>
-									</tr>
-									<tr>
-										<td>
-											<input type="text" disabled="" name="fecha" placeholder="Fecha">
-										</td>
-										<td>
-											<input type="text" disabled="" name="plan" placeholder="Plan">
-										</td>
-										<td>
-											<input type="text" disabled="" name="Estado" placeholder="Estado">
-										</td>
-									</tr>
-								</tbody>
-							</table>
-							<tr>
-							<input type="button" name="action" value="Ingreso">
-						</form>
+						<table>
+							<tr class="row">
+								<span id="hora" class="col m4 s3"></span>
+								<span id="min" class="col m4 s3"></span>
+								<span id="seg" class="col m4 s3"></span>
+							</tr>
+							<tr class="row">
+								<label for="" id="Nomdia"><?php echo $nom_dia?>/</label>
+								<label for="" id="dia"><?php echo date("d"); ?>/</label>
+								<label for="" id="mes"><?php echo date("m"); ?>/</label>
+								<label for="" id="anho"><?php echo date("Y"); ?></label>
+								
+							</tr>
+						</table>
 					</div>
 				</div>
 			</div>
@@ -82,19 +74,19 @@
 				</div>
 				<div class="card_content">
 					<form action="../../WEBAPP/Controller/controller.php" method="POST">
-						<div class="col m3 s3">
+						<div class="col m3 s6">
 							<label for="">Numero de Documento</label>
 							<input type="text" name="jvInvndoc" required=""></input>
 						</div>
-						<div class="col m3 s3">
+						<div class="col m3 s6">
 							<label for="">Nombres</label>
 							<input type="text" name="jvInvnom" required=""></input>
 						</div>
-						<div class="col m3 s3">
+						<div class="col m3 s6">
 							<label for="">Apellidos</label>
 							<input type="text" name="jvInvape" required=""></input>
 						</div>
-						<div class="col m3 s3">
+						<div class="col m3 s6">
 							<label for="">Telefono</label>
 							<input type="text" name="jvInvtel" required=""></input>
 						</div>

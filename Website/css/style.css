@@ -173,3 +173,11 @@ nav div ul li a{
 #allusersJV{
 	padding: 30px 70px;
 }
+#hora, #min, #seg{
+	font-size: 50px;
+	font-family: Share Tech Mono;
+}
+#Nomdia, #dia, #mes, #anho{
+	font-size: 40px;
+	font-family: Share Tech Mono;
+}

@@ -47,6 +47,9 @@
 		case 'BorrarUsuario':
 			include_once('contenido/BorrarUsuario.php');
 		break;
+		case 'usuingresado':
+			include_once('contenido/usuingresado.php');
+		break;
 		default:
 			# code...
 		break;
