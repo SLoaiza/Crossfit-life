@@ -181,5 +181,25 @@
 		}
 		header("Location:../../Website/html/SuperAdmin.php?seccion=AllUsers");
 	break;
+
+	//mauro
+	case 'GuardarPlan':
+
+		$codplan =$_POST["codplan"];
+		$codfact=$_POST["codfactura"];
+		$valorplan=$_POST["precioplan"];
+		$descrip=$_POST["descripplan"];
+		$cantdias=$_POST["cantdias"];
+		$rangodias=$_POST["rangodias"];
+				
+		try {
+			$guardadoplan= GestionUsuario::GuardarPlan($codplan,$codfact,$valorplan,$descrip,$cantdias,$rangodias);
+			
+		} catch (Exception $e) {	
+			echo $e;
+		}
+		
+	break;
 	}
- ?>
+  
+?>
