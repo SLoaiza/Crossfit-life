@@ -9,6 +9,7 @@
     }else{
       $actividad="";
     }
+    date_default_timezone_set('America/Bogota');
   	require_once("../../WEBAPP/Model/conexionbd.php");
   	require_once("../../WEBAPP/Model/gestiones.php");
     $datosdecita=GestionUsuario::MostrarTodasLasCitas();

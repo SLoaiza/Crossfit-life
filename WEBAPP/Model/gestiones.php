@@ -53,7 +53,7 @@
 		function ConsultarIngresado($documentoconsulta){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$consultaing="select * from usuario where usu_cod=?";
+			$consultaing="Select usuario.usu_cod, plan.plan_cod, plan.plan_desc, usuario.usu_nom, usuario.usu_ape, usuario.usu_tel, usuario.usu_cel, usuario.usu_mail, usuario.usu_dir, usuario.usu_estado, usuario.usu_edad, usuario.usu_plan_fin from usuario inner join plan on plan.plan_cod=usuario.plan_cod where usu_cod=?";
 			$query= $pdo->prepare($consultaing);
 			$query->execute(array($documentoconsulta));
 			$result=$query->fetch(PDO::FETCH_BOTH);

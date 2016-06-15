@@ -38,7 +38,7 @@
 							<br>
 							<input type="text" id="NdocIngresoUsuJV" name="NdocIngresoUsuJV" required="" style="text-align: center; font-size: 16px; width: 200px;">
 							<br>
-							<button name="action" value="ConsultarIngresado">Consultar</button>
+							<button type="submit">Consultar</button>
 						</form>
 					</div>
 				</div>

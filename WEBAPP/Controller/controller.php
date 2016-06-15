@@ -172,10 +172,19 @@
 		header("Location:../../Website/html/SuperAdmin.php?seccion=AllUsers");
 	break;
 	case 'BorrarUsuario':
-
 		$codigo=$_POST["UsucodBorrarJV"];
 		try {
-		 	$modificarcliente= GestionUsuario::BorrarUsuario($codigo);
+		 	$BorrarUsuario= GestionUsuario::BorrarUsuario($codigo);
+		} catch (Exception $e) {
+		 	echo $e;
+		}
+		header("Location:../../Website/html/SuperAdmin.php?seccion=AllUsers");
+	break;
+	case 'IngresoUsuAlGym':
+		$documento=$_POST["IngUsuDocJV"];
+		
+		try {
+		 	$BorrarUsuario= GestionUsuario::BorrarUsuario($codigo);
 		} catch (Exception $e) {
 		 	echo $e;
 		}
