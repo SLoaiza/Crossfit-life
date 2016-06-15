@@ -59,7 +59,7 @@
 	case 'GuardarEqui':
 		$codrecu = $_POST["codrecu"];
 		$nom = $_POST["recunom"];
-		$img = $_POST["img"];
+		$img = $_POST["imagen"];
 		$desc = $_POST["desc"];
 		$fech = $_POST["fecha"];
 		if($codrecu=="" and $nom=="" and $desc=="" and $fech==""){
@@ -131,7 +131,7 @@
 			$consulta = GestionUsuario::ConsultarIngresado($documentoconsulta);
 			$document = $consulta[0];
 		    $nombre = $consulta[4];
-		    
+
 			// header("Location:../../Website/html/SuperAdmin.php?seccion=ingreso");
 			echo "<script>alert('".$document." ".$nombre."');</script>";
 		} catch (Exception $e) {
@@ -149,7 +149,7 @@
 		$horaregistroinv=date("H:i:s");
 		try {
 			$guardado= GestionUsuario::GuardarUsuCasual($documentoinv,$nombreinv,$apellidoinv,$telefonoinv,$fecharegistroinv,$horaregistroinv);
-			
+
 		} catch (Exception $e) {
 			echo $e;
 		}
@@ -164,11 +164,11 @@
 		$horacita=$_POST["HoraCitaUsuJv"];
 		 try {
 		 	$guardadocita= GestionUsuario::AsignarCita($codigocita,$Ndocumentocita,$fechacita,$horacita);
-			
+
 		 } catch (Exception $e) {
 		 	echo $e;
 		 }
-		
+
 	break;
 	case 'GuardarcambiosJV':
 

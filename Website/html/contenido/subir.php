@@ -3,7 +3,7 @@ $imagen = $_POST["imagen"]
 switch ($imagen) {
 	case 'subirimagen':
 
-		$directorio="../Views/Assets/Images";
+		$directorio="../../../WEBAPP/Views/Assets/Images";
 		$archivo=basename($_FILES["imagen"]["name"]);
 		$extencion=pathinfo($archivo, PATHINFO_EXTENSION);
 		date_default_timezone_set('America/Bogota');
