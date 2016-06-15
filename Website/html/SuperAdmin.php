@@ -35,14 +35,14 @@
     <link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
-    
+
 
     <script src="../../WEBAPP/Views/Components/jquery-1.12.4.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
   <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-    
+
   <script type="text/javascript">
     $(document).ready(function(){
         $('select').material_select();
@@ -61,10 +61,21 @@
         $(".button-collapse").sideNav();
         $('.datepicker').pickadate({
           selectMonths: true, // Creates a dropdown to control month
-          selectYears: 15 // Creates a dropdown of 15 years to control year
+          selectYears: 50, // Creates a dropdown of 15 years to control year
+          format: 'yyyy/mm/dd',
+          // firstDay: 5,
+          // dayNamesMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
+          // dayNamesShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
+          // monthNames:
+          //     ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
+          //     "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
+          // monthNamesShort:
+          //     ["Ene", "Feb", "Mar", "Abr", "May", "Jun",
+          //     "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
+
         });
-        
-        
+
+
     });
     function reloj(){
         var reloj= new Date();
