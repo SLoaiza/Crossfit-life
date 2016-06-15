@@ -129,7 +129,7 @@
 			$queryUC= $pdo->prepare($consultaUC);
 			$queryUC->execute(array($codplan,$codfact,$valorplan,$descrip,$cantdias,$rangodias));
 			//$pdo= ConexionBD::CerrarBD();
-			echo "Guardo con Exito";
+			ConexionDB::CerrarBD();
 			
 		}
 	}

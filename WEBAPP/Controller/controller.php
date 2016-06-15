@@ -198,6 +198,7 @@
 		} catch (Exception $e) {	
 			echo $e;
 		}
+		header("Location:../../Website/html/SuperAdmin.php?seccion=planes");
 		
 	break;
 	}
