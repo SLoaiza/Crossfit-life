@@ -30,7 +30,7 @@
 			<li><a href="SuperAdmin.php?seccion=valoracion" class="black-text">Valoraciones</a></li>
 			<li><a href="SuperAdmin.php?seccion=roles" class="black-text">Roles</a></li>
 			<li><a href="SuperAdmin.php?seccion=planes" class="black-text">Planes</a></li>
-			<li><a href="SuperAdmin.php?seccion=recursos" class="black-text">Recursos Fisicos</a></li>
+			<li><a href="SuperAdmin.php?seccion=regirecur" class="black-text">Recursos Fisicos</a></li>
 			<li><a href="SuperAdmin.php?seccion=AllUsers" class="black-text">Ver Todos Los Clientes</a></li>
 		</ul>
 	</div>

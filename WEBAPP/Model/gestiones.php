@@ -20,6 +20,14 @@
 
 			ConexionBD::CerrarBD();
 		}
+		function GuardarEqui($recod, $nomb, $img, $descr, $fecha){
+			$pdo= ConexionDB::AbrirBD();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$consulta = "INSERT INTO recurso_fisico (rec_cod,rec_nom,rec_img,rec_desc,rec_fecha) values (?,?,?,?,?)";
+			$query= $pdo->prepare($consulta);
+			$query->execute(array($recod, $nomb, $img, $descr, $fecha));
+			ConexionBD::CerrarBD();
+		}
 		function GuardarUsu($cedula,$rol,$edad,$nombres,$apellidos,$telefono,$celular,$correo,$dir,$pass,$estado,$fecharegistro,$codigo_plan,$inicio,$fin){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -130,7 +138,7 @@
 			$queryUC->execute(array($codplan,$codfact,$valorplan,$descrip,$cantdias,$rangodias));
 			//$pdo= ConexionBD::CerrarBD();
 			ConexionDB::CerrarBD();
-			
+
 		}
 		//mauro
 		function MostrarPlanesPorcodigo($codigo){

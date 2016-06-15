@@ -42,7 +42,7 @@
 		$corr = $_POST["mail"];
 		$dire = $_POST["dir"];
 		$rol = $_POST["rolusu"];
-		
+
 		if($nrod=="" and $edad=="" and $nom=="" and $ape=="" and $tel=="" and $cel=="" and $corr=="" and $dire=="" and $rol==""){
 			echo "<script>alert('Por favor ingrese datos');</script>";
 		}elseif ($nrod=="" or $edad=="" or $nom=="" or $ape=="" or $rol=="") {
@@ -55,6 +55,26 @@
  		 		echo $e;
  		 		}
 			}
+	break;
+	case 'GuardarEqui':
+		$codrecu = $_POST["codrecu"];
+		$nom = $_POST["recunom"];
+		$img = $_POST["img"];
+		$desc = $_POST["desc"];
+		$fech = $_POST["fecha"];
+		if($codrecu=="" and $nom=="" and $desc=="" and $fech==""){
+			echo "<script>alert('Por favor ingrese datos');</script>";
+		}elseif ($codrecu=="" or $nom=="" or $desc=="" or $fech=="") {
+			echo "<script>alert('Falta un campo por llenar, Por favor Verifica!');</script>";
+		}else{
+			try {
+				$usuario = GestionUsuario::GuardarEqui($codrecu, $nom, $img, $desc, $fech);
+				echo "Guardar con exito";
+ 		 		} catch (Exception $e) {
+ 		 		echo $e;
+ 		 		}
+			}
+			// header("Location:../../Website/html/SuperAdmin.php?seccion=registrorecursos");
 	break;
 	case'RegistrarUsuario':
 		$cedula=$_POST["NdocUsujv"];
@@ -111,7 +131,7 @@
 			$consulta = GestionUsuario::ConsultarIngresado($documentoconsulta);
 			$document = $consulta[0];
 		    $nombre = $consulta[4];
-		    
+
 			// header("Location:../../Website/html/SuperAdmin.php?seccion=ingreso");
 			echo "<script>alert('".$document." ".$nombre."');</script>";
 		} catch (Exception $e) {
@@ -129,7 +149,7 @@
 		$horaregistroinv=date("H:i:s");
 		try {
 			$guardado= GestionUsuario::GuardarUsuCasual($documentoinv,$nombreinv,$apellidoinv,$telefonoinv,$fecharegistroinv,$horaregistroinv);
-			
+
 		} catch (Exception $e) {
 			echo $e;
 		}
@@ -144,11 +164,11 @@
 		$horacita=$_POST["HoraCitaUsuJv"];
 		 try {
 		 	$guardadocita= GestionUsuario::AsignarCita($codigocita,$Ndocumentocita,$fechacita,$horacita);
-			
+
 		 } catch (Exception $e) {
 		 	echo $e;
 		 }
-		
+
 	break;
 	case 'GuardarcambiosJV':
 
@@ -182,7 +202,7 @@
 	break;
 	case 'IngresoUsuAlGym':
 		$documento=$_POST["IngUsuDocJV"];
-		
+
 		try {
 		 	$BorrarUsuario= GestionUsuario::BorrarUsuario($codigo);
 		} catch (Exception $e) {
@@ -200,16 +220,16 @@
 		$descrip=$_POST["descripplan"];
 		$cantdias=$_POST["cantdias"];
 		$rangodias=$_POST["rangodias"];
-				
+
 		try {
 			$guardadoplan= GestionUsuario::GuardarPlan($codplan,$codfact,$valorplan,$descrip,$cantdias,$rangodias);
-			
-		} catch (Exception $e) {	
+
+		} catch (Exception $e) {
 			echo $e;
 		}
 
 		header("Location:../../Website/html/SuperAdmin.php?seccion=planes");
-		
+
 	break;
 	//mauro
 	case 'BorrarPlan':
@@ -223,5 +243,5 @@
 		header("Location:../../Website/html/SuperAdmin.php?seccion=planes");
 	break;
 	}
-  
+
 ?>

@@ -1,7 +1,7 @@
 <div class="row">
 	<form action="../../WEBAPP/Controller/controller.php" method="post">
 		<div class="col m10 s10 offset-m1 offset-s1">
-			<div class="card" id="registroempleado">
+			<div class="card" id="registro">
 				<div class="card-title">
 					<h5>DATOS DEL RECURSO FISICO</h5>
 				</div>
@@ -37,13 +37,13 @@
 						</tbody>
 					</table>
 				</div>
+				<center>
+					<button type="submit" name="action" class="btn" value="GuardarEqui">Guardar</button>
+					&nbsp;&nbsp;&nbsp;&nbsp;
+					<button type="submit" name="action" class="btn" onclick="limpiar()">Cancelar</button>
+				</center>
 			</div>
 		</div>
-				<center>
-					<button type="submit" name="action" value="GuardarEmp">Guardar</button>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button type="submit" name="action" onclick="limpiar()">Cancelar</button>
-				</center>
 			</div>
 		</div>
 	</form>

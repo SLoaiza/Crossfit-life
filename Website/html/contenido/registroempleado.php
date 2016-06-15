@@ -1,26 +1,13 @@
 <div class="row">
 	<form action="../../WEBAPP/Controller/controller.php" method="post">
 		<div class="col m10 s10 offset-m1 offset-s1">
-			<div class="card" id="registroempleado">
+			<div class="card" id="registro">
 				<div class="card-title">
 					<h5>Datos Personales</h5>
 				</div>
 				<div class="card-content">
 					<table>
 						<tbody>
-							<tr>
-								<td>
-									<input type="radio" id="rdTI" name="group1" value="targeta">
-									<label for="rdTI">T.I</label>
-									&nbsp;&nbsp;&nbsp;
-									<input type="radio" id="rdCC" name="group1" value="cedula">
-									<label for="rdCC">C.C</label>
-									&nbsp;&nbsp;&nbsp;
-									<input type="radio" id="rdOTRO" name="group1"
-									value="otro">
-									<label for="rdOTRO">OTRO</label>
-								</td>
-							</tr>
 							<tr>
 								<td>
 									<label for="nrodoc">Nº Documento de Identidad</label>
@@ -75,16 +62,20 @@
 					<table>
 						<tr>
 							<td>
-								<label for="pass">Contraseña</label>
-								<input type="text" name="password" id="pass">
-								<br>
-								Nivel: <i></i>
+								<div class="col m12 s12">
+									<label for="pass">Contraseña</label>
+									<input type="text" name="pass" id="pass" required="" maxlength="15">
+									<br>
+									Nivel: <span id="nivelpass"></span>
+								</div>
 							</td>
-							<td>
-								<label for="cpass">Confirme su Contraseña</label>
-								<input type="text" name="confirmpassword" id="cpass">
-								<br>
-								Coincide: <i></i>
+							<td >
+								<div class="col m6 s6">
+									<label for="cpass">Confirme su Contraseña</label>
+									<input type="text" name="cpass" id="cpass" required="" maxlength="15">
+									<br>
+									Coincide: <span id="coincidepass"></span>
+								</div>
 							</td>
 						</tr>
 						<tr>
@@ -102,11 +93,46 @@
 					</table>
 				</div>
 				<center>
-					<button type="submit" name="action" value="GuardarEmp">Guardar</button>
+					<button type="submit" name="action" class="btn" value="GuardarEmp">Guardar</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button type="submit" name="action" onclick="limpiar()">Cancelar</button>
+					<button type="submit" name="action" class="btn" onclick="limpiar()">Cancelar</button>
 				</center>
 			</div>
 		</div>
 	</form>
 </div>
+<script>
+	$("#pass").focusout(function(){
+      var pass=document.getElementById('pass').value;
+      if (pass.length==0) {
+      	alert('Por Favor Digite Contraseña.');
+      }else if(pass.length>0 && pass.length<=7){
+      	alert('La contraseña debe de ser con un minimo de 8 digitos.');
+      	$("#nivelpass").text("Muy Bajo");
+      	document.getElementById('nivelpass').style.color="#d50000";
+      }else if(pass.length<=8){
+      	$("#nivelpass").text("Bajo");
+      	document.getElementById('nivelpass').style.color="#c62828";
+      }else if(pass.length<=12){
+      	$("#nivelpass").text("Medio");
+      	document.getElementById('nivelpass').style.color="#01579b";
+      }else if(pass.length<=15){
+      	$("#nivelpass").text("Alto");
+      	document.getElementById('nivelpass').style.color="#9e9d24";
+      }
+    });
+    $("#cpass").focusout(function(){
+      var pass=document.getElementById('pass').value;
+      var coincidepass=document.getElementById('cpass').value;
+
+      if (pass==coincidepass) {
+      	$("#coincidepass").text("Coincide");
+      	document.getElementById('coincidepass').style.color="#827717";
+      }else{
+      	$("#coincidepass").text("No Coincide");
+      	document.getElementById('coincidepass').style.color="#f44336";
+      }
+
+    });
+
+</script>

@@ -35,8 +35,8 @@
 			include_once('contenido/planes.php');
 		break;
 		// mauro
-		case 'recursos':
-			# code...
+		case 'regirecur':
+			include_once('contenido/registrorecursos.php');
 		break;
 		case 'AllUsers':
 			include_once('contenido/MostrarUsuarios.php');
