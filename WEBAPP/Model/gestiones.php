@@ -83,7 +83,7 @@
 		function MostrarTodasLasCitas(){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql="SELECT cita.cita_cod, cita.usu_cod, usuario.usu_nom, usuario.usu_ape, cita.cita_fecha, cita.cita_hora FROM cita inner join usuario on cita.usu_cod=usuario.usu_cod ORDER BY cita_fecha ";
+			$sql="SELECT cita.cita_cod, cita.usu_cod, usuario.usu_nom, usuario.usu_ape,usuario.usu_tel, cita.cita_fecha, cita.cita_hora FROM cita inner join usuario on cita.usu_cod=usuario.usu_cod ORDER BY cita_fecha ";
 			$query= $pdo->prepare($sql);
 			$query->execute();
 			// $pdo->CerrarBD();
@@ -97,6 +97,15 @@
 			$consultaUC = "INSERT INTO cita (cita_cod,usu_cod,cita_fecha,cita_hora) values (?,?,?,?)";
 			$queryUC= $pdo->prepare($consultaUC);
 			$queryUC->execute(array($codigocita,$Ndocumentocita,$fechacita,$horacita));
+			$pdo= ConexionBD::CerrarBD();
+			echo $codigocita;
+		}
+		function IngresarUsuario($codigoIng,$documentoIng,$fechaIng,$horaIng){
+			$pdo= ConexionDB::AbrirBD();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$consultaUC = "INSERT INTO ingreso_usu (ingr_cod,usu_cod,ingr_fecha,ingr_hora) values (?,?,?,?)";
+			$queryUC= $pdo->prepare($consultaUC);
+			$queryUC->execute(array($codigoIng,$documentoIng,$fechaIng,$horaIng));
 			$pdo= ConexionBD::CerrarBD();
 			echo $codigocita;
 		}
@@ -117,15 +126,6 @@
 			$sql="UPDATE usuario set plan_cod=?, usu_nom=? , usu_ape=?, usu_tel=? , usu_cel=? ,usu_mail=? , usu_dir=? ,usu_estado=? , usu_edad=? ,usu_plan_inicio=? ,usu_plan_fin=? where usu_cod=?";
 			$query= $pdo->prepare($sql);
 			$query->execute(array($plan,$nombre,$apellido,$telefono,$celular,$mail,$direccion,$estado,$edad,$FIplan,$FFplan,$codigo));
-			// $pdo->CerrarBD();
-			ConexionDB::CerrarBD();
-		}
-		function BorrarUsuario($codigo){
-			$pdo= ConexionDB::AbrirBD();
-			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql="delete from usuario where usu_cod=?";
-			$query= $pdo->prepare($sql);
-			$query->execute(array($codigo));
 			// $pdo->CerrarBD();
 			ConexionDB::CerrarBD();
 		}

@@ -8,12 +8,12 @@
  			<form action="../../WEBAPP/Controller/controller.php" method="POST">
  				<table>
  					<thead>
- 						
+ 						<center><h3>Datos De Usuario</h3></center>
  					</thead>
  					<tbody>
  						<tr class="col m12 s12">	
- 							<td class="col m3 s3">
- 								<label>Numero de documento de identidad: <?php echo $usuarios["usu_cod"]; ?></label>
+ 							<td class="col m12 s12">
+ 								<label><h5>Numero de documento de identidad: <?php echo $usuarios["usu_cod"]; ?></h5></label>
 								<input type="hidden" name="UsucodVerUsuJV"  value="<?php echo $usuarios["usu_cod"]; ?>">
  							</td>
  						</tr>
