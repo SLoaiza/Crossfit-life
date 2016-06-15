@@ -19,9 +19,10 @@
 								</td>
 							</tr>
 							<tr>
-								<td>
-									<label for="img">Imagen</label>
-									<input type="text" name="img" id="img">
+								<td action="subir.php" method="POST" enctype="multipart/form-data">
+									<label for="">Imagen</label>
+									<br>
+									<input type="file" name="imagen" class="imagen" value="subirimagen" multiple="multiple">
 								</td>
 								<td>
 									<label for="desc">Descripción</label>

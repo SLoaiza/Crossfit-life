@@ -59,7 +59,7 @@
 	case 'GuardarEqui':
 		$codrecu = $_POST["codrecu"];
 		$nom = $_POST["recunom"];
-		$img = $_POST["img"];
+		$img = $_POST["imagen"];
 		$desc = $_POST["desc"];
 		$fech = $_POST["fecha"];
 		if($codrecu=="" and $nom=="" and $desc=="" and $fech==""){
