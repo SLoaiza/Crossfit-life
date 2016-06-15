@@ -1,18 +1,18 @@
-<div class="row">
-	<form action="../../WEBAPP/Controller/controller.php" method="POST">
-		<div class="col m10 s10 offset-m1 offset-s1">
-			<div class="card" id="planes">
-				<div class="card-title">
-					<h5>Planes</h5>
-				</div>
-				<div class="card-content">
-					<table>
+<?php 
+	$planes = GestionUsuario::MostrarPlanesPorcodigo($_GET["plan_cod"]);
+ ?>
+ <div class="row">
+ 	<div class="card">
+ 		<div class="card-title"></div>
+ 		<div class="card-content">
+ 			<form action="../../WEBAPP/Controller/controller.php" method="POST">
+ 				<table>
 						<tbody>
 							<tr>
 								<td>
 
-									<label for="plan_cod">Código del Plan</label>
-									<input type="text" name="codplan" id="plan_cod" required="">
+									<label for="plan_cod">Código del Plan: <?php echo $planes["plan_cod"]; ?></label>
+									<input type="hidden" name="codplan" id="plan_cod" value="<?php echo $planes["plan_cod"]; ?>">
 
 								</td>
 
@@ -65,53 +65,20 @@
 						</tbody>
 					</table>
 				</div>
-				<center>
-					<td>
-						<button type="submit" name="action" value="GuardarPlan">Guardar</button>
-					</td>
-					
-				</center>
-
-				<table id="datatable" style="border:solid 1px;">
-				<thead>
-					<tr>
-						<td>Código del plan</td>						
-						<td>Costo del plan</td>
-						<td>Descripción</td>
-						<td>Nro de Dias</td>
-						<td>Acciones</td>
-						
-					</tr>
-				</thead>
-				<tbody>
-					<?php 
-						$item = 1;
-						foreach ($datosdeplan as $row) {
-							echo "<tr>
-									<td>".$row["plan_cod"]."</td>									
-									<td>".$row["plan_precio"]."</td>
-									<td>".$row["plan_desc"]."</td>
-									<td>".$row["plan_rango"]."</td>
-									<td><a href='SuperAdmin.php?seccion=Verplan=".$row["plan_cod"]."'>Ver Plan</a>-
-										<a href='SuperAdmin.php?seccion=planes=".$row["plan_cod"]."'>Eliminar</a>
-									</td>
-								  </tr>";
-							$item++;
-						}
-
-					 ?>
-				</tbody>
-			</table>
-			</div>
-
-		</div>
-
-	</form>
-	
-</div>
-<script>
-	$("#datatable").dataTable( {
-        "language": {"url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"}
-    });
-
-</script>
+ 						<tr>
+ 								<td class="col m3 s2 offset-m2">
+ 									<span id="Modificar" class="btn" name="action">Habilitar Campos</span>
+ 								</td>
+ 								<td class="col m2 s2">
+ 									<button type="submit" name="action" class="btn orange disabled= " value="GuardarcambiosJV" id="guardarcambios">Guardar</button>
+ 								</td>
+ 								<td class="col m2 s2">
+ 									<a href="SuperAdmin.php?seccion=AllUsers" class="btn">Atras</button>
+ 								</td>
+ 						</tr>
+ 					</tbody>
+ 				</table>
+ 			</form>
+ 		</div>
+ 	</div>
+ </div>

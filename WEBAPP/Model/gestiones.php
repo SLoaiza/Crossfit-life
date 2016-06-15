@@ -132,6 +132,18 @@
 			ConexionDB::CerrarBD();
 			
 		}
+		//mauro
+		function MostrarPlanesPorcodigo($codigo){
+			$pdo= ConexionDB::AbrirBD();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql="Select plan.plan_cod, plan.factura_cod, plan.plan_precio, plan.plan_desc, plan.plan_dias, plan.plan_rango ";
+			$query= $pdo->prepare($sql);
+			$query->execute(array($codigo));
+			// $pdo->CerrarBD();
+			$result=$query->fetch(PDO::FETCH_BOTH);
+			ConexionDB::CerrarBD();
+			return $result;
+		}
 	}
 
 

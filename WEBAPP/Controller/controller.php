@@ -198,8 +198,20 @@
 		} catch (Exception $e) {	
 			echo $e;
 		}
+
 		header("Location:../../Website/html/SuperAdmin.php?seccion=planes");
 		
+	break;
+	//mauro
+	case 'BorrarPlan':
+
+		$codigo=$_POST["PlanCodBorrarMC"];
+		try {
+		 	$modificarcliente= GestionUsuario::BorrarPlan($codplan);
+		} catch (Exception $e) {
+		 	echo $e;
+		}
+		header("Location:../../Website/html/SuperAdmin.php?seccion=planes");
 	break;
 	}
   
