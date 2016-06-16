@@ -1,5 +1,5 @@
 
-header{
+/*header{
 	margin: auto;
 	margin-top: 50px;
 	position: relative;
@@ -9,12 +9,19 @@ header{
 	background-image: url("../imagenes/logo.png");
 	background-position: center 0 ;
 	background-repeat: no-repeat;
+}*/
+header{
+	height: 100vh;
+}
+nav{
+	position: absolute;
+	z-index: 99999999;
 }
 /*.imagen{
 	background-color: red;
 }*/
 body , #ingreso{
-	background-color: #e3f2fd;
+	background-color: #BDBDBD;
 }
 .nav-wrapper .button-collapse .material-icons{
 	font-size: 40px;
@@ -53,7 +60,7 @@ p.white{
 	}
 	header{
 		height: 500px;
-		background-image: url("../imagenes/logocel.png");
+		/*background-image: url("../imagenes/logocel.png");*/
 		background-size: 100%;
 		background-position: left;
 		background-position: center 550;
@@ -81,7 +88,7 @@ p.white{
 	.menu-fixed{
 		margin-top: 5px;
 		position: fixed;
-		z-index: 1000;
+		z-index: 1000 !important;
 		top: 0;
 		width: 100%;
 		max-width: 945px;
@@ -127,7 +134,7 @@ div .card.z-depth-2.row{
 }
 .menu-fixed{
 	position: fixed;
-	z-index: 1000;
+	z-index: 1000 !important;
 	top: 0;
 	width: 100%;
 	/*max-width: 1000px;*/
@@ -184,3 +191,7 @@ nav div ul li a{
 	font-size: 40px;
 	font-family: Share Tech Mono;
 }
+/*div #quines{
+	width: 100%;
+	height: 100px;
+}*/

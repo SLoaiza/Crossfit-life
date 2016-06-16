@@ -74,7 +74,7 @@
  		 		echo $e;
  		 		}
 			}
-			// header("Location:../../Website/html/SuperAdmin.php?seccion=registrorecursos");
+			header("Location:../../Website/html/SuperAdmin.php?seccion=registrorecursos");
 	break;
 	case'RegistrarUsuario':
 		$cedula=$_POST["NdocUsujv"];
