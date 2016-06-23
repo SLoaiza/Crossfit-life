@@ -1,7 +1,12 @@
+#quines{
+	position: relative;
+	width: 100%;
+	padding: 0;
+}
 
-/*header{
+.log{
 	margin: auto;
-	margin-top: 50px;
+	/*margin-top: 0px;*/
 	position: relative;
 	height: 100vh;
 	width: 100%;
@@ -9,7 +14,7 @@
 	background-image: url("../imagenes/logo.png");
 	background-position: center 0 ;
 	background-repeat: no-repeat;
-}*/
+}
 header{
 	height: 100vh;
 }

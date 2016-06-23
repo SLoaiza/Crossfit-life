@@ -17,6 +17,7 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 </head>
 <!--scrolltop fixed jquery-->
+<!-- menú -->
 <body>
 	<div class="container-fluid">
 		<header id="cabeza">
@@ -28,15 +29,18 @@
 							<li><a href="#quienes_somos" class="black-text">Quienes Somos</a></li>
 							<!-- <li><a href="#slider2" class="black-text">Recomendaciones De Salud</a></li> -->
 							<li><a href="#contactar" class="black-text">Contactenos</a></li>
+							<li><a href="#login" class="black-text">Ingresar</a></li>
 						</ul>
 						<ul class="side-nav" id="mobile-demo">
 							<li><a href="#cabeza" class="black-text"><i class="fa fa-home"></i>Inicio</a></li>
 							<li><a href="#quienes_somos" class="black-text"><i class="fa fa-users"></i>Quienes Somos</a></li>
 							<!-- <li><a href="#slider2" class="black-text"><i class="fa fa-comments"></i>Recomendaciones</a></li> -->
 							<li><a href="#contactar" class="black-text"><i class="fa fa-envelope"></i>Contactenos</a></li>
+							<li><a href="#login" class="black-text">Ingresar</a></li>
 						</ul>
 					</div>
 				</nav>
+<!-- baner -->
 			<div class="row">
 				<div class="col s12 m12" >
 					<div class="slider fullscreen">
@@ -84,7 +88,7 @@
 			</div>
 
 		</header>
-
+<!-- quienes somos -->
 		<div class="row">
 			<div class="col s12 m12" id="quines">
 				<section id="quienes_somos" class="">
@@ -94,7 +98,7 @@
 				</section>
 			</div>
 		</div>
-
+<!-- contactenos -->
 		<div class="row">
 			<div class="col s12 m6" id="nosotros">
 				<img src="../imagenes/logo.png" alt="" id="logocont" class="responsive-img">
