@@ -14,7 +14,7 @@
  						<tr class="col m12 s12">	
  							<td class="col m12 s12">
  								<label><h5>Numero de documento de identidad: <?php echo $usuarios["usu_cod"]; ?></h5></label>
-								<input type="hidden" name="UsucodVerUsuJV"  value="<?php echo $usuarios["usu_cod"]; ?>">
+								<input type="hidden" name="UsucodVerUsuJV"  value="<?php echo $usuarios["usu_cod"]; ?>" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
  							</td>
  						</tr>
  						<tr class="col m12 s12">
@@ -31,19 +31,19 @@
  							<td class="col m1 s1"> 
  								<label for="edad">edad</label>
 								<br>
-								<input type="text" name="UsuedadVerUsuJV" id="UsuedadVerUsuJV" value="<?php echo $usuarios["usu_edad"]; ?>">
+								<input type="text" name="UsuedadVerUsuJV" id="UsuedadVerUsuJV" value="<?php echo $usuarios["usu_edad"]; ?>" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
  							</td>
  						</tr>
  						<tr class="col m12 s12">
  							<td class="col m3 s3">
  								<label for="telefono">telefono</label>
 								<br>
-								<input type="text" name="UsutelVerUsuJV" id="UsuatelVerUsuJV" value="<?php echo $usuarios["usu_tel"]; ?>">
+								<input type="text" name="UsutelVerUsuJV" id="UsuatelVerUsuJV" value="<?php echo $usuarios["usu_tel"]; ?>" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
  							</td>
  							<td class="col m3 s3">
  								<label for="celular">celular</label>
 								<br>
-								<input type="text" name="UsucelVerUsuJV" id="UsucelVerUsuJV" value="<?php echo $usuarios["usu_cel"]; ?>">
+								<input type="text" name="UsucelVerUsuJV" id="UsucelVerUsuJV" value="<?php echo $usuarios["usu_cel"]; ?>" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
  							</td>
  							<td class="col m3 s3">
  								<label for="mail">mail</label>

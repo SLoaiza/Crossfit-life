@@ -11,13 +11,13 @@
 							<tr>
 								<td>
 									<label for="ndoc">Nº Documento de Identidad</label>
-									<input type="text" name="NdocUsujv" id="ndoc" required="">
+									<input type="text" name="NdocUsujv" id="ndoc" required="" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
 									<input name="rolUsujv" value="4" hidden="">
 								</td>
 								<td>
 									<label for="edad">Edad</label>
 									<br>
-									<input type="text" name="edadUsujv" id="edad" maxlength="2" style="width: 60px; font-size: 20px;" required="">
+									<input type="text" name="edadUsujv" id="edad" maxlength="2" style="width: 60px; font-size: 20px;" required="" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
 								</td>
 							</tr>
 							<tr>
@@ -33,11 +33,11 @@
 							<tr>
 								<td>
 									<label for="telefono">Telefono Fijo</label>
-									<input type="text" name="telefonoUsujv" id="telefono">
+									<input type="text" name="telefonoUsujv" id="telefono" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
 								</td>
 								<td>
 									<label for="celular">Numero Celular</label>
-									<input type="text" name="celularUsujv" id="celular">
+									<input type="text" name="celularUsujv" id="celular" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
 							</tr>
 							<tr>
 								<td>

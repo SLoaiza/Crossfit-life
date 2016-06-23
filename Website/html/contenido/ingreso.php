@@ -36,7 +36,7 @@
 						<form action="SuperAdmin.php?seccion=usuingresado" method="POST">
 							<label for="">Ingrese Numero De Documento</label>
 							<br>
-							<input type="text" id="NdocIngresoUsuJV" name="NdocIngresoUsuJV" required="" style="text-align: center; font-size: 16px; width: 200px;">
+							<input type="text" id="NdocIngresoUsuJV" name="NdocIngresoUsuJV" required="" style="text-align: center; font-size: 16px; width: 200px;" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
 							<br>
 							<button type="submit">Consultar</button>
 						</form>
@@ -76,7 +76,7 @@
 					<form action="../../WEBAPP/Controller/controller.php" method="POST">
 						<div class="col m3 s6">
 							<label for="">Numero de Documento</label>
-							<input type="text" name="jvInvndoc" required=""></input>
+							<input type="text" name="jvInvndoc" required="" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"></input>
 						</div>
 						<div class="col m3 s6">
 							<label for="">Nombres</label>
@@ -88,7 +88,7 @@
 						</div>
 						<div class="col m3 s6">
 							<label for="">Telefono</label>
-							<input type="text" name="jvInvtel" required=""></input>
+							<input type="text" name="jvInvtel" required="" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"></input>
 						</div>
 						<br>
 						<button type="submit" name="action" value="IngresoUsuarioCasual">Ingresar</button>

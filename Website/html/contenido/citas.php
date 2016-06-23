@@ -20,7 +20,7 @@
 								</div>
 								<div class="col m4 s12">
 									<label for="NdocumentoCitaUsuJv">Numero De Documento</label>
-									<input type="text" name="NdocumentoCitaUsuJv" id="NdocumentoCitaUsuJv" required="">
+									<input type="text" name="NdocumentoCitaUsuJv" id="NdocumentoCitaUsuJv" required="" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
 								</div>
 				</div>
 				<div class="col m7 s12">
@@ -95,5 +95,5 @@
 		setButtonLabel:"Seleccionar"
 	});
 
-	
+
 </script>
