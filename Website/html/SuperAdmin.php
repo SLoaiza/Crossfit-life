@@ -34,6 +34,7 @@
   	<link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Share+Tech+Mono' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../WEBAPP/Views/Assets/Plugins/jquery.ptTimeSelect.css">
 
 
 
@@ -42,6 +43,7 @@
     <script type="text/javascript" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
   <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script type="text/javascript" src="../../WEBAPP/Views/Assets/Plugins/jquery.ptTimeSelect.js"></script>
 
   <script type="text/javascript">
     $(document).ready(function(){

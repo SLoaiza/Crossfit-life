@@ -36,7 +36,7 @@
 								</td>
 								<td>
 									<label for="HoraCitaUsuJv">Hora</label>
-									<input type="time" name="HoraCitaUsuJv" id="HoraCitaUsuJv" required="">
+									<input type="text" name="HoraCitaUsuJv" id="HoraCitaUsuJv" required="" readonly="">
 								</td>
 							</tr>
 							<tr>
@@ -89,5 +89,11 @@
 	$("#datatable").dataTable( {
         "language": {"url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"}
     });
+	$("#HoraCitaUsuJv").ptTimeSelect({
+		hoursLabel:'Horas',
+		minutesLabel:'Minutos',
+		setButtonLabel:"Seleccionar"
+	});
 
+	
 </script>
