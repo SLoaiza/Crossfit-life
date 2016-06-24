@@ -1,4 +1,17 @@
-
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0  ; 
+    /*border-radius: 10px;*/
+    background-color: #424242;
+}
+ 
+::-webkit-scrollbar-thumb {
+    /*border-radius: 10px;*/
+    -webkit-box-shadow: inset 0 0  ;
+    background-color: #E0E0E0; 
+}
 #quines{
 	position: relative;
 	/*width: 100vh;*/
@@ -12,7 +25,7 @@
 
 .log{
 	margin: auto;
-	/*margin-top: 0px;*/
+	margin-top: 40px;
 	position: relative;
 	height: 100vh;
 	width: 100%;
@@ -25,8 +38,10 @@ header{
 	height: 100vh;
 }
 nav{
-	position: absolute;
+	position: relative;
 	z-index: 99999999;
+
+
 }
 /*.imagen{
 	background-color: red;
