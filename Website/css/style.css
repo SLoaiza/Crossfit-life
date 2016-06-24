@@ -1,7 +1,13 @@
+
 #quines{
 	position: relative;
-	width: 100%;
-	padding: 0;
+	/*width: 100vh;*/
+	max-width: 1000px;
+	padding-top: 50px;
+	padding-left: 37px;
+
+	
+
 }
 
 .log{

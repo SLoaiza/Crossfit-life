@@ -14,7 +14,13 @@
   	<link rel="stylesheet" href="../css/style.css">
   	<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,100italic,700,900,900italic,700italic,500italic,500,400italic&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
   	<link href='https://fonts.googleapis.com/css?family=Montserrat:700' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+	<script type="text/javascript">
+		
+	</script>
+	
+
 </head>
 <!--scrolltop fixed jquery-->
 <!-- menú -->
@@ -26,7 +32,7 @@
 						<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons fa fa-bars"></i></a>
 						<ul class="hide-on-med-and-down">
 							<li><a href="#cabeza" class="black-text">Inicio</a></li>
-							<li><a href="#quienes_somos" class="black-text">Quienes Somos</a></li>
+							<li><a href="#quienes_somos" class="black-text" id="quienes">Quienes Somos</a></li>
 							<!-- <li><a href="#slider2" class="black-text">Recomendaciones De Salud</a></li> -->
 							<li><a href="#contactar" class="black-text">Contactenos</a></li>
 							<li><a href="#login" class="black-text">Ingresar</a></li>
@@ -167,6 +173,11 @@
   			})
   		});
   		$(".button-collapse").sideNav();
+  		$('nav a').click(function(e){
+	e.preventDefault();
+	$('html, body').stop().animate({scrollTop: $($(this).attr('href')).offset().top}, 1000);
+});
+
 	</script>
 </body>
 </html>
