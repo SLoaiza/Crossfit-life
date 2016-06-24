@@ -74,18 +74,18 @@
 								 </div>
 							 </li>
 							 <li>
-								 <img src="../imagenes/publicidad4.jpg"> <!-- random image -->
+								 <img src="../imagenes/baner3.jpg"> <!-- random image -->
 								 <div class="caption left-align">
-									 <h3 class="white-text">Visualiza Tu Rutina</h3>
-									 <h4 class="white-text">De Una Manera Mas Rapida</h5>
-									 <h4 class="white-text">Y En Todo Momento</h5>
+									 <h3 class="black-text">Visualiza Tu Rutina</h3>
+									 <h4 class="black-text">De Una Manera Mas Rapida</h5>
+									 <h4 class="black-text">Y En Todo Momento</h5>
 								 </div>
 							 </li>
 							 <li>
-								 <img src="../imagenes/publicidad5.jpg"> <!-- random image -->
+								 <img src="../imagenes/maxresdefault.jpg"> <!-- random image -->
 								 <div class="caption left-align">
-									 <h3 class="white-text">El Mejor Entrenamiento!</h3>
-									 <h5 class="white-text">¡Pruébalo Ahora Por Ti Mismo!</h5>
+									 <h3 class="black-text">El Mejor Entrenamiento!</h3>
+									 <h5 class="black-text">¡Pruébalo Ahora Por Ti Mismo!</h5>
 								 </div>
 							 </li>
 						 </ul>
