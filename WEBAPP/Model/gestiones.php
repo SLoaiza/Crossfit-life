@@ -1,11 +1,17 @@
 <?php
 	class GestionUsuario{
-		function Login($ndoc, $pass){
+		function Login($ndoc){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$consultalog="select * from usuario where usu_cod=? and usu_clave=? ";
+			$consultalog="select usuario.usu_cod, usuario.usu_clave, usuario.usu_nom, usuario.usu_ape, usuario.usu_tel, usuario.usu_cel, usuario.usu_mail, usuario.usu_dir, usuario.usu_estado, usuario.usu_edad, usuario.usu_plan_inicio, usuario.usu_plan_fin, 
+				rol.rol_cod, rol.rol_nom, 
+				plan.plan_cod, plan.plan_desc, plan.plan_dias, plan.plan_rango, plan.plan_precio
+				from usuario 
+				inner join rol on rol.rol_cod = usuario.rol_cod 
+				inner join plan on plan.plan_cod = usuario.plan_cod 
+				where usu_cod=?";
 			$querylog= $pdo->prepare($consultalog);
-			$querylog->execute(array($ndoc,$pass));
+			$querylog->execute(array($ndoc));
 			$resultlog=$querylog->fetch(PDO::FETCH_BOTH);
 			ConexionDB::CerrarBD();
 			return $resultlog;
@@ -34,7 +40,6 @@
 			$consultausu = "INSERT INTO usuario (usu_cod,plan_cod,rol_cod,usu_clave,usu_nom,usu_ape,usu_tel,usu_cel,usu_mail,usu_dir,usu_estado,usu_edad,usu_fecha,usu_plan_inicio,usu_plan_fin) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";;
 			$queryGU= $pdo->prepare($consultausu);
 			$queryGU->execute(array($cedula,$codigo_plan,$rol,$pass,$nombres, $apellidos,$telefono,$celular,$correo,$dir,$estado,$edad,$fecharegistro,$inicio,$fin));
-			$pdo= ConexionBD::CerrarBD();
 		}
 		function MostrarUsuarios(){
 			$pdo= ConexionDB::AbrirBD();

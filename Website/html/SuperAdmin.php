@@ -1,6 +1,6 @@
 <?php
-    if (isset($_GET["seccion"])) {
-       $seccion=$_GET["seccion"];
+    if (isset($_GET["S"])) {
+       $seccion=$_GET["S"];
     }else{
        $seccion="";
     }

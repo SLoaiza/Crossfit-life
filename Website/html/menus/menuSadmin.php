@@ -3,10 +3,10 @@
 		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons fa fa-bars"></i></a>
 		<a href="index.php" class="black-text right" style="margin-right: 20px;"><i class="fa fa-power-off fa-3x"></i></a>
 		<ul class="hide-on-med-and-down">
-			<li><a href="SuperAdmin.php?seccion=inicio" class="black-text">Inicio</a></li>
-			<li><a href="SuperAdmin.php?seccion=ingreso" class="black-text">Ingresos Al Gimnasio</a></li>
-			<li><a href="SuperAdmin.php?seccion=registro" class="black-text">Registrar Cliente</a></li>
-			<li><a href="SuperAdmin.php?seccion=regiemple" class="black-text">Registrar Empleados</a></li>
+			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("inicio");?>" class="black-text">Inicio</a></li>
+			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("ingreso");?>" class="black-text">Ingresos Al Gimnasio</a></li>
+			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("registro");?>" class="black-text">Registrar Cliente</a></li>
+			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("regiemple");?>" class="black-text">Registrar Empleados</a></li>
 			<li><a class="dropdown-button black-text" href="#!" data-activates="dropdown1"><i class="fa fa-caret-down"></i>&nbsp;&nbsp;Gestiones</a></li>
 		</ul>
 		<ul class="side-nav" id="mobile-demo">
@@ -26,12 +26,12 @@
 
 
 		<ul id="dropdown1" class="dropdown-content"  >
-		  	<li><a href="SuperAdmin.php?seccion=citas" class="black-text">Citas Medicas</a></li>
-			<li><a href="SuperAdmin.php?seccion=valoracion" class="black-text">Valoraciones</a></li>
-			<li><a href="SuperAdmin.php?seccion=roles" class="black-text">Roles</a></li>
-			<li><a href="SuperAdmin.php?seccion=planes" class="black-text">Planes</a></li>
-			<li><a href="SuperAdmin.php?seccion=regirecur" class="black-text">Recursos Fisicos</a></li>
-			<li><a href="SuperAdmin.php?seccion=AllUsers" class="black-text">Ver Todos Los Clientes</a></li>
+		  	<li><a href="SuperAdmin.php?S=<?php echo base64_encode("citas");?>" class="black-text">Citas Medicas</a></li>
+			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("valoracion");?>" class="black-text">Valoraciones</a></li>
+			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("roles");?>" class="black-text">Roles</a></li>
+			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("planes");?>" class="black-text">Planes</a></li>
+			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("regirecur");?>" class="black-text">Recursos Fisicos</a></li>
+			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("AllUsers");?>" class="black-text">Ver Todos Los Clientes</a></li>
 		</ul>
 	</div>
 </nav>

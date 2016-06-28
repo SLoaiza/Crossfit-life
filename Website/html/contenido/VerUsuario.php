@@ -93,7 +93,7 @@
  									<button type="submit" name="action" class="btn orange disabled= " value="GuardarcambiosJV" id="guardarcambios">Guardar</button>
  								</td>
  								<td class="col m2 s2">
- 									<a href="SuperAdmin.php?seccion=AllUsers" class="btn">Atras</button>
+ 									<a href="SuperAdmin.php?S=QWxsVXNlcnM=" class="btn">Atras</button>
  								</td>
  						</tr>
  					</tbody>

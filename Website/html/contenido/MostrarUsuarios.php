@@ -36,7 +36,7 @@
 										<td>".$numerodecontacto."</td>
 										<td>".$row["plan_desc"]."</td>
 										<td>".$row["usu_estado"]."</td>
-										<td><a href='SuperAdmin.php?seccion=VerUsuario&codigo_usuario=".$row["usu_cod"]."'>Ver Usuario</a>
+										<td><a href='SuperAdmin.php?S=VerUsuario&codigo_usuario=".$row["usu_cod"]."'>Ver Usuario</a>
 										</td>
 									</tr>";
 								$item++;

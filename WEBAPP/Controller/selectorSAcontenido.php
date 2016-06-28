@@ -1,44 +1,44 @@
 <?php
 	switch ($seccion) {
-		case 'inicio':
+		case 'aW5pY2lv':
 			//mauro
 			include_once('contenido/inicio.php');
 		break;
 		// mauro
-		case 'ingreso':
+		case 'aW5ncmVzbw==':
 			include_once('contenido/ingreso.php');
 		break;
 
-		case 'registro':
+		case 'cmVnaXN0cm8=':
 			include_once('contenido/registro.php');
 		break;
 		// Santiago
-		case 'regiemple':
+		case 'cmVnaWVtcGxl':
 			include_once('contenido/registroempleado.php');
 		// Santiago
 		break;
 
-		case 'citas':
+		case 'Y2l0YXM=':
 			include_once('contenido/citas.php');
 		break;
 		case 'usuarios':
 			# code...
 		break;
-		case 'valoracion':
+		case 'dmFsb3JhY2lvbg==':
 			include_once('contenido/valoraciones.php');
 		break;
-		case 'roles':
+		case 'cm9sZXM=':
 			include_once('contenido/roles.php');
 		break;
-		case 'planes':
+		case 'cGxhbmVz':
 		//mauro
 			include_once('contenido/planes.php');
 		break;
 		// mauro
-		case 'regirecur':
+		case 'cmVnaXJlY3Vy':
 			include_once('contenido/registrorecursos.php');
 		break;
-		case 'AllUsers':
+		case 'QWxsVXNlcnM=':
 			include_once('contenido/MostrarUsuarios.php');
 		break;
 		case 'VerUsuario':
