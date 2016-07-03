@@ -2,7 +2,7 @@
 	switch ($seccion) {
 		case 'aW5pY2lv':
 			//mauro
-			include_once('contenido/inicio.php');
+			include_once('contenido/dashboard.php');
 		break;
 		// mauro
 		case 'aW5ncmVzbw==':
@@ -47,7 +47,7 @@
 		case 'BorrarUsuario':
 			include_once('contenido/BorrarUsuario.php');
 		break;
-		case 'usuingresado':
+		case 'dXN1aW5ncmVzYWRv':
 			include_once('contenido/usuingresado.php');
 		break;
 		default:

@@ -1,4 +1,9 @@
 <?php
+    session_start();
+    if (!isset($_SESSION["codigo_usuario"])) {
+      header("Location: index.php");
+    }
+
     if (isset($_GET["S"])) {
        $seccion=$_GET["S"];
     }else{
@@ -11,10 +16,15 @@
     }
     date_default_timezone_set('America/Bogota');
   	require_once("../../WEBAPP/Model/conexionbd.php");
-  	require_once("../../WEBAPP/Model/gestiones.php");
+    require_once("../../WEBAPP/Model/gestiones.php");
+    // require_once("../../WEBAPP/Model/gestiones2.php");
     $datosdecita=GestionUsuario::MostrarTodasLasCitas();
     $datosdeplan=GestionUsuario::MostrarTodosLosPlanes();
     $todoslosusuarios=GestionUsuario::MostrarUsuarios();
+    $citasdehoy=GestionUsuario::MostrarTodasLasCitasDeHoy();
+    $usuarioFrecuente=GestionUsuario::UsuarioFrecuente();
+    $usuariosnuevos=GestionUsuario::NuevosUsuariosDeHoy();
+    $datosdiagrama=GestionUsuario::DatosDiagrama();
 
  ?>
 <!DOCTYPE html>
@@ -36,14 +46,14 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="../../WEBAPP/Views/Assets/Plugins/jquery.ptTimeSelect.css">
 
-
-
     <script src="../../WEBAPP/Views/Components/jquery-1.12.4.min.js" type="text/javascript"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="//cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
   <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
     <script type="text/javascript" src="../../WEBAPP/Views/Assets/Plugins/jquery.ptTimeSelect.js"></script>
+
+    
 
   <script type="text/javascript">
     $(document).ready(function(){

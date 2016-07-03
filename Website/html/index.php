@@ -35,7 +35,7 @@
 							<li><a href="#quienes_somos" class="black-text" id="quienes">Quienes Somos</a></li>
 							<!-- <li><a href="#slider2" class="black-text">Recomendaciones De Salud</a></li> -->
 							<li><a href="#contactar" class="black-text">Contactenos</a></li>
-							<li><a href="login.php" class="black-text">Ingresar</a></li>
+							<li><a href="https://pixabay.com/es/photos/" class="black-text"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Ingresar</a></li>
 						</ul>
 						<ul class="side-nav" id="mobile-demo">
 							<li><a href="#cabeza" class="black-text"><i class="fa fa-home"></i>Inicio</a></li>

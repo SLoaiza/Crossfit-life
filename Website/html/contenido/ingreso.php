@@ -33,7 +33,7 @@
 						<h5>Ingreso De Usuarios Al Gimnasio</h5>
 					</div>
 					<div class="card-content">	
-						<form action="SuperAdmin.php?seccion=usuingresado" method="POST">
+						<form action="SuperAdmin.php?S=<?php echo base64_encode("usuingresado");?>" method="POST">
 							<label for="">Ingrese Numero De Documento</label>
 							<br>
 							<input type="text" id="NdocIngresoUsuJV" name="NdocIngresoUsuJV" required="" style="text-align: center; font-size: 16px; width: 200px;" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">

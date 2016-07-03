@@ -1,7 +1,7 @@
 <nav class="z-depth-2 m12 s12 menu">
 	<div class="nav-wrapper orange z-depth-1">
 		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons fa fa-bars"></i></a>
-		<a href="index.php" class="black-text right" style="margin-right: 20px;"><i class="fa fa-power-off fa-3x"></i></a>
+		<a href="contenido/cerrarsesion.php" class="black-text right" style="margin-right: 20px;"><i class="fa fa-power-off fa-3x"></i></a>
 		<ul class="hide-on-med-and-down">
 			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("inicio");?>" class="black-text">Inicio</a></li>
 			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("ingreso");?>" class="black-text">Ingresos Al Gimnasio</a></li>
