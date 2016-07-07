@@ -51,7 +51,7 @@
 					</table>
 				</div>
 			</form>
-			<table id="datatable" style="border:solid 1px;">
+			<table id="datatable" style="border:solid 1px;" class="striped responsive-table">
 				<thead>
 					<tr>
 						<td>Codigo</td>
@@ -61,6 +61,7 @@
 						<td>Telefono</td>
 						<td>Fecha</td>
 						<td>Hora</td>
+						<td>Cancelar</td>
 					</tr>
 				</thead>
 				<tbody>
@@ -75,6 +76,7 @@
 									<td>".$row["usu_tel"]."</td>
 									<td>".$row["cita_fecha"]."</td>
 									<td>".$row["cita_hora"]."</td>
+									<td>Cancelar Cita</td>
 								  </tr>";
 							$item++;
 						}

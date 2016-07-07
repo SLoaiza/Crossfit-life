@@ -17,38 +17,37 @@
 	 			$usuario = GestionUsuario::Login($ndoc);
 	 			if (($usuario[0]!="") or ($usuario[0]!=null)) {
 	 				if (password_verify($pass,$usuario[1])) {
-	 						$SESSION["codigo_usuario"] = $usuario[0];
-		 					$SESSION["nombre_usuario"] = $usuario[2];
-		 					$SESSION["apellido_usuario"] = $usuario[3];
-		 					$SESSION["telefono_usuario"] = $usuario[4];
-		 					$SESSION["celular_usuario"] = $usuario[5];
-		 					$SESSION["mail_usuario"] = $usuario[6];
-		 					$SESSION["direccion_usuario"] = $usuario[7];
-		 					$SESSION["estado_usuario"] = $usuario[8];
-		 					$SESSION["edad_usuario"] = $usuario[9];
-		 					$SESSION["inicio_plan_usuario"] = $usuario[10];
-		 					$SESSION["fin_plan_usuario"] = $usuario[11];
-		 					$SESSION["rol_usuario"] = $usuario[12];
-		 					$SESSION["rol_nom_usuario"] = $usuario[13];
-		 					$SESSION["codigo_plan_usuario"] = $usuario[14];
-		 					$SESSION["nombre_plan_usuario"] = $usuario[15];
-		 					$SESSION["dias_plan_usuario"] = $usuario[16];
-		 					$SESSION["rango_plan_usuario"] = $usuario[17];
-		 					$SESSION["precio_plan_usuario"] = $usuario[18];
+ 						$_SESSION["codigo_usuario"] = $usuario[0];
+	 					$_SESSION["nombre_usuario"] = $usuario[2];
+	 					$_SESSION["apellido_usuario"] = $usuario[3];
+	 					$_SESSION["telefono_usuario"] = $usuario[4];
+	 					$_SESSION["celular_usuario"] = $usuario[5];
+	 					$_SESSION["mail_usuario"] = $usuario[6];
+	 					$_SESSION["direccion_usuario"] = $usuario[7];
+	 					$_SESSION["estado_usuario"] = $usuario[8];
+	 					$_SESSION["edad_usuario"] = $usuario[9];
+	 					$_SESSION["inicio_plan_usuario"] = $usuario[10];
+	 					$_SESSION["fin_plan_usuario"] = $usuario[11];
+	 					$_SESSION["rol_usuario"] = $usuario[12];
+	 					$_SESSION["rol_nom_usuario"] = $usuario[13];
+	 					$_SESSION["codigo_plan_usuario"] = $usuario[14];
+	 					$_SESSION["nombre_plan_usuario"] = $usuario[15];
+	 					$_SESSION["dias_plan_usuario"] = $usuario[16];
+	 					$_SESSION["rango_plan_usuario"] = $usuario[17];
+	 					$_SESSION["precio_plan_usuario"] = $usuario[18];
 
-		 					if($usuario[12] == '1'){
-			 				header("Location: ../../Website/html/SuperAdmin.php?seccion=inicio");
-				 			}elseif ($usuario[12] == '2') {
-				 				echo "hola Admin";
-				 			}elseif($usuario[12] == '3'){
-				 				echo "hola instructor";
-				 			}elseif($usuario[12] == '4'){
-				 				echo "hola usuario";
-				 			}else{
-				 				header("Location: ../../Website/html/index.php");
-				 			}
-	 					}	
-
+	 					if($usuario[12] == '1'){
+		 				header("Location: ../../Website/html/SuperAdmin.php?S=aW5pY2lv");
+			 			}elseif ($usuario[12] == '2') {
+			 				echo "hola Admin";
+			 			}elseif($usuario[12] == '3'){
+			 				echo "hola instructor";
+			 			}elseif($usuario[12] == '4'){
+			 				echo "hola usuario";
+			 			}else{
+			 				header("Location: ../../Website/html/index.php");
+			 			}
+ 					}
 	 			}
 	 		} catch (Exception $e) {
 	 			echo $e;
@@ -122,7 +121,8 @@
 		if ($dir=="") {
 		 	$dir="NaN";
 		}
-		$pass=password_hash($_POST["passwordUsujv"],PASSWORD_DEFAULT);
+		$pass=$_POST["passwordUsujv"];
+		
 		$confirmpass=$_POST["confirmpasswordUsujv"];
 		$estado=$_POST["EstadoUsujv"];
 		$fecharegistro=date("Y-m-d");
@@ -142,26 +142,16 @@
 		 if ($fin=="") {
 		 	$fin="NaN";
 		}
-	    try {
-		   	$usuario = GestionUsuario::GuardarUsu($cedula,$rol,$edad,$nombres,$apellidos,$telefono,$celular,$correo,$dir,$pass,$estado,$fecharegistro,$codigo_plan,$inicio,$fin);
-		} catch (Exception $e){
-		    	    echo $e;
-	    }
-		header("Location:../../Website/html/SuperAdmin.php?seccion=registro");
-	break;
-	case 'ConsultarIngresado':
-		$documentoconsulta = $_POST["NdocIngresoUsuJV"];
-		try {
-			$consulta = GestionUsuario::ConsultarIngresado($documentoconsulta);
-			$document = $consulta[0];
-		    $nombre = $consulta[4];
 
-			// header("Location:../../Website/html/SuperAdmin.php?seccion=ingreso");
-			echo "<script>alert('".$document." ".$nombre."');</script>";
-		} catch (Exception $e) {
-			echo $e;
+		if (strcmp($pass, $confirmpass) >=0) {
+			$pass=password_hash($_POST["passwordUsujv"],PASSWORD_DEFAULT);
+			try {
+				$usuario = GestionUsuario::GuardarUsu($cedula,$rol,$edad,$nombres,$apellidos,$telefono,$celular,$correo,$dir,$pass,$estado,$fecharegistro,$codigo_plan,$inicio,$fin);
+			} catch (Exception $e){
+				echo $e;
+			}
+			header("Location:../../Website/html/SuperAdmin.php?S=cmVnaXN0cm8=");
 		}
-		//echo $documentoconsulta;
 	break;
 	case 'IngresoUsuarioCasual':
 
@@ -177,8 +167,7 @@
 		} catch (Exception $e) {
 			echo $e;
 		}
-		echo $horaregistroinv;
-		header("Location:../../Website/html/SuperAdmin.php?seccion=registro");
+		header("Location:../../Website/html/SuperAdmin.php?S=aW5ncmVzbw==");
 	break;
 	case 'asignarcita':
 
@@ -186,9 +175,18 @@
 		$Ndocumentocita=$_POST["NdocumentoCitaUsuJv"];
 		$fechacita=$_POST["FechaCitaUsuJv"];
 		$horacita=$_POST["HoraCitaUsuJv"];
+
+		$var1="6";
+		$var2="1023";
+		$var3="4";
+		$var4="5";
+		$var5="6";
+		$var6="7";
+
 		 try {
 		 	$guardadocita= GestionUsuario::AsignarCita($codigocita,$Ndocumentocita,$fechacita,$horacita);
-
+		 	$guardadoaccion= GestionUsuario::GuardarACT($var1,$var2,$var3,$var4,$var5,$var6);
+		 	header("Location:../../Website/html/SuperAdmin.php?S=Y2l0YXM=");
 		 } catch (Exception $e) {
 		 	echo $e;
 		 }
@@ -213,19 +211,26 @@
 		} catch (Exception $e) {
 		 	echo $e;
 		}
-		header("Location:../../Website/html/SuperAdmin.php?seccion=AllUsers");
+		header("Location:../../Website/html/SuperAdmin.php?S=QWxsVXNlcnM=");
 	break;
 	case 'IngresoUsuAlGym':
 		$codigoIng=substr(date("Y"), -2).date("mdhis");
 		$documentoIng=$_POST["IngUsuDocJV"];
 		$fechaIng=date("Y-m-d");
 		$horaIng=date("H:i:s");
+		// $var1="B";
+		// $var2="1023";
+		// $var3="A";
+		// $var4="A";
+		// $var5="A";
+		// $var6="A";
 		 try {
 		  	$Ingresar= GestionUsuario::IngresarUsuario($codigoIng,$documentoIng,$fechaIng,$horaIng);
+		  	//$accion=GestionUsuario::GuardarACT($var1,$var2,$var3,$var4,$var5,$var6);
 		 } catch (Exception $e) {
 		  	echo $e;
 		 }
-		 header("Location:../../Website/html/SuperAdmin.php?seccion=ingreso");
+		 header("Location:../../Website/html/SuperAdmin.php?S=aW5ncmVzbw==");
 	break;
 
 	//mauro
@@ -247,17 +252,6 @@
 
 		header("Location:../../Website/html/SuperAdmin.php?seccion=planes");
 
-	break;
-	//mauro
-	case 'BorrarPlan':
-
-		$codigo=$_POST["PlanCodBorrarMC"];
-		try {
-		 	$modificarcliente= GestionUsuario::BorrarPlan($codplan);
-		} catch (Exception $e) {
-		 	echo $e;
-		}
-		header("Location:../../Website/html/SuperAdmin.php?seccion=planes");
 	break;
 	}
 

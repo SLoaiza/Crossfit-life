@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="card" id="allusersJV">
 		<div class="m12 s12">
-			<table id="datatable">
+			<table id="datatable" class="striped responsive-table">
 				<thead>
 					<tr><h3>Listado De Clientes...</h3></tr>
 					<tr>
