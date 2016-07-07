@@ -78,11 +78,11 @@
  							</td>
  							<td class="col m3 s3">
  								<label for="jvInicio">Fecha de inicio de plan</label>
-								<input type="date" class="datepicker" placeholder="Inicio del plan" id="FInicioVerUsuJV" name="FInicioVerUsuJV" value="<?php echo $usuarios["usu_plan_inicio"]; ?>">
+								<input type="date" class="datepicker" placeholder="Inicio del plan" id="FInicioVerUsuJV" name="FInicioVerUsuJV">
  							</td>
  							<td class="col m3 s3">
  								<label for="jvInicio">Fecha de fin de plan</label>
-								<input type="date" class="datepicker" placeholder="Fin del plan" id="FFinVerUsuJV" name="FFinVerUsuJV" value="<?php echo $usuarios["usu_plan_fin"]; ?>">
+								<input type="date" class="datepicker" placeholder="Fin del plan" id="FFinVerUsuJV" name="FFinVerUsuJV">
  							</td>
  						</tr>
  						<tr>
@@ -113,8 +113,8 @@
  		$("#UsudirVerUsuJV").prop("readonly",true);
  		$("#UsuestadoVerUsuJV").prop("readonly",true);
  		$("#tipoplanVerUsuJV").prop("readonly",true);
- 		$("#FInicioVerUsuJV").prop("disabled",true);
- 		$("#FFinVerUsuJV").prop("disabled",true);
+ 		$("#FInicioVerUsuJV").prop("readonly",true);
+ 		$("#FFinVerUsuJV").prop("readonly",true);
  		$("#guardarcambios").addClass("btn orange disabled");
 
  		$("#Modificar").click(function(){
@@ -127,8 +127,8 @@
 	 		$("#UsudirVerUsuJV").prop("readonly",false);
 	 		$("#UsuestadoVerUsuJV").prop("readonly",false);
 	 		$("#tipoplanVerUsuJV").prop("readonly",false);
-	 		$("#FInicioVerUsuJV").prop("disabled",false);
-	 		$("#FFinVerUsuJV").prop("disabled",false);
+	 		$("#FInicioVerUsuJV").prop("readonly",false);
+	 		$("#FFinVerUsuJV").prop("readonly",false);
 	 		
 	 		$("#Modificar").addClass("btn orange disabled");
 	 		$("#guardarcambios").removeClass("btn orange disabled").addClass("btn orange");

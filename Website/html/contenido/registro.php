@@ -3,13 +3,10 @@
 		<div class="col m10 s10 offset-m1 offset-s1">
 			<div class="card" id="registro">
 				<div class="card-title">
-					<h4>Registro de Nuevo Cliente</h4>
+					<h5>Datos Personales</h5>
 				</div>
 				<div class="card-content">
 					<table>
-						<thead>
-							<h5>Datos Personales</h5>
-						</thead>
 						<tbody>
 							<tr>
 								<td>
@@ -111,19 +108,15 @@
 					<input name="EstadoUsujv" value="Activo" hidden="">
 				</div>
 				<center>
-					<button type="submit" class="btn orange" name="action" value="RegistrarUsuario" id="terminar">Registrar</button>
+					<button type="submit" name="action" value="RegistrarUsuario">Registrar</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button type="reset" class="btn">Limpiar</button>
+					<button type="reset" >Limpiar</button>
 				</center>
 			</div>
 		</div>
 	</form>
 </div>
 <script>
- 	$(document).ready(function(){
- 		$("#terminar").prop("disabled",true);
- 		$("#cpass").prop("disabled",true);
- 	});
 	$("#pass").focusout(function(){
       var pass=document.getElementById('pass').value;
       if (pass.length==0) {
@@ -132,35 +125,27 @@
       	alert('La contraseña debe de ser con un minimo de 8 digitos.');
       	$("#nivelpass").text("Muy Bajo");
       	document.getElementById('nivelpass').style.color="#d50000";
-      }else if(pass.length==8){
+      }else if(pass.length<=8){
       	$("#nivelpass").text("Bajo");
       	document.getElementById('nivelpass').style.color="#c62828";
-      	$("#cpass").prop("disabled",false);
       }else if(pass.length<=12){
       	$("#nivelpass").text("Medio");
       	document.getElementById('nivelpass').style.color="#01579b";
-      	$("#cpass").prop("disabled",false);
       }else if(pass.length<=15){
       	$("#nivelpass").text("Alto");
       	document.getElementById('nivelpass').style.color="#9e9d24";
-      	$("#cpass").prop("disabled",false);
       }
     });
     $("#cpass").focusout(function(){
       var pass=document.getElementById('pass').value;
       var coincidepass=document.getElementById('cpass').value;
-      if(pass=="" || pass==null || coincidepass=="" || coincidepass==null ){
-      	$("#terminar").prop("disabled",true);
+     
+      if (pass==coincidepass) {
+      	$("#coincidepass").text("Coincide");
+      	document.getElementById('coincidepass').style.color="#827717";
       }else{
-      	if (pass==coincidepass) {
-	      	$("#coincidepass").text("Coincide");
-	      	document.getElementById('coincidepass').style.color="#827717";
-	      	$("#terminar").prop("disabled",false);
-	      }else{
-	      	$("#coincidepass").text("No Coincide");
-	      	document.getElementById('coincidepass').style.color="#f44336";
-	      	$("#terminar").prop("disabled",true);
-	      }
+      	$("#coincidepass").text("No Coincide");
+      	document.getElementById('coincidepass').style.color="#f44336";
       }
     
     });
