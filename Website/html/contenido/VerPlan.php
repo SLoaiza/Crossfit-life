@@ -49,17 +49,7 @@
 
 										<input type="number"  name="rangodias" min="1" max="365" placeholder="Ingrese rango de Días" id="numdias" required="">
 									</td>
-								<!--<td>
-									<div>
-										<label for="jvInicio">Fecha de inicio</label>
-										<input type="date" name="diaini" class="datepicker" placeholder="Inicio del plan" id="jvInicio">
-									</div>
-								</td>
-									<div>
-								<td>
-										<label for="jvFinalizacion">Fecha de finalizacion</label>
-										<input type="date" name="diafin" class="datepicker" placeholder="Finalizacion del plan" id="jvFinalizacion">
-									</div>-->
+								
 								</td>
 							</tr>
 						</tbody>
@@ -70,7 +60,7 @@
  									<span id="Modificar" class="btn" name="action">Habilitar Campos</span>
  								</td>
  								<td class="col m2 s2">
- 									<button type="submit" name="action" class="btn orange disabled= " value="GuardarcambiosJV" id="guardarcambios">Guardar</button>
+ 									<button type="submit" name="action" class="btn orange disabled= " value="GuardarcambiosM" id="guardarcambios">Guardar</button>
  								</td>
  								<td class="col m2 s2">
  									<a href="SuperAdmin.php?seccion=AllUsers" class="btn">Atras</button>
