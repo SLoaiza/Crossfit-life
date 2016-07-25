@@ -2,24 +2,22 @@
     width: 12px;
 }
 ::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0  ; 
+    -webkit-box-shadow: inset 0 0  ;
     /*border-radius: 10px;*/
     background-color: #424242;
 }
- 
+
 ::-webkit-scrollbar-thumb {
     /*border-radius: 10px;*/
     -webkit-box-shadow: inset 0 0  ;
-    background-color: #E0E0E0; 
+    background-color: #E0E0E0;
 }
 #quines{
 	position: relative;
 	/*width: 100vh;*/
-	max-width: 1000px;
+	height: auto;
 	padding-top: 50px;
 	padding-left: 37px;
-
-	
 
 }
 

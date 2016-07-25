@@ -17,9 +17,9 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script type="text/javascript">
-		
+
 	</script>
-	
+
 
 </head>
 <!--scrolltop fixed jquery-->
@@ -31,10 +31,10 @@
 					<div class="nav-wrapper orange z-depth-2">
 						<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons fa fa-bars"></i></a>
 						<ul class="hide-on-med-and-down">
-							<li><a href="#cabeza" class="black-text">Inicio</a></li>
-							<li><a href="#quienes_somos" class="black-text" id="quienes">Quienes Somos</a></li>
+							<li><a href="#cabeza" class="black-text ancla">Inicio</a></li>
+							<li><a href="#quienes_somos" class="black-text ancla" id="quienes">Quienes Somos</a></li>
 							<!-- <li><a href="#slider2" class="black-text">Recomendaciones De Salud</a></li> -->
-							<li><a href="#contactar" class="black-text">Contactenos</a></li>
+							<li><a href="#contactar" class="black-text ancla">Contactenos</a></li>
 							<li><a href="https://pixabay.com/es/photos/" class="black-text"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Ingresar</a></li>
 						</ul>
 						<ul class="side-nav" id="mobile-demo">
@@ -99,7 +99,7 @@
 			<div class="col s12 m12" id="quines">
 				<section id="quienes_somos" class="">
 					<div class="card-image ">
-						<img src="../imagenes/quienes_somos.png" alt="">
+						<img src="../imagenes/quienes_somos.png" class="responsive-img">
 					</div>
 				</section>
 			</div>
@@ -173,7 +173,7 @@
   			})
   		});
   		$(".button-collapse").sideNav();
-  		$('nav a').click(function(e){
+  		$('nav .ancla').click(function(e){
 	e.preventDefault();
 	$('html, body').stop().animate({scrollTop: $($(this).attr('href')).offset().top}, 1000);
 });
