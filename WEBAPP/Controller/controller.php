@@ -250,7 +250,7 @@
 			echo $e;
 		}
 
-		header("Location:../../Website/html/SuperAdmin.php?seccion=planes");
+		header("Location:../../Website/html/SuperAdmin.php?S=cGxhbmVz");
 
 	break;
 	}

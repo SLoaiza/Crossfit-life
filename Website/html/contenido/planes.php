@@ -25,7 +25,7 @@
 								<td>
 
 									<label for="precios">Costo del Plan</label>
-									<input type="number" name="precioplan" id="plan_precio" required="">
+									<input type="number" name="precioplan" min="1" id="plan_precio" required="">
 
 								</td>
 							</tr>
@@ -57,7 +57,8 @@
 				</div>
 				<center>
 					<td>
-						<button type="submit" name="action" value="GuardarPlan">Guardar</button>
+						<button type="submit" onclick="mensaje()" name="action" class="btn" value="GuardarPlan">Guardar</button>
+
 					</td>
 					
 				</center>
@@ -104,4 +105,11 @@
         "language": {"url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"}
     });
 
+</script>
+
+<script type="text/javascript">
+	function mensaje(){
+		if (confirm('¿Estas seguro de enviar este formulario?'))
+		alert("Formulario Guardado");
+	}
 </script>
