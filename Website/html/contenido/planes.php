@@ -3,7 +3,7 @@
 		<div class="col m10 s10 offset-m1 offset-s1">
 			<div class="card" id="planes">
 				<div class="card-title">
-					<h5>Planes</h5>
+					<h4>Planes</h4>
 				</div>
 				<div class="card-content">
 					<table>
@@ -83,7 +83,7 @@
 									<td>".$row["plan_precio"]."</td>
 									<td>".$row["plan_desc"]."</td>
 									<td>".$row["plan_rango"]."</td>
-									<td><a href='SuperAdmin.php?seccion=Verplan=".$row["plan_cod"]."'>Ver Plan</a>-
+									<td><a href='SuperAdmin.php?S=VerPlan&plan_cod=".$row["plan_cod"]."'>Ver Plan</a>-
 										<a href='SuperAdmin.php?seccion=planes=".$row["plan_cod"]."'>Eliminar</a>
 									</td>
 								  </tr>";
