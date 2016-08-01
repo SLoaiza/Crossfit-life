@@ -80,14 +80,14 @@
 		</div>
 		<header id="cabeza">
 			<nav class="m12 s12 menu">
-					<div class="nav-wrapper orange z-depth-2">
+					<div class="nav-wrapper  z-depth-2" color="#424242">
 						<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons fa fa-bars"></i></a>
 						<ul class="hide-on-med-and-down">
-							<li><a href="#cabeza" class="black-text ancla">Inicio</a></li>
-							<li><a href="#quienes_somos" class="black-text ancla" id="quienes">Quienes Somos</a></li>
+							<li><a href="#cabeza" class="white-text ancla">Inicio</a></li>
+							<li><a href="#quienes_somos" class="white-text ancla" id="quienes">Quienes Somos</a></li>
 							<!-- <li><a href="#slider2" class="black-text">Recomendaciones De Salud</a></li> -->
-							<li><a href="#contactar" class="black-text ancla">Contactenos</a></li>
-							<li id="ingresar"><a class="black-text"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Ingresar</a></li>
+							<li><a href="#contactar" class="white-text ancla">Contactenos</a></li>
+							<li id="ingresar"><a class="white-text"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Ingresar</a></li>
 						</ul>
 						<ul class="side-nav" id="mobile-demo">
 							<li><a href="#cabeza" class="black-text"><i class="fa fa-home"></i>Inicio</a></li>
