@@ -176,7 +176,7 @@
 		function MostrarTodosLosPlanes(){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql="SELECT * from plan";
+			$sql="SELECT plan_cod, plan_desc from plan";
 			$query= $pdo->prepare($sql);
 			$query->execute();
 			// $pdo->CerrarBD();
@@ -216,6 +216,31 @@
 			$result=$query->fetch(PDO::FETCH_BOTH);
 			ConexionDB::CerrarBD();
 			return $result;
+		}
+		function MostrarCitaPorcodigo($codigo){
+			$pdo= ConexionDB::AbrirBD();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql="SELECT cita.cita_cod, cita.cita_fecha, cita.cita_hora, usuario.usu_nom, usuario.usu_ape
+				from cita
+				inner join usuario
+				on usuario.usu_cod=cita.usu_cod
+				where cita.cita_cod= ?";
+			$query= $pdo->prepare($sql);
+			$query->execute(array($codigo));
+			// $pdo->CerrarBD();
+			$result=$query->fetch(PDO::FETCH_BOTH);
+			ConexionDB::CerrarBD();
+			return $result;
+		}
+		function CancelarCita($codigo)
+		{
+			$pdo= ConexionDB::AbrirBD();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$Ccita = "delete from cita where cita_cod=?";
+			$query= $pdo->prepare($Ccita);
+			$query->execute(array($codigo));
+			//$pdo= ConexionBD::CerrarBD();
+			ConexionDB::CerrarBD();
 		}
 	}
 

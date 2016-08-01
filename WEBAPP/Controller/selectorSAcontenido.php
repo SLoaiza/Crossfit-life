@@ -50,8 +50,11 @@
 		case 'dXN1aW5ncmVzYWRv':
 			include_once('contenido/usuingresado.php');
 		break;
-		case 'VerPlan';
+		case 'VerPlan':
 			include_once('contenido/VerPlan.php');
+		break;
+		case 'Y2FuY2VsYXJjaXRh':
+			include_once('contenido/cancelarcita.php');
 		break;
 		default:
 			# code...

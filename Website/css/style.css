@@ -28,7 +28,7 @@
 	height: 100vh;
 	width: 100%;
 	max-width: 1000px;
-	background-image: url("../imagenes/logo.png");
+	/**background-image: url("../imagenes/logo.png");**/
 	background-position: center 0 ;
 	background-repeat: no-repeat;
 }
@@ -77,6 +77,10 @@ body , #ingreso{
 p.white{
 	font-size: 30px;
 
+}
+#documento , #contrasena{
+	color: black;
+	font-size: 16px;
 }
 @media only screen and (max-width: 600px){
 	.border-right{
@@ -127,6 +131,17 @@ p.white{
 	}
 	#documento , #contrasena{
 		width: 85%;
+	}
+	.log{
+		margin: auto;
+		margin-top: 40px;
+		position: relative;
+		height: 100vh;
+		width: 100%;
+		max-width: 1000px;
+		/**background-image: url("../imagenes/logo.png");**/
+		background-position: center 0 ;
+		background-repeat: no-repeat;
 	}
 }
 #contacto{
@@ -189,7 +204,7 @@ nav div ul li a{
 	padding: 30px;
 }
 
-#dropdown1{
+#dropdown1 ,#dropdown2{
 	width: 170px !important;
 }
 
@@ -219,3 +234,30 @@ nav div ul li a{
 	width: 100%;
 	height: 100px;
 }*/
+#vmodal{
+	width: 100%;
+	height: 100%;
+	color: #fff;
+	position: fixed;
+	background-image: url("../imagenes/fondo.png");
+	z-index: 10000000000000000;
+	top: 0px;
+	display: none;
+}
+#cerrar{
+	color: black;
+	text-align: right;
+	font-size:30px;
+}
+#ventana{
+	width: 40%;
+	top: 0px;
+	padding: 10px 40px;
+}
+#confimacion{
+	color: black;
+	top:200px; 
+	width: 50%;
+	height: 300px;
+	padding: 10px 40px;
+}

@@ -176,16 +176,16 @@
 		$fechacita=$_POST["FechaCitaUsuJv"];
 		$horacita=$_POST["HoraCitaUsuJv"];
 
-		$var1="6";
-		$var2="1023";
-		$var3="4";
-		$var4="5";
-		$var5="6";
-		$var6="7";
+		//$var1="6";
+		//$var2="1023";
+		//$var3="4";
+		//$var4="5";
+		//$var5="6";
+		//$var6="7";
 
 		 try {
 		 	$guardadocita= GestionUsuario::AsignarCita($codigocita,$Ndocumentocita,$fechacita,$horacita);
-		 	$guardadoaccion= GestionUsuario::GuardarACT($var1,$var2,$var3,$var4,$var5,$var6);
+		 	//$guardadoaccion= GestionUsuario::GuardarACT($var1,$var2,$var3,$var4,$var5,$var6);
 		 	header("Location:../../Website/html/SuperAdmin.php?S=Y2l0YXM=");
 		 } catch (Exception $e) {
 		 	echo $e;
@@ -252,6 +252,16 @@
 
 		header("Location:../../Website/html/SuperAdmin.php?S=cGxhbmVz");
 
+	break;
+	case 'CancelarCitaJV':
+		sleep(3);
+		$codigo = $_POST["CitacodCJV"];
+		try {
+			GestionUsuario::CancelarCita($codigo);
+			header("Location:../../Website/html/SuperAdmin.php?S=Y2l0YXM=");
+		} catch (Exception $e) {
+			echo $e;
+		}
 	break;
 	}
 

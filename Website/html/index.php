@@ -17,7 +17,14 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 	<script type="text/javascript">
-
+		$(document).ready(function(){
+			$("#ingresar").click(function(){
+				$("#vmodal").slideDown("show");
+			});
+			$("#cerrar").click(function(){
+				$("#vmodal").slideUp("show");
+			});
+		});
 	</script>
 
 
@@ -26,6 +33,51 @@
 <!-- menú -->
 <body>
 	<div class="container-fluid">
+		<div id="vmodal">
+			<center>
+				<div id="ventana" class="card">
+					<div class="card-title" id="cerrar">
+						X
+					</div>
+					<div class="card-content">
+						<div class="row log">
+					      <div class="row">
+					        <center>
+					          <img src="../imagenes/logo1.png" alt="" style="width:400px;height:200px;">
+					        </center>
+					      </div>
+					      <div class="row" style="text-align:left;">
+					        <div class="col s12 m12">
+					          <form action="../../WEBAPP/Controller/controller.php" method="POST" id="login">
+					            <label for="documento" class="text-black">Nº Documento:</label>
+					            <input type="text" placeholder="Ingrese numero de documento" id="documento" name="log_doc" required="" maxlength="15" onkeypress="if(event.keyCode<45 || event.keyCode>57)event.returnValue=false;">
+					            <br>
+					            <label for="contrasena" class="text-black">Contraseña:</label>
+					            <input type="password" placeholder="Ingrese Contraseña" id="contrasena" name="log_pass" required="">
+					            <button type="submit" class="waves-effect waves-light btn orange darken-3" value="INGRESAR" style="height: 40px;" name="action">INGRESAR</button>
+					          </form>
+					        </div>
+					      </div>
+					      <div class="col s12 m12">
+					        <div class="row" id="iconos">
+					          <center>
+					            <div class="col s4 m1 offset-m2">
+					              <a href="#" class="btn-floating btn-large" id="btn_red"><img src="../imagenes/fb.png" alt="" id="redes"></a>
+					            </div>
+					            <div class="col s4 m1 offset-m2">
+					              <a href="#" class="btn-floating btn-large" id="btn_red"><img src="../imagenes/tw.png" alt="" id="redes"></a>
+					            </div>
+					            <div class="col s4 m1 offset-m2">
+					              <a href="#" class="btn-floating btn-large" id="btn_red"><img src="../imagenes/yt.png" alt="" id="redes"></a>
+					            </div>
+					          </center>
+					        </div>
+					      </div>
+					    </div>
+					</div>
+				</div>
+			</center>
+		</div>
 		<header id="cabeza">
 			<nav class="m12 s12 menu">
 					<div class="nav-wrapper orange z-depth-2">
@@ -35,7 +87,7 @@
 							<li><a href="#quienes_somos" class="black-text ancla" id="quienes">Quienes Somos</a></li>
 							<!-- <li><a href="#slider2" class="black-text">Recomendaciones De Salud</a></li> -->
 							<li><a href="#contactar" class="black-text ancla">Contactenos</a></li>
-							<li><a href="https://pixabay.com/es/photos/" class="black-text"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Ingresar</a></li>
+							<li id="ingresar"><a class="black-text"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Ingresar</a></li>
 						</ul>
 						<ul class="side-nav" id="mobile-demo">
 							<li><a href="#cabeza" class="black-text"><i class="fa fa-home"></i>Inicio</a></li>

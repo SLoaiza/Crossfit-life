@@ -127,9 +127,9 @@
 	$("#pass").focusout(function(){
       var pass=document.getElementById('pass').value;
       if (pass.length==0) {
-      	alert('Por Favor Digite Contraseña.');
+      	swal("Error!", "Por Favor Digite Contraseña.", "error");
       }else if(pass.length>0 && pass.length<=7){
-      	alert('La contraseña debe de ser con un minimo de 8 digitos.');
+      	swal("Error!", "La contraseña debe de ser con un minimo de 8 digitos.", "error");
       	$("#nivelpass").text("Muy Bajo");
       	document.getElementById('nivelpass').style.color="#d50000";
       }else if(pass.length==8){

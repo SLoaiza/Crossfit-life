@@ -30,20 +30,20 @@
 						</thead>
 						<tbody>
 							<tr>
-								<td>
+								<td class="col m3 s12">
 									<label for="FechaCitaUsuJv">Fecha</label>
 									<input type="date" name="FechaCitaUsuJv" id="FechaCitaUsuJv" class="datepicker" required="">
 								</td>
-								<td>
+								<td class="col m3 s12">
 									<label for="HoraCitaUsuJv">Hora</label>
 									<input type="text" name="HoraCitaUsuJv" id="HoraCitaUsuJv" required="" readonly="">
 								</td>
 							</tr>
 							<tr>
-								<td>
+								<td class="col m3 s12">
 									<button type="submit" name="action" value="asignarcita">Asignar Cita</button>
 								</td>
-								<td>
+								<td class="col m3 s12">
 									<button type="reset">Cancelar</button>
 								</td>
 							</tr>
@@ -76,7 +76,7 @@
 									<td>".$row["usu_tel"]."</td>
 									<td>".$row["cita_fecha"]."</td>
 									<td>".$row["cita_hora"]."</td>
-									<td>Cancelar Cita</td>
+									<td><span onclick='cancelar(".$row["cita_cod"].")' style='color:#2196f3; cursor:pointer;'>Cancelar Cita<span></td>
 								  </tr>";
 							$item++;
 						}
@@ -88,6 +88,18 @@
 	</div>
 </div>
 <script>
+	function cancelar(codigo){
+		swal({   
+			title: "Espera un momento",   
+			type: "warning",
+			text: "Mientras Cargamos Los Datos",   
+			timer: 2000,   
+			showConfirmButton: false 
+		});
+		setTimeout(function(){
+			window.location='SuperAdmin.php?S=<?php echo base64_encode("cancelarcita");?>&codigo_cita='+codigo;
+		}, 2000);
+	}
 	$("#datatable").dataTable( {
         "language": {"url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"}
     });
