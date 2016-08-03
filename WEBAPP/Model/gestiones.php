@@ -202,8 +202,17 @@
 			$queryplan->execute(array($codplan,$codfact,$valorplan,$descrip,$cantdias,$rangodias));
 			//$pdo= ConexionBD::CerrarBD();
 			ConexionDB::CerrarBD();
-
-
+		}
+		function MostrartblPlanes(){
+			$pdo= ConexionDB::AbrirBD();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql="SELECT plan.plan_cod, plan.plan_precio, plan.plan_desc,plan.plan_rango from plan";
+			$query= $pdo->prepare($sql);
+			$query->execute();
+			// $pdo->CerrarBD();
+			$result=$query->fetchALL(PDO::FETCH_BOTH);
+			ConexionDB::CerrarBD();
+			return $result;
 		}
 		//mauro
 		function MostrarPlanesPorcodigo($verplanes){

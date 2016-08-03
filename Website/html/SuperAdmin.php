@@ -26,6 +26,7 @@
     $usuariosnuevos=GestionUsuario::NuevosUsuariosDeHoy();
     $datosdiagrama=GestionUsuario::DatosDiagrama();
     $acciones=GestionUsuario::ConsultarAcciones();
+    $datostblplan=GestionUsuario::MostrartblPlanes();
 
  ?>
 <!DOCTYPE html>

@@ -47,7 +47,7 @@
 									<td>
 										<label for="rango">Rango del Plan</label>
 
-										<input type="number"  name="rangodias" min="1" max="365" placeholder="Ingrese rango de Días" id="numdias" required="">
+										<input type="number"  name="rangodias" min="1" max="365" placeholder="Ingrese rango de Días" id="plan_rango" required="">
 									</td>
 								
 								</td>
@@ -63,7 +63,7 @@
 					
 				</center>
 
-				<table id="datatable" style="border:solid 1px;">
+				<table id="datatable" style="border:solid 1px;" class="striped responsive-table">
 				<thead>
 					<tr>
 						<td>Código del plan</td>						
@@ -77,7 +77,7 @@
 				<tbody>
 					<?php 
 						$item = 1;
-						foreach ($datosdeplan as $row) {
+						foreach ($datostblplan as $row) {
 							echo "<tr>
 									<td>".$row["plan_cod"]."</td>									
 									<td>".$row["plan_precio"]."</td>
