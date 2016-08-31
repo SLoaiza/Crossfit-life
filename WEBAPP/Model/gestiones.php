@@ -106,7 +106,7 @@
 		function UsuarioFrecuente(){
 			$pdo = ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$consultaUF="select usu_cas_cod , COUNT(usu_cas_cod) as ingresos, usu_cas_nom, usu_cas_ape from usuario_casual group by usu_cas_cod order by ingresos desc limit 0,5";
+			$consultaUF="select usu_cas_cod , COUNT(usu_cas_cod) as ingresos, usu_cas_nom, usu_cas_ape, usu_cas_tel from usuario_casual group by usu_cas_cod order by ingresos desc";
 			$queryUF= $pdo->prepare($consultaUF);
 			$queryUF->execute();
 			$resultUF=$queryUF->fetchALL(PDO::FETCH_BOTH);

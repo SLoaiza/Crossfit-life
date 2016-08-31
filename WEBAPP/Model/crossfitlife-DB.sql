@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-07-2016 a las 17:26:24
--- Versión del servidor: 5.6.26
--- Versión de PHP: 5.6.12
+-- Tiempo de generación: 18-08-2016 a las 20:52:16
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `actividad`
 --
 
-CREATE TABLE IF NOT EXISTS `actividad` (
+CREATE TABLE `actividad` (
   `act_cod` varchar(10) NOT NULL,
   `rec_cod` varchar(10) NOT NULL,
   `act_duracion` varchar(10) DEFAULT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `actividad` (
 -- Estructura de tabla para la tabla `actividad_x_rutina`
 --
 
-CREATE TABLE IF NOT EXISTS `actividad_x_rutina` (
+CREATE TABLE `actividad_x_rutina` (
   `rut_cod` varchar(10) NOT NULL,
   `act_cod` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS `actividad_x_rutina` (
 -- Estructura de tabla para la tabla `cita`
 --
 
-CREATE TABLE IF NOT EXISTS `cita` (
+CREATE TABLE `cita` (
   `cita_cod` varchar(15) NOT NULL,
   `usu_cod` varchar(10) NOT NULL,
   `nom_med` varchar(50) DEFAULT NULL,
@@ -86,7 +86,7 @@ INSERT INTO `cita` (`cita_cod`, `usu_cod`, `nom_med`, `cita_fecha`, `cita_hora`)
 -- Estructura de tabla para la tabla `ingreso_usu`
 --
 
-CREATE TABLE IF NOT EXISTS `ingreso_usu` (
+CREATE TABLE `ingreso_usu` (
   `ingr_cod` varchar(15) NOT NULL,
   `usu_cod` varchar(15) NOT NULL,
   `ingr_fecha` varchar(10) NOT NULL,
@@ -123,7 +123,7 @@ INSERT INTO `ingreso_usu` (`ingr_cod`, `usu_cod`, `ingr_fecha`, `ingr_hora`) VAL
 -- Estructura de tabla para la tabla `permiso`
 --
 
-CREATE TABLE IF NOT EXISTS `permiso` (
+CREATE TABLE `permiso` (
   `perm_cod` varchar(10) NOT NULL,
   `perm_nom` varchar(20) NOT NULL,
   `perm_fecha` varchar(10) NOT NULL
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS `permiso` (
 -- Estructura de tabla para la tabla `permiso_x_rol`
 --
 
-CREATE TABLE IF NOT EXISTS `permiso_x_rol` (
+CREATE TABLE `permiso_x_rol` (
   `rol_cod` varchar(10) NOT NULL,
   `perm_cod` varchar(10) NOT NULL,
   `estado` varchar(20) NOT NULL,
@@ -149,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `permiso_x_rol` (
 -- Estructura de tabla para la tabla `plan`
 --
 
-CREATE TABLE IF NOT EXISTS `plan` (
+CREATE TABLE `plan` (
   `plan_cod` varchar(10) NOT NULL,
   `factura_cod` varchar(20) NOT NULL,
   `plan_precio` varchar(10) NOT NULL,
@@ -175,7 +175,7 @@ INSERT INTO `plan` (`plan_cod`, `factura_cod`, `plan_precio`, `plan_desc`, `plan
 -- Estructura de tabla para la tabla `recurso_fisico`
 --
 
-CREATE TABLE IF NOT EXISTS `recurso_fisico` (
+CREATE TABLE `recurso_fisico` (
   `rec_cod` varchar(10) NOT NULL,
   `rec_nom` varchar(50) NOT NULL,
   `rec_img` varchar(255) DEFAULT NULL,
@@ -189,7 +189,7 @@ CREATE TABLE IF NOT EXISTS `recurso_fisico` (
 -- Estructura de tabla para la tabla `rol`
 --
 
-CREATE TABLE IF NOT EXISTS `rol` (
+CREATE TABLE `rol` (
   `rol_cod` varchar(10) NOT NULL,
   `rol_nom` varchar(15) NOT NULL,
   `rol_fecha` varchar(10) NOT NULL
@@ -210,7 +210,7 @@ INSERT INTO `rol` (`rol_cod`, `rol_nom`, `rol_fecha`) VALUES
 -- Estructura de tabla para la tabla `rutina`
 --
 
-CREATE TABLE IF NOT EXISTS `rutina` (
+CREATE TABLE `rutina` (
   `rut_cod` varchar(10) NOT NULL,
   `vlrcion_cod` varchar(10) NOT NULL,
   `rut_nom` varchar(30) NOT NULL,
@@ -224,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `rutina` (
 -- Estructura de tabla para la tabla `seguimiento`
 --
 
-CREATE TABLE IF NOT EXISTS `seguimiento` (
+CREATE TABLE `seguimiento` (
   `segui_cod` varchar(10) NOT NULL,
   `usu_cod` varchar(15) NOT NULL,
   `segui_modu` varchar(50) NOT NULL,
@@ -250,7 +250,7 @@ INSERT INTO `seguimiento` (`segui_cod`, `usu_cod`, `segui_modu`, `segui_accion`,
 -- Estructura de tabla para la tabla `usuario`
 --
 
-CREATE TABLE IF NOT EXISTS `usuario` (
+CREATE TABLE `usuario` (
   `usu_cod` varchar(15) NOT NULL,
   `plan_cod` varchar(10) DEFAULT NULL,
   `rol_cod` varchar(10) NOT NULL,
@@ -299,7 +299,7 @@ INSERT INTO `usuario` (`usu_cod`, `plan_cod`, `rol_cod`, `usu_clave`, `usu_nom`,
 -- Estructura de tabla para la tabla `usuario_casual`
 --
 
-CREATE TABLE IF NOT EXISTS `usuario_casual` (
+CREATE TABLE `usuario_casual` (
   `usu_cas_cod` varchar(10) NOT NULL,
   `usu_cas_nom` varchar(50) NOT NULL,
   `usu_cas_ape` varchar(50) NOT NULL,
@@ -338,7 +338,7 @@ INSERT INTO `usuario_casual` (`usu_cas_cod`, `usu_cas_nom`, `usu_cas_ape`, `usu_
 -- Estructura de tabla para la tabla `valoracion`
 --
 
-CREATE TABLE IF NOT EXISTS `valoracion` (
+CREATE TABLE `valoracion` (
   `vlrcion_cod` varchar(10) NOT NULL,
   `usu_cod` varchar(15) NOT NULL,
   `vlrcion_peso` int(11) NOT NULL,

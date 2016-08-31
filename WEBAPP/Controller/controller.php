@@ -8,34 +8,60 @@
 	case 'INGRESAR':
 		$ndoc=$_POST["log_doc"];
 		$pass=$_POST["log_pass"];
-		if($ndoc=="" and $pass==""){
-	 		echo "<script>alert('Por favor ingrese datos');</script>";
-		}elseif ($ndoc=="" or $pass=="") {
-	 		echo "<script>alert('Falta un campo por llenar, Por favor Verifica!');</script>";
+		
+		$inj="'or'1'='1";
+		if (($ndoc==$inj)and($pass==$inj)) {
+			echo "intento de inyection por login. fallido"."<br>";
+			echo "Ip Capturada: ".$_SERVER['REMOTE_ADDR'];
+		}elseif (($ndoc==$inj)or($pass==$inj)) {
+			echo "intento de injection fallido en algun campo";
 		}else{
-	 		try {
-	 			$usuario = GestionUsuario::Login($ndoc);
-	 			if (($usuario[0]!="") or ($usuario[0]!=null)) {
-	 				if (password_verify($pass,$usuario[1])) {
- 						$_SESSION["codigo_usuario"] = $usuario[0];
-	 					$_SESSION["nombre_usuario"] = $usuario[2];
-	 					$_SESSION["apellido_usuario"] = $usuario[3];
-	 					$_SESSION["telefono_usuario"] = $usuario[4];
-	 					$_SESSION["celular_usuario"] = $usuario[5];
-	 					$_SESSION["mail_usuario"] = $usuario[6];
-	 					$_SESSION["direccion_usuario"] = $usuario[7];
-	 					$_SESSION["estado_usuario"] = $usuario[8];
-	 					$_SESSION["edad_usuario"] = $usuario[9];
-	 					$_SESSION["inicio_plan_usuario"] = $usuario[10];
-	 					$_SESSION["fin_plan_usuario"] = $usuario[11];
-	 					$_SESSION["rol_usuario"] = $usuario[12];
-	 					$_SESSION["rol_nom_usuario"] = $usuario[13];
-	 					$_SESSION["codigo_plan_usuario"] = $usuario[14];
-	 					$_SESSION["nombre_plan_usuario"] = $usuario[15];
-	 					$_SESSION["dias_plan_usuario"] = $usuario[16];
-	 					$_SESSION["rango_plan_usuario"] = $usuario[17];
-	 					$_SESSION["precio_plan_usuario"] = $usuario[18];
+			if($ndoc=="" and $pass==""){
+	 			echo "<script>alert('Por favor ingrese datos');</script>";
+			}elseif ($ndoc=="" or $pass=="") {
+		 		echo "<script>alert('Falta un campo por llenar, Por favor Verifica!');</script>";
+			}else{
+		 		try {
+		 			$usuario = GestionUsuario::Login($ndoc);
+		 			if (($usuario[0]!="") or ($usuario[0]!=null)) {
+		 				if (password_verify($pass,$usuario[1])) {
+	 						$_SESSION["codigo_usuario"] = $usuario[0];
+		 					$_SESSION["nombre_usuario"] = $usuario[2];
+		 					$_SESSION["apellido_usuario"] = $usuario[3];
+		 					$_SESSION["telefono_usuario"] = $usuario[4];
+		 					$_SESSION["celular_usuario"] = $usuario[5];
+		 					$_SESSION["mail_usuario"] = $usuario[6];
+		 					$_SESSION["direccion_usuario"] = $usuario[7];
+		 					$_SESSION["estado_usuario"] = $usuario[8];
+		 					$_SESSION["edad_usuario"] = $usuario[9];
+		 					$_SESSION["inicio_plan_usuario"] = $usuario[10];
+		 					$_SESSION["fin_plan_usuario"] = $usuario[11];
+		 					$_SESSION["rol_usuario"] = $usuario[12];
+		 					$_SESSION["rol_nom_usuario"] = $usuario[13];
+		 					$_SESSION["codigo_plan_usuario"] = $usuario[14];
+		 					$_SESSION["nombre_plan_usuario"] = $usuario[15];
+		 					$_SESSION["dias_plan_usuario"] = $usuario[16];
+		 					$_SESSION["rango_plan_usuario"] = $usuario[17];
+		 					$_SESSION["precio_plan_usuario"] = $usuario[18];
 
+<<<<<<< HEAD
+		 					if($usuario[12] == '1'){
+			 				header("Location: ../../Website/html/SuperAdmin.php?S=aW5pY2lv");
+				 			}elseif ($usuario[12] == '2') {
+				 				echo "hola Admin";
+				 			}elseif($usuario[12] == '3'){
+				 				echo "hola instructor";
+				 			}elseif($usuario[12] == '4'){
+				 				header("Location: ../../Website/html/Usuario.php");
+				 			}else{
+				 				header("Location: ../../Website/html/index.php");
+				 			}
+	 					}
+		 			}
+		 		} catch (Exception $e) {
+		 			echo $e;
+				}
+=======
 	 					if($usuario[12] == '1'){
 		 				header("Location: ../../Website/html/SuperAdmin.php?S=aW5pY2lv");
 			 			}elseif ($usuario[12] == '2') {
@@ -43,14 +69,19 @@
 			 			}elseif($usuario[12] == '3'){
 			 				echo "hola instructor";
 			 			}elseif($usuario[12] == '4'){
-			 				echo "hola usuario";
+			 				header("Location: ../../Website/html/Usuario.php");
 			 			}else{
 			 				header("Location: ../../Website/html/index.php");
 			 			}
+ 					}else{
+ 						header("Location: ../../Website/html/index.php");
  					}
+	 			}else{
+	 				header("Location: ../../Website/html/index.php");
 	 			}
 	 		} catch (Exception $e) {
 	 			echo $e;
+>>>>>>> origin/master
 			}
 		}
 	break;

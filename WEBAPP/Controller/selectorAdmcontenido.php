@@ -3,18 +3,10 @@
 		case 'aW5pY2lv':
 			include_once('contenido/dashboard.php');
 		break;
-		case "aW5pY2lv'":
-<<<<<<< HEAD
-			echo "intento de injection por url fallido";
-=======
-			echo "Tu intento por hacer inyection sql fracaso";
->>>>>>> origin/master
-		break;
 		// mauro
 		case 'aW5ncmVzbw==':
 			include_once('contenido/ingreso.php');
 		break;
-
 		case 'cmVnaXN0cm8=':
 			include_once('contenido/registro.php');
 		break;

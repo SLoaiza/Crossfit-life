@@ -28,15 +28,15 @@ $usuariosingdehoy=GestionUsuario2::MostrarUsuariosDeHoy();
 	}
  ?>
 <div class="row">
-	<div class="card">
+	<div class="" id="dash">
 		<div class="card-title">
-			<h2>DashBoard.</h2>
-			<?php echo "Bienvenido ".$_SESSION["rol_nom_usuario"]; ?>
+			<h3>DashBoard</h3>
+			<span style="font-size:20px;"><?php echo "Bienvenido ".$_SESSION["nombre_usuario"]; ?></span>
 		</div>
 		<div class="card-content">
-			<div class="row">
+			<div class="row card z-depth-1">
 				<div class="col m3 s12">
-					<h4>Usuarios Ingresados Hoy</h4>
+					<h5>Usuarios Con Plan Que Ingresaron Hoy</h5>
 					<?php echo "<h5>".$nom_dia." ".date("d-m-Y")."</h5>"; ?>
 				</div>
 				<div class="col m9 s12">
@@ -76,12 +76,11 @@ $usuariosingdehoy=GestionUsuario2::MostrarUsuariosDeHoy();
 				</div>
 			</div>
 			<div class="row">
-				<div class="col m12 s12" id="">
-					<center><h4>Citas Para Hoy</h4></center>
+				<div class="col m6 s12 card z-detph-1" id="">
+					<center><h5>Citas Para Hoy</h5></center>
 					<table id="datatablecita" style="border:solid 1px;" class="striped responsive-table">
 						<thead>
 							<tr>
-								<td>Codigo</td>
 								<td>Nº Documento</td>
 								<td>Nombres</td>
 								<td>Apellidos</td>
@@ -95,7 +94,6 @@ $usuariosingdehoy=GestionUsuario2::MostrarUsuariosDeHoy();
 								$item=1;
 								foreach ($citasdehoy as $fila) {
 										echo "<tr>
-												<td>".$fila[0]."</td>
 												<td>".$fila[1]."</td>
 												<td>".$fila[2]."</td>
 												<td>".$fila[3]."</td>
@@ -109,34 +107,8 @@ $usuariosingdehoy=GestionUsuario2::MostrarUsuariosDeHoy();
 						</tbody>
 					</table>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col m5 s12">
-					<h5>Ultimas Acciones Realizadas En El Sistema</h5>
-					<ul class="collection">
-						<?php 
-							 foreach ($acciones as $dato) {
-							 	echo "<li  class='collection-item avatar'>
-							 		<span class='title'>".$dato[1]." ".$dato[2]."</span>
-							 	      <p>
-							 	      	Codigo: ".$dato[0]."
-							 	      	<br>
-							 	        Rol: ".$dato[4]."
-							 	        <br>
-							 	        Fecha / Hora: ".$dato[7]." / ".$dato[8]."
-							 	        <br>
-							 	        Modulo: ".$dato[5]."
-							 	        <br>
-								        Accion: ".$dato[6]."
-							 	      </p>
-							 	</li>";
-							 }
-
-						 ?>
-					</ul>
-				</div>
-				<div class="col m7 s12">
-					<div><h4>Nuevos Usuarios Registrados Hoy</h4></div>
+				<div class="col m5 s12 card z-detph-1 offset-m1">
+					<div><h5>Nuevos Usuarios Registrados Hoy</h5></div>
 					<div>
 						<table id="NuevosUsuarios" style="border:solid 1px;" class="striped responsive-table">
 							<thead>
@@ -170,26 +142,52 @@ $usuariosingdehoy=GestionUsuario2::MostrarUsuariosDeHoy();
 				</div>
 			</div>
 			<div class="row">
-				<div class="col m6 s12">
-					<div><h4>Usuarios Casuales Con Mayor Asistencia</h4></div>
+				<!-- <div class="col m5 s12">
+					<h5>Ultimas Acciones Realizadas En El Sistema</h5>
+					<ul class="collection">
+						<?php 
+							 // foreach ($acciones as $dato) {
+							 // 	echo "<li  class='collection-item avatar'>
+							 // 		<span class='title'>".$dato[1]." ".$dato[2]."</span>
+							 // 	      <p>
+							 // 	      	Codigo: ".$dato[0]."
+							 // 	      	<br>
+							 // 	        Rol: ".$dato[4]."
+							 // 	        <br>
+							 // 	        Fecha / Hora: ".$dato[7]." / ".$dato[8]."
+							 // 	        <br>
+							 // 	        Modulo: ".$dato[5]."
+							 // 	        <br>
+								//         Accion: ".$dato[6]."
+							 // 	      </p>
+							 // 	</li>";
+							 //}
+
+						 ?>
+					</ul>
+				</div> -->
+			</div>
+			<div class="row">
+				<div class="col m5 s12 card">
+					<div><h5>Listado Usuarios Casuales</h5></div>
 					<div>
-						<table style="border:solid 1px;" class="striped responsive-table">
+						<table style="border:solid 1px;" class="striped responsive-table" id="usuarioscasuales">
 							<thead>
 								<tr>
-									<td>Codigo</td>
 									<td>Nombres</td>
 									<td>Apellidos</td>
 									<td>ingresos</td>
+									<td>Telefono</td>
 								</tr>
 							</thead>
 							<tbody>
 								<?php 
 									foreach ($usuarioFrecuente as $filas) {
 										echo "<tr>
-												<td>".$filas[0]."</td>
 												<td>".$filas[2]."</td>
 												<td>".$filas[3]."</td>
 												<td>".$filas[1]."</td>
+												<td>".$filas[4]."</td>
 											</tr>";
 									}
 
@@ -198,8 +196,8 @@ $usuariosingdehoy=GestionUsuario2::MostrarUsuariosDeHoy();
 						</table>
 					</div>
 				</div>
-				<div class="col m6 s12">
-					<h4>Cantidad De Usuarios En Cada Plan</h4>
+				<div class="col m6 s12 card offset-m1">
+					<h5>Cantidad De Usuarios En Cada Plan</h5>
 					<br>
 					<?php include('diagrama.php'); ?>
 				</div>
@@ -215,6 +213,9 @@ $usuariosingdehoy=GestionUsuario2::MostrarUsuariosDeHoy();
         "language": {"url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"}
     });
     $("#NuevosUsuarios").dataTable( {
+        "language": {"url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"}
+    });
+    $("#usuarioscasuales").dataTable( {
         "language": {"url": "//cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"}
     });
 

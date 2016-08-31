@@ -3,7 +3,7 @@
 	require_once("../../WEBAPP/Model/gestiones.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>Crossfit Life</title>
@@ -47,6 +47,12 @@
 					        </center>
 					      </div>
 					      <div class="row" style="text-align:left;">
+<<<<<<< HEAD
+					        <form action="../../WEBAPP/Controller/controller.php" method="POST" id="login">
+					            <div class="input-field col m12">
+					            	<input type="text" class="validate" id="documento" name="log_doc" required="" maxlength="15" onkeypress="if(event.keyCode<45 || event.keyCode>57)event.returnValue=false;">
+					            	<label for="documento" class="text-black">Nº Documento</label>
+=======
 					        <div class="col s12 m12">
 					          <form action="../../WEBAPP/Controller/controller.php" method="POST" id="login">
 					            <label for="documento" class="text-black">Nº Documento:</label>
@@ -54,6 +60,7 @@
 					            <br>
 					            <label for="contrasena" class="text-black">Contraseña:</label>
 					            <input type="password" placeholder="Ingrese Contraseña" id="contrasena" name="log_pass" required="">
+					            <br>
 					            <button type="submit" class="waves-effect waves-light btn orange darken-3" value="INGRESAR" style="height: 40px;" name="action">INGRESAR</button>
 					          </form>
 					        </div>
@@ -63,16 +70,19 @@
 					          <center>
 					            <div class="col s4 m1 offset-m2">
 					              <a href="#" class="btn-floating btn-large" id="btn_red"><img src="../imagenes/fb.png" alt="" id="redes"></a>
+>>>>>>> origin/master
 					            </div>
-					            <div class="col s4 m1 offset-m2">
-					              <a href="#" class="btn-floating btn-large" id="btn_red"><img src="../imagenes/tw.png" alt="" id="redes"></a>
+					            <br>
+					            <div class="input-field col m12">
+					            	<input type="password" class="validate" id="contrasena" name="log_pass" required="">
+					            	<label for="contrasena" class="text-black">Contraseña:</label>
 					            </div>
-					            <div class="col s4 m1 offset-m2">
-					              <a href="#" class="btn-floating btn-large" id="btn_red"><img src="../imagenes/yt.png" alt="" id="redes"></a>
+					            <br>
+					            <div col m12>
+					            	<button type="submit" class="waves-effect waves-light btn orange darken-3" value="INGRESAR" style="height: 60px; width:100%; font-size:18pt;" name="action">INGRESAR</button>
 					            </div>
-					          </center>
+					          </form>
 					        </div>
-					      </div>
 					    </div>
 					</div>
 				</div>
@@ -86,8 +96,8 @@
 							<li><a href="#cabeza" class="white-text ancla">Inicio</a></li>
 							<li><a href="#quienes_somos" class="white-text ancla" id="quienes">Quienes Somos</a></li>
 							<!-- <li><a href="#slider2" class="black-text">Recomendaciones De Salud</a></li> -->
-							<li><a href="#contactar" class="white-text ancla">Contactenos</a></li>
-							<li id="ingresar"><a class="white-text"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Ingresar</a></li>
+							<li><a href=".page-footer" class="white-text ancla">Contactenos</a></li>
+							<li id="ingresar"><a class="white-text right"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Ingresar</a></li>
 						</ul>
 						<ul class="side-nav" id="mobile-demo">
 							<li><a href="#cabeza" class="black-text"><i class="fa fa-home"></i>Inicio</a></li>
@@ -156,47 +166,9 @@
 				</section>
 			</div>
 		</div>
-<!-- contactenos -->
-		<div class="row">
-			<div class="col s12 m6" id="nosotros">
-				<img src="../imagenes/logo.png" alt="" id="logocont" class="responsive-img">
-				<section id="contactar">
-					<p style="font-size: 19px;">
-						Contacte con el departamento de atención al cliente de Crossfit Life, para cualquier duda que tenga o para cualquier aclaración que necesite.
-					</p>
-					<p style="font-size: 19px;">
-						Correo electrónico:
-					</p>
-					<p style="font-size: 19px;">
-						Teléfono:
-					</p>
-				</section>
-				<br>
-				<section id="redescont">
-					<a href="#" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/fb.png" alt="" id="redes"></a>
-					<a href="#" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/tw.png" alt="" id="redes"></a>
-					<a href="#" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/yt.png" alt="" id="redes"></a>
-				</section>
-			</div>
-			<div class="col s12 m6">
-					<section id="contacto" class="card z-depth-2 row">
-						<h4 class="center-align" id="titulo">Contactenos</h4>
-						<form action="POST" id="contactenos">
-							<label for="identidad" class="white col s12 m12">Nombres:</label>
-							<input type="text" class="col s12 m12" placeholder="Ingrese nombres y apellidos" id="identidad">
-							<label for="correo" class="white col s12 m12">Email:</label>
-							<input type="text" class="col s12 m12" placeholder="Ingrese correo electronico" id="correo">
-							<br>
-							<div class="input-field col s12">
-					          <textarea id="textarea1" length="500" class="materialize-textarea" maxlength="500"></textarea>
-					          <label for="textarea1" >Mensaje</label>
-					        </div>
-							<input type="button" class="col s12 m4waves-effect waves-light btn orange darken-3" value="Enviar" style="height: 40px; width: 120px;" id="enviar">
-						</form>
-					</section>
-				</div>
-			</div>
-		</div>
+		<?php 
+			include_once 'footer.php';
+		 ?>
 	</div>
 
 
