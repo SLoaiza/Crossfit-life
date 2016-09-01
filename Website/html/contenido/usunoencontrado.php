@@ -1,4 +1,4 @@
-<div class="card">
+<div class="container card">
 	<div class="row">
 		<div class="col m4 s12">
 			<img src="../imagenes/usuarioNoEncontrado.png" alt="">

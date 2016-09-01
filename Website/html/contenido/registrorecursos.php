@@ -1,5 +1,5 @@
 <div class="row">
-	<form action="../../WEBAPP/Controller/controller.php" method="post">
+	<form action="../../WEBAPP/Controller/controller.php" method="post" enctype="multipart/form-data">
 		<div class="col m10 s10 offset-m1 offset-s1">
 			<div class="card" id="registro">
 				<div class="card-title">
@@ -22,7 +22,7 @@
 								<td action="subir.php" method="POST" enctype="multipart/form-data">
 									<label for="">Imagen</label>
 									<br>
-									<input type="file" name="imagen" class="imagen" value="subirimagen" multiple="multiple">
+									<input type="file" name="file" class="imagen" value="subirimagen">
 								</td>
 								<td>
 									<label for="desc">Descripción</label>
@@ -41,7 +41,7 @@
 				<center>
 					<button type="submit" name="action" class="btn" value="GuardarEqui">Guardar</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button type="submit" name="action" class="btn" onclick="limpiar()">Cancelar</button>
+					<button type="reset" name="action" class="btn">Cancelar</button>
 				</center>
 			</div>
 		</div>

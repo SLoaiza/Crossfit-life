@@ -12,7 +12,7 @@
 		$inj="'or'1'='1";
 		if (($ndoc==$inj)and($pass==$inj)) {
 			echo "intento de inyection por login. fallido"."<br>";
-			echo "Ip Capturada: ".$_SERVER['REMOTE_ADDR'];
+			
 		}elseif (($ndoc==$inj)or($pass==$inj)) {
 			echo "intento de injection fallido en algun campo";
 		}else{
@@ -94,22 +94,26 @@
 	case 'GuardarEqui':
 		$codrecu = $_POST["codrecu"];
 		$nom = $_POST["recunom"];
-		$img = $_POST["imagen"];
 		$desc = $_POST["desc"];
 		$fech = $_POST["fecha"];
-		if($codrecu=="" and $nom=="" and $desc=="" and $fech==""){
-			echo "<script>alert('Por favor ingrese datos');</script>";
-		}elseif ($codrecu=="" or $nom=="" or $desc=="" or $fech=="") {
-			echo "<script>alert('Falta un campo por llenar, Por favor Verifica!');</script>";
-		}else{
-			try {
-				$usuario = GestionUsuario::GuardarEqui($codrecu, $nom, $img, $desc, $fech);
-				echo "Guardar con exito";
- 		 		} catch (Exception $e) {
- 		 		echo $e;
- 		 		}
-			}
-			header("Location:../../Website/html/SuperAdmin.php?seccion=registrorecursos");
+		
+		$carpeta="maquinas";
+		$dir="../../Website/imagenes/".$carpeta."/";
+		$archivo=basename($_FILES["imagen"]["size"]);
+		 if($codrecu=="" and $nom=="" and $desc=="" and $fech==""){
+		 	echo "<script>alert('Por favor ingrese datos');</script>";
+		 }elseif ($codrecu=="" or $nom=="" or $desc=="" or $fech=="") {
+		 	echo "<script>alert('Falta un campo por llenar, Por favor Verifica!');</script>";
+		 }else{
+		 	try {
+		 		$usuario = GestionUsuario::GuardarEqui($codrecu, $nom, $img, $desc, $fech);
+		 		echo "Guardar con exito";
+ 	 	 		} catch (Exception $e) {
+ 	 	 		echo $e;
+ 	 	 		}
+		 	}
+		 	header("Location:../../Website/html/SuperAdmin.php?seccion=registrorecursos");
+		echo $archivo;
 	break;
 	case'RegistrarUsuario':
 		$cedula=$_POST["NdocUsujv"];
