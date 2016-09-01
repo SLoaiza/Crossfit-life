@@ -43,8 +43,6 @@
 		 					$_SESSION["dias_plan_usuario"] = $usuario[16];
 		 					$_SESSION["rango_plan_usuario"] = $usuario[17];
 		 					$_SESSION["precio_plan_usuario"] = $usuario[18];
-
-<<<<<<< HEAD
 		 					if($usuario[12] == '1'){
 			 				header("Location: ../../Website/html/SuperAdmin.php?S=aW5pY2lv");
 				 			}elseif ($usuario[12] == '2') {
@@ -56,32 +54,15 @@
 				 			}else{
 				 				header("Location: ../../Website/html/index.php");
 				 			}
+	 					}else{
+	 						header("Location: ../../Website/html/index.php");
 	 					}
+		 			}else{
+		 				header("Location: ../../Website/html/index.php");
 		 			}
 		 		} catch (Exception $e) {
 		 			echo $e;
 				}
-=======
-	 					if($usuario[12] == '1'){
-		 				header("Location: ../../Website/html/SuperAdmin.php?S=aW5pY2lv");
-			 			}elseif ($usuario[12] == '2') {
-			 				echo "hola Admin";
-			 			}elseif($usuario[12] == '3'){
-			 				echo "hola instructor";
-			 			}elseif($usuario[12] == '4'){
-			 				header("Location: ../../Website/html/Usuario.php");
-			 			}else{
-			 				header("Location: ../../Website/html/index.php");
-			 			}
- 					}else{
- 						header("Location: ../../Website/html/index.php");
- 					}
-	 			}else{
-	 				header("Location: ../../Website/html/index.php");
-	 			}
-	 		} catch (Exception $e) {
-	 			echo $e;
->>>>>>> origin/master
 			}
 		}
 	break;

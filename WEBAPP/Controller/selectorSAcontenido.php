@@ -4,11 +4,8 @@
 			include_once('contenido/dashboard.php');
 		break;
 		case "aW5pY2lv'":
-<<<<<<< HEAD
-			echo "intento de injection por url fallido";
-=======
+			echo "intento de inyection por url fallido";
 			echo "Tu intento por hacer inyection sql fracaso";
->>>>>>> origin/master
 		break;
 		// mauro
 		case 'aW5ncmVzbw==':

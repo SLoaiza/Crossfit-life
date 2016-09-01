@@ -47,30 +47,10 @@
 					        </center>
 					      </div>
 					      <div class="row" style="text-align:left;">
-<<<<<<< HEAD
 					        <form action="../../WEBAPP/Controller/controller.php" method="POST" id="login">
 					            <div class="input-field col m12">
 					            	<input type="text" class="validate" id="documento" name="log_doc" required="" maxlength="15" onkeypress="if(event.keyCode<45 || event.keyCode>57)event.returnValue=false;">
 					            	<label for="documento" class="text-black">Nº Documento</label>
-=======
-					        <div class="col s12 m12">
-					          <form action="../../WEBAPP/Controller/controller.php" method="POST" id="login">
-					            <label for="documento" class="text-black">Nº Documento:</label>
-					            <input type="text" placeholder="Ingrese numero de documento" id="documento" name="log_doc" required="" maxlength="15" onkeypress="if(event.keyCode<45 || event.keyCode>57)event.returnValue=false;">
-					            <br>
-					            <label for="contrasena" class="text-black">Contraseña:</label>
-					            <input type="password" placeholder="Ingrese Contraseña" id="contrasena" name="log_pass" required="">
-					            <br>
-					            <button type="submit" class="waves-effect waves-light btn orange darken-3" value="INGRESAR" style="height: 40px;" name="action">INGRESAR</button>
-					          </form>
-					        </div>
-					      </div>
-					      <div class="col s12 m12">
-					        <div class="row" id="iconos">
-					          <center>
-					            <div class="col s4 m1 offset-m2">
-					              <a href="#" class="btn-floating btn-large" id="btn_red"><img src="../imagenes/fb.png" alt="" id="redes"></a>
->>>>>>> origin/master
 					            </div>
 					            <br>
 					            <div class="input-field col m12">
