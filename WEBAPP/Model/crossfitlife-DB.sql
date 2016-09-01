@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-08-2016 a las 20:52:16
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 5.6.23
+-- Tiempo de generación: 01-09-2016 a las 21:48:56
+-- Versión del servidor: 10.1.9-MariaDB
+-- Versión de PHP: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -43,7 +43,8 @@ CREATE TABLE `actividad` (
 
 CREATE TABLE `actividad_x_rutina` (
   `rut_cod` varchar(10) NOT NULL,
-  `act_cod` varchar(10) NOT NULL
+  `act_cod` varchar(10) NOT NULL,
+  `act_rut_dia` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -212,10 +213,10 @@ INSERT INTO `rol` (`rol_cod`, `rol_nom`, `rol_fecha`) VALUES
 
 CREATE TABLE `rutina` (
   `rut_cod` varchar(10) NOT NULL,
-  `vlrcion_cod` varchar(10) NOT NULL,
   `rut_nom` varchar(30) NOT NULL,
   `rut_desc` varchar(500) NOT NULL,
-  `rut_fecha` varchar(10) NOT NULL
+  `rut_fecha` varchar(10) NOT NULL,
+  `usu_cod` varchar(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -419,7 +420,7 @@ ALTER TABLE `rol`
 --
 ALTER TABLE `rutina`
   ADD PRIMARY KEY (`rut_cod`),
-  ADD KEY `vlrcion_cod` (`vlrcion_cod`);
+  ADD KEY `usu_cod` (`usu_cod`);
 
 --
 -- Indices de la tabla `seguimiento`
@@ -483,7 +484,7 @@ ALTER TABLE `permiso_x_rol`
 -- Filtros para la tabla `rutina`
 --
 ALTER TABLE `rutina`
-  ADD CONSTRAINT `rutina_ibfk_1` FOREIGN KEY (`vlrcion_cod`) REFERENCES `valoracion` (`vlrcion_cod`);
+  ADD CONSTRAINT `rutina_ibfk_1` FOREIGN KEY (`usu_cod`) REFERENCES `usuario` (`usu_cod`);
 
 --
 -- Filtros para la tabla `seguimiento`
