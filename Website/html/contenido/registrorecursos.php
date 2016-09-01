@@ -31,8 +31,8 @@
 							</tr>
 							<tr>
 								<td>
-									<label for="act_fecha">Fecha</label>
-									<input type="date" class="datepicker" name="act_fecha" id="act_fecha">
+									<label for="fecha">Fecha</label>
+									<input type="date" class="datepicker" name="fecha" id="fecha">
 								</td>
 							</tr>
 						</tbody>
