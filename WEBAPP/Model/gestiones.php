@@ -3,12 +3,12 @@
 		function Login($ndoc){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$consultalog="select usuario.usu_cod, usuario.usu_clave, usuario.usu_nom, usuario.usu_ape, usuario.usu_tel, usuario.usu_cel, usuario.usu_mail, usuario.usu_dir, usuario.usu_estado, usuario.usu_edad, usuario.usu_plan_inicio, usuario.usu_plan_fin, 
-				rol.rol_cod, rol.rol_nom, 
+			$consultalog="select usuario.usu_cod, usuario.usu_clave, usuario.usu_nom, usuario.usu_ape, usuario.usu_tel, usuario.usu_cel, usuario.usu_mail, usuario.usu_dir, usuario.usu_estado, usuario.usu_edad, usuario.usu_plan_inicio, usuario.usu_plan_fin,
+				rol.rol_cod, rol.rol_nom,
 				plan.plan_cod, plan.plan_desc, plan.plan_dias, plan.plan_rango, plan.plan_precio
-				from usuario 
-				inner join rol on rol.rol_cod = usuario.rol_cod 
-				inner join plan on plan.plan_cod = usuario.plan_cod 
+				from usuario
+				inner join rol on rol.rol_cod = usuario.rol_cod
+				inner join plan on plan.plan_cod = usuario.plan_cod
 				where usu_cod=?";
 			$querylog= $pdo->prepare($consultalog);
 			$querylog->execute(array($ndoc));
@@ -24,7 +24,7 @@
 			$query= $pdo->prepare($consulta);
 			$query->execute(array($nrod, $edad, $nom, $ape, $tel, $cel, $corr, $dire, $rol));
 
-			ConexionBD::CerrarBD();
+			ConexionDB::CerrarBD();
 		}
 		function GuardarEqui($recod, $nomb, $img, $descr, $fecha){
 			$pdo= ConexionDB::AbrirBD();
@@ -32,8 +32,27 @@
 			$consulta = "INSERT INTO recurso_fisico (rec_cod,rec_nom,rec_img,rec_desc,rec_fecha) values (?,?,?,?,?)";
 			$query= $pdo->prepare($consulta);
 			$query->execute(array($recod, $nomb, $img, $descr, $fecha));
-			ConexionBD::CerrarBD();
+			ConexionDB::CerrarBD();
 		}
+		function Guardaract($act_cod, $rec_cod, $act_duracion, $act_seccion, $act_rep, $act_fecha){
+			$pdo = ConexionDB::AbrirBD();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql = "INSERT INTO actividad (act_cod, rec_cod, act_duracion, act_seccion, act_rep, act_fecha) VALUES(?,?,?,?,?,?)";
+			$query=$pdo->prepare($sql);
+			$query->execute(array($act_cod, $rec_cod, $act_duracion, $act_seccion, $act_rep, $act_fecha));
+			ConexionDB::CerrarBD();
+		}
+		function verrecur(){
+		$pdo = ConexionDB::AbrirBD();
+		$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "SELECT rec_cod, rec_nom FROM recurso_fisico";
+    $query= $pdo->prepare($sql);
+		$query->execute();
+		$result=$query->fetchALL(PDO::FETCH_BOTH);
+		ConexionDB::CerrarBD();
+		return $result;
+
+  }
 		function GuardarUsu($cedula,$rol,$edad,$nombres,$apellidos,$telefono,$celular,$correo,$dir,$pass,$estado,$fecharegistro,$codigo_plan,$inicio,$fin){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
