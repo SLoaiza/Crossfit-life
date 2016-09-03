@@ -218,7 +218,7 @@
 		function MostrarPlanesPorcodigo($verplanes){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql="SELECT * from plan";
+			$sql="SELECT * from plan where plan_cod=?";
 			$query= $pdo->prepare($sql);
 			$query->execute(array($verplanes));
 			// $pdo->CerrarBD();

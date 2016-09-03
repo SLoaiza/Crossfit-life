@@ -83,8 +83,8 @@
 									<td>".$row["plan_precio"]."</td>
 									<td>".$row["plan_desc"]."</td>
 									<td>".$row["plan_rango"]."</td>
-									<td><a href='SuperAdmin.php?S=VerPlan&plan_cod=".$row["plan_cod"]."'>Ver Plan</a>-
-										<a href='SuperAdmin.php?seccion=planes=".$row["plan_cod"]."'>Eliminar</a>
+									<td><a href='SuperAdmin.php?S=VerPlan&plan_cod=".$row["plan_cod"]."'>Editar</a>-
+										<a href='SuperAdmin.php?seccion=borrarplan=".$row["plan_cod"]."'>Eliminar</a>
 									</td>
 								  </tr>";
 							$item++;
