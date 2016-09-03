@@ -31,11 +31,11 @@
 							<label for="HoraCitaUsuJv">Hora</label>
 							<input type="text" name="HoraCitaUsuJv" id="HoraCitaUsuJv" required="" readonly="">
 						</div>
-						<div class="col m3 s12">
+						<div class="col m4 s12">
 							<br><br>
-							<span><button type="submit" name="action" value="asignarcita">Asignar Cita</button></span>
+							<span><button type="submit" name="action" value="asignarcita" class="btn orange" id="asignarcita">Asignar Cita</button></span>
 							&nbsp;&nbsp;&nbsp;
-							<span><button type="reset">Cancelar</button></span>
+							<span><button type="reset" class="btn orange">Cancelar</button></span>
 						</div>
 					</div>
 				</div>
@@ -79,6 +79,7 @@
 	</div>
 </div>
 <script>
+	
 	function cancelar(codigo){
 		swal({   
 			title: "Espera un momento",   

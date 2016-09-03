@@ -61,9 +61,9 @@
  <script>
  	$("#CancelarCitaJV").click(function(){
  		swal({   
-			title: "Espera un momento",   
-			type: "warning",
-			text: "Mientras Cancelamos Esta Cita",   
+			title: "Proceso completado",   
+			type: "success",
+			text: "Cita cancelada satisfactoriamente",   
 			timer: 3000,   
 			showConfirmButton: false 
 		});

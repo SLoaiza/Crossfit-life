@@ -38,7 +38,7 @@
 							<br>
 							<input type="text" id="NdocIngresoUsuJV" name="NdocIngresoUsuJV" required="" style="text-align: center; font-size: 16px; width: 200px;" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
 							<br>
-							<button type="submit">Consultar</button>
+							<button type="submit" class="btn orange">Consultar</button>
 						</form>
 					</div>
 				</div>
@@ -91,10 +91,21 @@
 							<input type="text" name="jvInvtel" required="" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"></input>
 						</div>
 						<br>
-						<button type="submit" name="action" value="IngresoUsuarioCasual">Ingresar</button>
+						<button type="submit" name="action" value="IngresoUsuarioCasual" onclick="mensaje()" class="btn orange">Ingresar</button>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+<script>
+	function mensaje() {
+		swal({   
+			title: "Excelente", 
+			type: 'success', 
+			text: "Usuario ingresado correctamente",   
+			timer: 1900,   
+			showConfirmButton: false 
+		});
+	}
+</script>

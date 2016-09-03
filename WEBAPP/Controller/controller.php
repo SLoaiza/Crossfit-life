@@ -170,7 +170,7 @@
 		}
 	break;
 	case 'IngresoUsuarioCasual':
-
+		sleep(2);
 		$documentoinv =$_POST["jvInvndoc"];
 		$nombreinv=$_POST["jvInvnom"];
 		$apellidoinv=$_POST["jvInvape"];
@@ -230,6 +230,7 @@
 		header("Location:../../Website/html/SuperAdmin.php?S=QWxsVXNlcnM=");
 	break;
 	case 'IngresoUsuAlGym':
+		sleep(2);
 		$codigoIng=substr(date("Y"), -2).date("mdhis");
 		$documentoIng=$_POST["IngUsuDocJV"];
 		$fechaIng=date("Y-m-d");
