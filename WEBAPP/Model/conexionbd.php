@@ -3,7 +3,7 @@
 	private static $dbhost="localhost";
 	private static $dbname="crossfitlife-db";
 	private static $dbuser="root";
-	private static $dbpass="lolaso123";
+	private static $dbpass="";
 	private static $conn=null;
 	public static function AbrirBD(){
 		if (self::$conn==null) {

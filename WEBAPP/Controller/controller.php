@@ -270,6 +270,28 @@
 		header("Location:../../Website/html/SuperAdmin.php?S=cGxhbmVz");
 
 	break;
+
+	case 'Editplan':
+
+		$codplan =$_POST["codplanedit"];
+		$codfact=$_POST["facturaplanedit"];
+		$valorplan=$_POST["precioplanedit"];
+		$descrip=$_POST["descripplanedit"];
+		$cantdias=$_POST["cantdiasedit"];
+		$rangodias=$_POST["rangodiasedit"];
+
+		try {
+			$editadoplan= GestionUsuario::EditarPlan($codplan,$codfact,$valorplan,$descrip,$cantdias,$rangodias);
+
+		} catch (Exception $e) {
+			echo $e;
+		}
+
+		header("Location:../../Website/html/SuperAdmin.php?S=cGxhbmVz");
+
+	break;
+
+
 	case 'CancelarCitaJV':
 		sleep(3);
 		$codigo = $_POST["CitacodCJV"];

@@ -194,6 +194,7 @@
 			ConexionDB::CerrarBD();
 		}
 		//mauro
+
 		function GuardarPlan($codplan,$codfact,$valorplan,$descrip,$cantdias,$rangodias){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -226,6 +227,17 @@
 			ConexionDB::CerrarBD();
 			return $result;
 		}
+		function EditarPlan($codfact,$valorplan,$descrip,$cantdias,$rangodias,$codplan){
+			$pdo= ConexionDB::AbrirBD();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql="UPDATE plan set factura_cod=?,plan_precio=?,plan_desc=?,plan_dias=?,plan_rango=? where plan_cod=?";
+			$query= $pdo->prepare($sql);
+			$query->execute(array($codfact,$valorplan,$descrip,$rangodias,$codplan));
+			ConexionDB::CerrarBD();
+		}
+
+
+
 		function MostrarCitaPorcodigo($codigo){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

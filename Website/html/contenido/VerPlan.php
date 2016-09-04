@@ -16,24 +16,24 @@
  						<tr class= "colm12 s12">
  							<td class="colm12 s12">
 	 							<label><h5>Código del Plan: <?php echo $verplanes["plan_cod"]; ?></h5></label>
-	 							<input type="hidden" name="codplanver" value="<?php echo $verplanes["plan_cod"] ?>;" onKeypress="if(event.keyCode < 45 || (event.keyCode > 57)) event.returnValue = false;">
+	 							<input type="hidden" name="codplanedit" value="<?php echo $verplanes["plan_cod"] ?>;" onKeypress="if(event.keyCode < 45 || (event.keyCode > 57)) event.returnValue = false;">
 	 						</td>
  						</tr>
  						<tr class= "colm12 s12">
  							<td class="col m6 s6">
  								<label for="codfact">Código de la Factura</label>
- 								<input type="text" name="facturaplanver" id="facturaplanver" value="<?php echo $verplanes["factura_cod"]; ?>">
+ 								<input type="text" name="facturaplanedit" id="facturaplanver" value="<?php echo $verplanes["factura_cod"]; ?>">
  							</td>
  						
  							<td class="col m6 s6">
  								<label for="precios">Costo del Plan</label>
- 								<input type="number" name="precioplan" min="1" id="plan_precio" value="<?php echo $verplanes["plan_precio"];?>"> 								
+ 								<input type="number" name="precioplanedit" min="1" id="plan_precio" value="<?php echo $verplanes["plan_precio"];?>"> 								
  							</td>
  							<tr>
 								<td colspan="3">
 								<!-- <div class="input-field col s12 m12"> -->
 									<label for="textarea1">Descripción del Plan</label>
-				          			<input  type="text" length="1000" name="descripplan"id="textarea1" class="textarea" maxlength="1000" value="<?php echo $verplanes["plan_desc"];?>"</textarea>
+				          			<input  type="text" length="1000" name="descripplanedit"id="textarea1" class="textarea" maxlength="1000" value="<?php echo $verplanes["plan_desc"];?>"</textarea>
 
 								</td>
 							</tr>
@@ -41,21 +41,30 @@
 						<tr class= "colm12 s12">
 							<td class="col m6 s6">
 								<label for="dias">Días del Plan</label>
-								<input type="number"  name="cantdias" min="1" max="365" placeholder="Ingrese Numero de Días" id="numdias" required="" value="<?php echo $verplanes["plan_dias"];?>">
+								<input type="number"  name="cantdiasedit" min="1" max="365" placeholder="Ingrese Numero de Días" id="numdias" required="" value="<?php echo $verplanes["plan_dias"];?>">
 							</td>
 							<td class="col m6 s6">
 								<label for="rango">Rango del Plan</label>
-								<input type="number"  name="rangodias" min="1" max="365" placeholder="Ingrese rango de Días" id="plan_rango" required="" value="<?php echo $verplanes["plan_rango"];?>">
+								<input type="number"  name="rangodiasedit" min="1" max="365" placeholder="Ingrese rango de Días" id="plan_rango" required="" value="<?php echo $verplanes["plan_rango"];?>">
 							</td>						
 						</tr>
+						<center>
 						<tr>
-							<td class="col m3 s2 offset-m2">
-								<button type="submit" name="action" "></button>
+							<td class="col m2 s2">
+								<button type="submit"  name="action" class="btn" value="Editplan">Guardar</button>
 							</td>
-						</tr>
+							<td class="col m2 s2">
+								<a href="SuperAdmin.php?S=cGxhbmVz" class="btn">Atras</button>						
+							</td>
+						</tr> 
+						</center>						
+ 					</tbody>
+	 			</table>
+	 		</div>
+	 	  </div>
+	 	</div>
+	 </form>
+	 </div>
 
 
- 						
- 				</tbody>
- 			</table>
 
