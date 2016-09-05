@@ -1,4 +1,4 @@
-<?php 
+<?php
 	$usuarios = GestionUsuario::MostrarDatosPorcodigo($_GET["codigo_usuario"]);
  ?>
  <div class="row">
@@ -11,24 +11,24 @@
  						<center><h3>Datos De Usuario</h3></center>
  					</thead>
  					<tbody>
- 						<tr class="col m12 s12">	
+ 						<tr class="col m12 s12">
  							<td class="col m12 s12">
  								<label><h5>Numero de documento de identidad: <?php echo $usuarios["usu_cod"]; ?></h5></label>
 								<input type="hidden" name="UsucodVerUsuJV"  value="<?php echo $usuarios["usu_cod"]; ?>" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
  							</td>
  						</tr>
  						<tr class="col m12 s12">
- 							<td class="col m3 s3"> 
+ 							<td class="col m3 s3">
  								<label for="nombre">nombre</label>
  								<br>
 								<input type="text" name="UsunomVerUsuJV" id="UsunomVerUsuJV" value="<?php echo $usuarios["usu_nom"]; ?>">
  							</td>
- 							<td class="col m3 s3"> 
+ 							<td class="col m3 s3">
  								<label for="apellido">apellido</label>
 								<br>
 								<input type="text" name="UsuapeVerUsuJV" id="UsuapeVerUsuJV" value="<?php echo $usuarios["usu_ape"]; ?>">
  							</td>
- 							<td class="col m1 s1"> 
+ 							<td class="col m1 s1">
  								<label for="edad">edad</label>
 								<br>
 								<input type="text" name="UsuedadVerUsuJV" id="UsuedadVerUsuJV" value="<?php echo $usuarios["usu_edad"]; ?>" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
@@ -69,7 +69,7 @@
  								<label for="">Seleccione un Plan</label>
  								<select name="tipoplanVerUsuJV" id="tipoplanVerUsuJV">
 							      <option value="<?php echo $usuarios["plan_cod"]; ?>">Plan Actual: <?php echo $usuarios["plan_desc"]; ?></option>
-								  <?php 
+								  <?php
 								  	foreach ($datosdeplan as $row) {
 								  		echo "<option value=".$row["plan_cod"].">".$row["plan_desc"]."</option>";
 								  	}
@@ -90,7 +90,7 @@
  									<span id="Modificar" class="btn" name="action">Habilitar Campos</span>
  								</td>
  								<td class="col m2 s2">
- 									<button type="submit" name="action" class="btn orange disabled= " value="GuardarcambiosJV" id="guardarcambios">Guardar</button>
+ 									<button type="submit" name="action" class="btn orange disabled= " value="GuardarcambiosJV" id="guardarcambios" onclick="mensaje()">Guardar</button>
  								</td>
  								<td class="col m2 s2">
  									<a href="SuperAdmin.php?S=QWxsVXNlcnM=" class="btn">Atras</button>
@@ -103,6 +103,15 @@
  	</div>
  </div>
 <script>
+	function mensaje() {
+		swal({
+			title: "Excelente",
+			type: 'success',
+			text: "Cliente modificado correctamente",
+			timer: 2900,
+			showConfirmButton: false
+		});
+	}
  	$(document).ready(function(){
  		$("#UsunomVerUsuJV").prop("readonly",true);
  		$("#UsuapeVerUsuJV").prop("readonly",true);
@@ -129,7 +138,7 @@
 	 		$("#tipoplanVerUsuJV").prop("readonly",false);
 	 		$("#FInicioVerUsuJV").prop("disabled",false);
 	 		$("#FFinVerUsuJV").prop("disabled",false);
-	 		
+
 	 		$("#Modificar").addClass("btn orange disabled");
 	 		$("#guardarcambios").removeClass("btn orange disabled").addClass("btn orange");
  		});

@@ -11,41 +11,41 @@
 							<tr>
 								<td>
 									<label for="nrodoc">Nº Documento de Identidad</label>
-									<input type="text" name="nrodoc" id="nrodoc">
+									<input type="text" name="nrodoc" id="nrodoc" required="">
 								</td>
 								<td>
 									<label for="edad">Edad</label>
-									<input type="text" name="edad" id="edad">
+									<input type="text" name="edad" id="edad" >
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<label for="nombres">Nombres Completos</label>
-									<input type="text" name="nombres" id="nombres">
+									<input type="text" name="nombres" id="nombres" required="">
 								</td>
 								<td>
 									<label for="apellido">Apellidos Completos</label>
-									<input type="text" name="apellido" id="apellido">
+									<input type="text" name="apellido" id="apellido" required="">
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<label for="tel">Telefono Fijo</label>
-									<input type="text" name="tel" id="tel">
+									<input type="text" name="tel" id="tel" >
 								</td>
 								<td>
 									<label for="celular">Número Celular</label>
-									<input type="text" name="cel" id="cel">
+									<input type="text" name="cel" id="cel" >
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<label for="mail">Correo Electronico</label>
-									<input type="text" name="mail" id="mail">
+									<input type="text" name="mail" id="mail" >
 								</td>
 								<td>
 									<label for="dir">Direccion de residencia</label>
-									<input type="text" name="dir" id="dir">
+									<input type="text" name="dir" id="dir" >
 								</td>
 							</tr>
 						</tbody>
@@ -64,7 +64,7 @@
 							<td>
 								<div class="col m12 s12">
 									<label for="pass">Contraseña</label>
-									<input type="text" name="pass" id="pass" required="" maxlength="15">
+									<input type="password" name="pass" id="pass" required="" maxlength="15">
 									<br>
 									Nivel: <span id="nivelpass"></span>
 								</div>
@@ -72,7 +72,7 @@
 							<td >
 								<div class="col m6 s6">
 									<label for="cpass">Confirme su Contraseña</label>
-									<input type="text" name="cpass" id="cpass" required="" maxlength="15">
+									<input type="password" name="cpass" id="cpass" required="" maxlength="15">
 									<br>
 									Coincide: <span id="coincidepass"></span>
 								</div>
@@ -81,7 +81,7 @@
 						<tr>
 							<td>
 								<div class="input-field col s12">
-								    <select name="rolusu">
+								    <select name="rolusu" required="">
 								      <option  disabled selected>Seleccione un rol</option>
 								      <option value="1" >Recepcionista</option>
 								      <option value="2">Instructor</option>
@@ -93,7 +93,7 @@
 					</table>
 				</div>
 				<center>
-					<button type="submit" name="action" class="btn" value="GuardarEmp">Guardar</button>
+					<button type="submit" name="action" class="btn" value="GuardarEmp" onclick="mensaje()">Guardar</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					<button type="submit" name="action" class="btn" onclick="limpiar()">Cancelar</button>
 				</center>
@@ -102,6 +102,15 @@
 	</form>
 </div>
 <script>
+	function mensaje() {
+		swal({
+			title: "Excelente",
+			type: 'success',
+			text: "Empleado guardado correctamente",
+			timer: 2900,
+			showConfirmButton: false
+		});
+	}
 	$("#pass").focusout(function(){
       var pass=document.getElementById('pass').value;
       if (pass.length==0) {

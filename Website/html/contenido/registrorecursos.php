@@ -39,7 +39,7 @@
 					</table>
 				</div>
 				<center>
-					<button type="submit" name="action" class="btn" value="GuardarEqui">Guardar</button>
+					<button type="submit" name="action" class="btn" value="GuardarEqui" onclick="mensaje()">Guardar</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					<button type="reset" name="action" class="btn">Cancelar</button>
 				</center>
@@ -49,3 +49,14 @@
 		</div>
 	</form>
 </div>
+<script type="text/javascript">
+function mensaje() {
+	swal({
+		title: "Excelente",
+		type: 'success',
+		text: "Recurso guardado correctamente",
+		timer: 2900,
+		showConfirmButton: false
+	});
+}
+</script>

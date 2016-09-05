@@ -15,7 +15,7 @@
 							<tr>
 								<td>
 									<label for="ndoc">Codigo de valoracion</label>
-									<input type="text" name=vlrcion_cod" id="ndoc">
+									<input type="text" name="vlrcion_cod" id="ndoc">
 								</td>
 							</tr>
 							<tr>
@@ -49,10 +49,21 @@
 				</div>
 			</div>
       <center>
-        <input type="submit" name="action" id="registrar" value="Registrar">
+        <input type="submit" name="action" id="registrar" value="Registrar" onclick="mensaje()">
         &nbsp;&nbsp;&nbsp;&nbsp;
         <input type="submit" name="action" id="cancelar" value="Cancelar">
         &nbsp;&nbsp;&nbsp;&nbsp;
         <input type="submit" id="limpiar" value="Limpiar" onclick="">
       </center>
 		</div>
+		<script type="text/javascript">
+		function mensaje() {
+			swal({
+				title: "Excelente",
+				type: 'success',
+				text: "Usuario Registrado correctamente",
+				timer: 2900,
+				showConfirmButton: false
+			});
+		}
+		</script>

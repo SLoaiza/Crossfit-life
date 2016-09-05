@@ -73,7 +73,7 @@
 							<td>
 								<div class="col m12 s12">
 									<label for="pass">Contraseña</label>
-									<input type="text" name="passwordUsujv" id="pass" required="" maxlength="15">
+									<input type="password" name="passwordUsujv" id="pass" required="" maxlength="15">
 									<br>
 									Nivel: <span id="nivelpass"></span>
 								</div>
@@ -81,7 +81,7 @@
 							<td >
 								<div class="col m6 s6">
 									<label for="cpass">Confirme su Contraseña</label>
-									<input type="text" name="confirmpasswordUsujv" id="cpass" required="" maxlength="15">
+									<input type="password" name="confirmpasswordUsujv" id="cpass" required="" maxlength="15">
 									<br>
 									Coincide: <span id="coincidepass"></span>
 								</div>
@@ -92,7 +92,7 @@
 								<div class="input-field col s12">
 								    <select name="tipoplanUsujv" id="planUsujv" required="">
 								      <option value="0" readonly="">Seleccione un Plan</option>
-									  <?php 
+									  <?php
 									  	foreach ($datosdeplan as $row) {
 									  		echo "<option value=".$row["plan_cod"].">".$row["plan_desc"]."</option>";
 									  	}
@@ -116,7 +116,7 @@
 					<input name="EstadoUsujv" value="Activo" hidden="">
 				</div>
 				<center>
-					<button type="submit" class="btn orange" name="action" value="RegistrarUsuario" id="terminar">Registrar</button>
+					<button type="submit" class="btn orange" name="action" value="RegistrarUsuario" id="terminar" onclick="mensaje()">Registrar</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
 					<button type="reset" class="btn" onclick="habilitar()">Limpiar</button>
 				</center>
@@ -127,6 +127,15 @@
 	</form>
 </div>
 <script>
+	function mensaje() {
+		swal({
+			title: "Excelente",
+			type: 'success',
+			text: "Usuario Registrado correctamente",
+			timer: 2900,
+			showConfirmButton: false
+		});
+	}
  	$(document).ready(function(){
  		$("#terminar").prop("disabled",true);
  		$("#cpass").prop("disabled",true);
@@ -169,7 +178,7 @@
 	      	$("#terminar").prop("disabled",true);
 	      }
       }
-    
+
     });
     function datos() {
     	var dato1=document.getElementById("ndoc").value;
@@ -199,7 +208,7 @@
 		}
     }
     function habilitar() {
-    	$("#ndoc").prop("readonly",false);
+    $("#ndoc").prop("readonly",false);
 		$("#edad").prop("readonly",false);
 		$("#nombres").prop("readonly",false);
 		$("#apellidos").prop("readonly",false);

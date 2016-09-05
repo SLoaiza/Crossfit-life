@@ -8,7 +8,7 @@
 				<div class="row">
 					<div class="col m12 s12">
 						<div class="col m2 s12">
-							Codigo Cita: <input type="text" readonly="" name="codigoCitaUsuJv" value="<?php 
+							Codigo Cita: <input type="text" readonly="" name="codigoCitaUsuJv" value="<?php
 								date_default_timezone_set('America/Bogota');
 								$numero=rand();
 								$año=date("Y");
@@ -33,7 +33,7 @@
 						</div>
 						<div class="col m4 s12">
 							<br><br>
-							<span><button type="submit" name="action" value="asignarcita" class="btn orange" id="asignarcita">Asignar Cita</button></span>
+							<span><button type="submit" name="action" value="asignarcita" class="btn orange" id="asignarcita" onclick="mensaje()">Asignar Cita</button></span>
 							&nbsp;&nbsp;&nbsp;
 							<span><button type="reset" class="btn orange">Cancelar</button></span>
 						</div>
@@ -55,7 +55,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						<?php 
+						<?php
 							$item = 1;
 							foreach ($datosdecita as $row) {
 								echo "<tr>
@@ -79,14 +79,24 @@
 	</div>
 </div>
 <script>
-	
+
+	function mensaje() {
+		swal({
+			title: "Excelente",
+			type: 'success',
+			text: "Cita asignada correctamente",
+			timer: 2900,
+			showConfirmButton: false
+		});
+	}
+
 	function cancelar(codigo){
-		swal({   
-			title: "Espera un momento",   
+		swal({
+			title: "Espera un momento",
 			type: "warning",
-			text: "Mientras Cargamos Los Datos",   
-			timer: 2000,   
-			showConfirmButton: false 
+			text: "Mientras Cargamos Los Datos",
+			timer: 2000,
+			showConfirmButton: false
 		});
 		var rol = <?php echo $_SESSION["rol_usuario"]; ?>;
 		if (rol==1) {

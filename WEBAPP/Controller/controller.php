@@ -8,11 +8,11 @@
 	case 'INGRESAR':
 		$ndoc=$_POST["log_doc"];
 		$pass=$_POST["log_pass"];
-		
+
 		$inj="'or'1'='1";
 		if (($ndoc==$inj)and($pass==$inj)) {
 			echo "intento de inyection por login. fallido"."<br>";
-			
+
 		}elseif (($ndoc==$inj)or($pass==$inj)) {
 			echo "intento de injection fallido en algun campo";
 		}else{
@@ -68,6 +68,7 @@
 	break;
 	// Santiago
 	case 'GuardarEmp':
+		sleep(3);
 		$nrod = $_POST["nrodoc"];
 		$edad = $_POST["edad"];
 		$nom = $_POST["nombres"];
@@ -92,12 +93,14 @@
 			}
 	break;
 	case 'GuardarEqui':
+		sleep(3);
 		$codrecu = $_POST["codrecu"];
 		$nom = $_POST["recunom"];
 		$desc = $_POST["desc"];
 		$fech = $_POST["fecha"];
-		
+
 		$carpeta="maquinas";
+
 		$dir="../../Website/imagenes/".$carpeta."/";
 		$archivo=basename($_FILES["imagen"]["size"]);
 		 if($codrecu=="" and $nom=="" and $desc=="" and $fech==""){
@@ -112,10 +115,11 @@
  	 	 		echo $e;
  	 	 		}
 		 	}
-		 	header("Location:../../Website/html/SuperAdmin.php?seccion=registrorecursos");
+		 	header("Location:../../Website/html/SuperAdmin.php?S=cmVnaXJlY3Vy");
 		echo $archivo;
 	break;
 	case'RegistrarUsuario':
+		sleep(3);
 		$cedula=$_POST["NdocUsujv"];
 		$rol=$_POST["rolUsujv"];
 		$edad=$_POST["edadUsujv"];
@@ -138,7 +142,7 @@
 		 	$dir="NaN";
 		}
 		$pass=$_POST["passwordUsujv"];
-		
+
 		$confirmpass=$_POST["confirmpasswordUsujv"];
 		$estado=$_POST["EstadoUsujv"];
 		$fecharegistro=date("Y-m-d");
@@ -186,7 +190,7 @@
 		header("Location:../../Website/html/SuperAdmin.php?S=aW5ncmVzbw==");
 	break;
 	case 'asignarcita':
-
+		sleep(3);
 		$codigocita=$_POST["codigoCitaUsuJv"];
 		$Ndocumentocita=$_POST["NdocumentoCitaUsuJv"];
 		$fechacita=$_POST["FechaCitaUsuJv"];
@@ -209,7 +213,7 @@
 
 	break;
 	case 'GuardarcambiosJV':
-
+		sleep(3);
 		$codigo=$_POST["UsucodVerUsuJV"];
 		$nombre=$_POST["UsunomVerUsuJV"];
 		$apellido=$_POST["UsuapeVerUsuJV"];
@@ -282,7 +286,7 @@
 
 		try {
 			GestionUsuario::EditarPlan($codplan,$codfact,$valorplan,$descrip,$cantdias,$rangodias);
-			
+
 		} catch (Exception $e) {
 			echo $e;
 		}

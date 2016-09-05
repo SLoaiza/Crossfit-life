@@ -45,7 +45,7 @@
 						</tr>
 						<tr class="row">
 							<td>
-								<button type="submit" name="action" value="IngresoUsuAlGym" class="btn orange" onclick="mensaje()">Ingresar Usuario</button>
+								<button type="submit" name="action" value="IngresoUsuAlGym" class="btn orange" >Ingresar Usuario</button>
 							</td>
 						</tr>
 					</tbody>
@@ -56,12 +56,12 @@
 </div>
 <script>
 	function mensaje() {
-		swal({   
-			title: "Excelente", 
-			type: 'success', 
-			text: "Usuario ingresado correctamente",   
-			timer: 1900,   
-			showConfirmButton: false 
+		swal({
+			title: "Excelente",
+			type: 'success',
+			text: "Usuario ingresado correctamente",
+			timer: 1900,
+			showConfirmButton: false
 		});
 	}
 </script>
