@@ -33,7 +33,7 @@
 								<td colspan="3">
 								<!-- <div class="input-field col s12 m12"> -->
 								<label for="textarea1">Descripción del Plan</label>
-			          <input  type="text" length="1000" name="descripplan"id="textarea1" class="textarea" maxlength="1000" </textarea>
+			          <input  type="text" length="1000" name="descripplan"id="descrip_plan" class="textarea" maxlength="1000" required="" </textarea>
 
 							</td>
 							</tr>
@@ -109,7 +109,18 @@
 
 <script type="text/javascript">
 	function mensaje(){
-		if (confirm('¿Estas seguro de enviar este formulario?'))
-		alert("Formulario Guardado");
+		var plan_cod=document.getElementById("plan_cod").value;
+		var factura_cod=document.getElementById("factura_cod").value;
+		var plan_precio=document.getElementById("plan_precio").value;
+		var descrip_plan=document.getElementById("descrip_plan").value;
+		var numdias=document.getElementById("numdias").value;
+		var plan_rango=document.getElementById("plan_rango").value;
+		
+	if (plan_cod==="" || factura_cod==="" || plan_precio==="" || descrip_plan==="" || numdias==="" || plan_rango==="")
+		alert("Ingrese Datos Por Favor");
+		else	
+		alert("¡Datos Guardados Correctamente!");
+			 
+
 	}
 </script>

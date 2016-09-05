@@ -281,8 +281,8 @@
 		$rangodias=$_POST["rangodiasedit"];
 
 		try {
-			$editadoplan= GestionUsuario::EditarPlan($codplan,$codfact,$valorplan,$descrip,$cantdias,$rangodias);
-
+			GestionUsuario::EditarPlan($codplan,$codfact,$valorplan,$descrip,$cantdias,$rangodias);
+			
 		} catch (Exception $e) {
 			echo $e;
 		}

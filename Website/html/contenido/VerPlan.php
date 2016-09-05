@@ -16,7 +16,7 @@
  						<tr class= "colm12 s12">
  							<td class="colm12 s12">
 	 							<label><h5>Código del Plan: <?php echo $verplanes["plan_cod"]; ?></h5></label>
-	 							<input type="hidden" name="codplanedit" value="<?php echo $verplanes["plan_cod"] ?>;" onKeypress="if(event.keyCode < 45 || (event.keyCode > 57)) event.returnValue = false;">
+	 							<input type="hidden" name="codplanedit" value="<?php echo $verplanes["plan_cod"] ?>" >
 	 						</td>
  						</tr>
  						<tr class= "colm12 s12">
@@ -51,7 +51,7 @@
 						<center>
 						<tr>
 							<td class="col m2 s2">
-								<button type="submit"  name="action" class="btn" value="Editplan">Guardar</button>
+								<button type="submit" onclick="mensaje()" name="action" class="btn" value="Editplan">Guardar</button>
 							</td>
 							<td class="col m2 s2">
 								<a href="SuperAdmin.php?S=cGxhbmVz" class="btn">Atras</button>						
@@ -66,5 +66,10 @@
 	 </form>
 	 </div>
 
+<script type="text/javascript">
+	function mensaje(){		
+		alert("Datos Actualizados");
+	}
+</script>
 
 

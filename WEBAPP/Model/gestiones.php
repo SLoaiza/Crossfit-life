@@ -227,14 +227,23 @@
 			ConexionDB::CerrarBD();
 			return $result;
 		}
-		function EditarPlan($codfact,$valorplan,$descrip,$cantdias,$rangodias,$codplan){
-			$pdo= ConexionDB::AbrirBD();
-			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			$sql="UPDATE plan set factura_cod=?,plan_precio=?,plan_desc=?,plan_dias=?,plan_rango=? where plan_cod=?";
-			$query= $pdo->prepare($sql);
-			$query->execute(array($codfact,$valorplan,$descrip,$rangodias,$codplan));
-			ConexionDB::CerrarBD();
+		function EditarPlan($codplan,$codfact,$valorplan,$descrip,$cantdias,$rangodias){
+			$pdo = ConexionDB::AbrirBD();
+    	$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+	    $sql="UPDATE plan SET factura_cod= ? ,plan_precio= ?, plan_desc= ?, plan_dias= ?, plan_rango= ? WHERE plan_cod= ?";
+	    $query= $pdo->prepare($sql);
+	    $query->execute(array($codfact,$valorplan,$descrip,$cantdias,$rangodias,$codplan));
+	    ConexionDB::CerrarBD();
 		}
+		function BorrarPlan()
+			{
+				$pdo = ConexionDB::AbrirBD();
+				$pdo->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+				$deleteplan="delete from plan where plan_cod=?";
+				$query= $pdo->prepare($deleteplan);
+
+			}
 
 
 
