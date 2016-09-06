@@ -12,13 +12,18 @@
     -webkit-box-shadow: inset 0 0  ;
     background-color: #424242;
 }
-#quines{
-	position: relative;
-	/*width: 100vh;*/
-	height: auto;
-	padding-top: 50px;
-	padding-left: 37px;
+#quienes_son{
+	margin: 0px;
+	padding: 0px;
 
+}
+#quienes_son span{
+	position: absolute;
+	margin-left: 15px;
+	margin-top: 43px;
+}
+#quienes_son span p{
+	font-size: 18px;
 }
 
 .log{
@@ -38,7 +43,7 @@ header{
 nav{
 	position: relative;
 	z-index: 99999999;
-    background-color: #C62828;
+    background-color: #FF9800;
 }
 nav a{
 	margin: 0px 30px 0px 0px;
@@ -82,6 +87,17 @@ p.white{
 	width: 100%;
 }
 @media only screen and (max-width: 600px){
+	#quienes_son span{
+	position: absolute;
+	margin-left: 15px;
+	margin-top: -22px;
+	}
+	#quienes_son span p{
+		font-size: 12px;
+	}
+	#quienes_son{
+		margin-top: 160px;
+	}
 	.border-right{
 		border: none;
 	}
@@ -266,6 +282,10 @@ nav div ul li a{
 footer{
 	color:white;
 }
+.page-footer{
+	background-color: #FF9800;
+
+}
 #lbidentidad, #lbcorreo, #lbtextarea1{
 	color: white;
 }
@@ -273,4 +293,5 @@ footer{
 	padding: 40px;
 	transition: 
 }
+
 

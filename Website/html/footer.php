@@ -1,4 +1,4 @@
-<footer class="page-footer" style="background-color:#C62828;">
+<footer class="page-footer" style="background-color:#FFA726; margin-top:-26px;">
   <div class="container-fluid">
     <div class="row">
       <div class="col m7 s7">
@@ -37,12 +37,12 @@
 	          <textarea id="textarea1" length="500" class="materialize-textarea" maxlength="500"></textarea>
 	          <label for="textarea1" id="lbtextarea1">Mensaje</label>
 	        </div>
-			<input type="button" class="col s12 m4waves-effect waves-light btn orange darken-3" value="Enviar" style="height: 40px; width: 100%;" id="enviar">
+			<input type="button" class="col s12 m4waves-effect waves-light btn " value="Enviar" style="height: 40px; width: 100%; background-color:#E64A19;" id="enviar">
 		</form>
       </div>
     </div>
   </div>
-  <div class="footer-copyright">
+  <div class="footer-copyright" Style="background-color:#FB8C00;">
     <div class="container">
     SENA 2016
     <a class="grey-text text-lighten-4 right" href="#!">Creadores</a>

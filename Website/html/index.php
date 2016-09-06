@@ -75,14 +75,14 @@
 						<a class="white-text right" id="ingresar" style="cursor:pointer;"><i class="fa fa-sign-in fa-2x" aria-hidden="true"></i>&nbsp;&nbsp;Login</a>
 						<ul class="hide-on-med-and-down">
 							<li><a href="#cabeza" class="white-text ancla">Inicio</a></li>
-							<li><a href="#quienes_somos" class="white-text ancla" id="quienes">Quienes Somos</a></li>
+							<li><a href="#quienes_son" class="white-text ancla" id="quienes">Quienes Somos</a></li>
 							<!-- <li><a href="#slider2" class="black-text">Recomendaciones De Salud</a></li> -->
-							<li><a href=".page-footer" class="white-text ancla">Contactenos</a></li>
+							<li><a href="#footer" class="white-text ancla">Contactenos</a></li>
 							<li ></li>
 						</ul>
 						<ul class="side-nav" id="mobile-demo">
 							<li><a href="#cabeza" class="black-text"><i class="fa fa-home"></i>Inicio</a></li>
-							<li><a href="#quienes_somos" class="black-text"><i class="fa fa-users"></i>Quienes Somos</a></li>
+							<li><a href="#quienes_son" class="black-text"><i class="fa fa-users"></i>Quienes Somos</a></li>
 							<!-- <li><a href="#slider2" class="black-text"><i class="fa fa-comments"></i>Recomendaciones</a></li> -->
 							<li><a href="#contactar" class="black-text"><i class="fa fa-envelope"></i>Contactenos</a></li>
 							<li><a href="login.php" class="black-text">Ingresar</a></li>
@@ -139,17 +139,24 @@
 		</header>
 <!-- quienes somos -->
 		<div class="row">
-			<div class="col s12 m12" id="quines">
+			<div class="col s12 m12 s12" id="quienes_son">
 				<section id="quienes_somos" class="">
-					<div class="card-image ">
-						<img src="../imagenes/quienes_somos.png" class="responsive-img">
-					</div>
+						<span><h2>Quienes somos</h2><p>Crossfit life es una aplicación que realiza el ingreso de usuarios al gimnasio<br>
+							y registro para usuarios nuevos.<br>
+							Administrar rutinas por medio de la web a las que se puede tener<br> acceso desde cualquier
+							dispositivo movil u ordenador.</p></span>
+						<img src="../imagenes/quienes_somos.jpg" class="responsive-img">
+
 				</section>
 			</div>
 		</div>
-		<?php 
-			include_once 'footer.php';
-		 ?>
+		<div class="footer" id="footer">
+			<section id="footer">
+				<?php 
+					include_once 'footer.php';
+				 ?>
+		 	</section>
+		</div>
 	</div>
 
 
