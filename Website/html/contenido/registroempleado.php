@@ -50,10 +50,13 @@
 							</tr>
 						</tbody>
 					</table>
+					<center>
+						<span class="btn orange" id="continuar" onclick="datos()">Continuar</span>
+					</center>
 				</div>
 			</div>
 		</div>
-		<div class="col m10 s10 offset-m1 offset-s1">
+		<div  class="col m10 s10 offset-m1 offset-s1" style="display:none;" id="datoscuenta">
 			<div class="card" id="registro">
 				<div class="card-title">
 					<h5>Datos de la Cuenta</h5>
@@ -93,9 +96,9 @@
 					</table>
 				</div>
 				<center>
-					<button type="submit" name="action" class="btn" value="GuardarEmp" onclick="mensaje()">Guardar</button>
+					<button type="submit" name="action" class="btn orange" value="GuardarEmp" onclick="mensaje()">Guardar</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button type="submit" name="action" class="btn" onclick="limpiar()">Cancelar</button>
+					<button type="reset" class="btn" onclick="habilitar()">Limpiar</button>
 				</center>
 			</div>
 		</div>
@@ -142,6 +145,45 @@
       	document.getElementById('coincidepass').style.color="#f44336";
       }
 
-    });
 
+    });
+    function datos() {
+    	var dato1=document.getElementById("nrodoc").value;
+    	var dato2=document.getElementById("edad").value;
+    	var dato3=document.getElementById("nombres").value;
+    	var dato4=document.getElementById("apellido").value;
+    	var dato5=document.getElementById("tel").value;
+    	var dato6=document.getElementById("cel").value;
+    	var dato7=document.getElementById("mail").value;
+		var dato8=document.getElementById("dir").value;
+		if (dato1=="" || dato2=="" || dato3=="" || dato4=="" || dato5=="" || dato6=="" || dato7=="" || dato8=="") {
+			swal("Faltan algunos campos por llenar.","Por favor verifica los campos.","");
+			document.getElementById("datoscuenta").style.display="none";
+			document.getElementById("continuar").style.display="inline-block";
+		}else{
+			$("#datoscuenta").slideDown("show");
+			document.getElementById("continuar").style.display="none";
+			$("#nrodoc").prop("readonly",true);
+			$("#edad").prop("readonly",true);
+			$("#nombres").prop("readonly",true);
+			$("#apellido").prop("readonly",true);
+			$("#tel").prop("readonly",true);
+			$("#cel").prop("readonly",true);
+			$("#mail").prop("readonly",true);
+			$("#dir").prop("readonly",true);
+
+		}
+    }
+    function habilitar() {
+    $("#ndoc").prop("readonly",false);
+		$("#edad").prop("readonly",false);
+		$("#nombres").prop("readonly",false);
+		$("#apellido").prop("readonly",false);
+		$("#tel").prop("readonly",false);
+		$("#cel").prop("readonly",false);
+		$("#mail").prop("readonly",false);
+		$("#dir").prop("readonly",false);
+		document.getElementById("datoscuenta").style.display="none";
+		document.getElementById("continuar").style.display="inline-block";
+    }
 </script>

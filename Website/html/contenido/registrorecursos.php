@@ -22,7 +22,7 @@
 								<td action="subir.php" method="POST" enctype="multipart/form-data">
 									<label for="">Imagen</label>
 									<br>
-									<input type="file" name="file" class="imagen" value="subirimagen">
+									<input type="file" name="imagen" class="imagen file-field input-field" value="subirimagen">
 								</td>
 								<td>
 									<label for="desc">Descripción</label>

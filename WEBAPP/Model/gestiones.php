@@ -34,6 +34,16 @@
 			$query->execute(array($recod, $nomb, $img, $descr, $fecha));
 			ConexionDB::CerrarBD();
 		}
+		function verempleado(){
+			$pdo= ConexionDB::AbrirBD();
+		 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		 	$sql = "SELECT usuario.usu_cod, usuario.usu_nom, usuario.usu_ape, usuario.usu_tel, usuario.usu_edad, rol.rol_nom FROM usuario inner join rol on usuario.rol_cod=rol.rol_cod";
+		 	$query= $pdo->prepare($sql);
+		 	$query->execute();
+		 	$result=$query->fetchALL(PDO::FETCH_BOTH);
+		 	ConexionDB::CerrarBD();
+		 	return $result;
+		}
 		function GuardarUsu($cedula,$rol,$edad,$nombres,$apellidos,$telefono,$celular,$correo,$dir,$pass,$estado,$fecharegistro,$codigo_plan,$inicio,$fin){
 			$pdo= ConexionDB::AbrirBD();
 			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

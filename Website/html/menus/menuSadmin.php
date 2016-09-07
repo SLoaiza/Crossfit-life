@@ -36,6 +36,7 @@
 			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("planes");?>" class="black-text">Planes</a></li>
 			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("regirecur");?>" class="black-text">Recursos Fisicos</a></li>
 			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("AllUsers");?>" class="black-text">Ver Todos Los Clientes</a></li>
+			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("Empleados");?>" class="black-text">Ver Empleados</a></li>
 		</ul>
 	</div>
 </nav>

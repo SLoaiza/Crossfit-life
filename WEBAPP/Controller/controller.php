@@ -86,7 +86,7 @@
 		}else{
 			try {
 				$usuario = GestionUsuario::GuardarEmp($nrod, $edad, $nom, $ape, $tel, $cel, $corr, $dire, $rol);
-				echo "Guardar con exito";
+				header("Location:../../Website/html/SuperAdmin.php?S=cmVnaWVtcGxl");
  		 		} catch (Exception $e) {
  		 		echo $e;
  		 		}
@@ -99,24 +99,37 @@
 		$desc = $_POST["desc"];
 		$fech = $_POST["fecha"];
 
-		$carpeta="maquinas";
-
-		$dir="../../Website/imagenes/".$carpeta."/";
-		$archivo=basename($_FILES["imagen"]["size"]);
-		 if($codrecu=="" and $nom=="" and $desc=="" and $fech==""){
-		 	echo "<script>alert('Por favor ingrese datos');</script>";
-		 }elseif ($codrecu=="" or $nom=="" or $desc=="" or $fech=="") {
-		 	echo "<script>alert('Falta un campo por llenar, Por favor Verifica!');</script>";
-		 }else{
+		$carpeta="Maquinas";
+			$dir="../../Website/imagenes/".$carpeta."/";
+			$archivo=basename($_FILES["imagen"]["name"]);
+			$extencion=pathinfo($archivo, PATHINFO_EXTENSION);
+			date_default_timezone_set('America/Bogota');
+			$archivo=$dir."files_".date('Ymd-His').".".$extencion;
+			$check=getimagesize($_FILES["imagen"]["tmp_name"]);
+			if ($check!==false) {
+				if (file_exists($archivo)) {
+					echo "Ya existe";
+				}else{
+					if ($_FILES["imagen"]["size"]>2000000) {
+						echo "Muy pesado";
+					}else{
+						if ($extencion != "jpg" && $extencion!="jpeg" && $extencion!="png") {
+							echo "no son imagenes";
+						}else{
+							if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $archivo)) {
+								echo "Archivo guardado";
+							}
+						}
+					}
+				}
+			}
 		 	try {
-		 		$usuario = GestionUsuario::GuardarEqui($codrecu, $nom, $img, $desc, $fech);
+		 		$usuario = GestionUsuario::GuardarEqui($codrecu, $nom, $archivo, $desc, $fech);
 		 		echo "Guardar con exito";
  	 	 		} catch (Exception $e) {
  	 	 		echo $e;
  	 	 		}
-		 	}
 		 	header("Location:../../Website/html/SuperAdmin.php?S=cmVnaXJlY3Vy");
-		echo $archivo;
 	break;
 	case'RegistrarUsuario':
 		sleep(3);

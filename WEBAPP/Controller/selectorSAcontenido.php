@@ -59,6 +59,9 @@
 		case 'Y2FuY2VsYXJjaXRh':
 			include_once('contenido/cancelarcita.php');
 		break;
+		case 'RW1wbGVhZG9z':
+			include_once('contenido/verempleados.php');
+			break;
 		default:
 			# code...
 		break;

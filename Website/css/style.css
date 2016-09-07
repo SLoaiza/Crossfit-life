@@ -21,6 +21,7 @@
 	position: absolute;
 	margin-left: 15px;
 	margin-top: 43px;
+	color: white;
 }
 #quienes_son span p{
 	font-size: 18px;
@@ -236,6 +237,9 @@ nav div ul li a{
 	padding: 20px;
 }
 #allusersJV{
+	padding: 30px 70px;
+}
+#empleados{
 	padding: 30px 70px;
 }
 #hora, #min, #seg{
