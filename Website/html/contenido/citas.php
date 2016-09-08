@@ -81,13 +81,20 @@
 <script>
 
 	function mensaje() {
-		swal({
-			title: "Excelente",
-			type: 'success',
-			text: "Cita asignada correctamente",
-			timer: 2900,
-			showConfirmButton: false
-		});
+		var c1 = document.getElementById('NdocumentoCitaUsuJv').value;
+		var c2 = document.getElementById('FechaCitaUsuJv').value;
+		var c3 = document.getElementById('HoraCitaUsuJv').value;
+		if (c1==null || c1 =="" || c2==null || c2 =="" || c3==null || c3 =="") {
+			swal("Faltan algunos campos por llenar.","Por favor verifica los campos.","");
+		}else{
+			swal({
+				title: "Excelente",
+				type: 'success',
+				text: "Cita asignada correctamente",
+				timer: 2900,
+				showConfirmButton: false
+			});
+		}
 	}
 
 	function cancelar(codigo){

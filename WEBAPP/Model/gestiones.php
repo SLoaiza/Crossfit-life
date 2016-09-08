@@ -37,7 +37,7 @@
 		function verempleado(){
 			$pdo= ConexionDB::AbrirBD();
 		 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		 	$sql = "select usuario.usu_cod, usuario.usu_nom, usuario.usu_ape, usuario.usu_tel, usuario.usu_cel, usuario.usu_edad, rol.rol_cod, rol.rol_nom from usuario inner join rol on usuario.rol_cod=rol.rol_cod";
+		 	$sql = "select usuario.usu_cod, usuario.usu_nom, usuario.usu_ape, usuario.usu_tel, usuario.usu_cel, usuario.usu_edad, rol.rol_cod, rol.rol_nom from usuario inner join rol on usuario.rol_cod=rol.rol_cod where usuario.rol_cod != 4";
 		 	$query= $pdo->prepare($sql);
 		 	$query->execute();
 		 	$result=$query->fetchALL(PDO::FETCH_BOTH);

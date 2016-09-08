@@ -13,13 +13,13 @@
 		<br>
         <h5 class="white-text">Visita nuestras redes sociales.</h5>
         <span>
-        	<a href="https://www.facebook.com/Crossfitlife1014793/?skip_nax_wizard=true" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/fb.png" alt="" id="redes"></a>
+        	<a href="https://www.facebook.com/Crossfitlife1014793/?skip_nax_wizard=true" target="_blank" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/fb.png" alt="" id="redes"></a>
         </span>
         <span>
-        	<a href="https://twitter.com/Crossfit_life10" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/tw.png" alt="" id="redes"></a>
+        	<a href="https://twitter.com/Crossfit_life10" target="_blank" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/tw.png" alt="" id="redes"></a>
         </span>
         <span>
-        	<a href="https://www.youtube.com/channel/UCugLN-n-MexbFtFzpyp4bcA" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/yt.png" alt="" id="redes"></a>
+        	<a href="https://www.youtube.com/channel/UCugLN-n-MexbFtFzpyp4bcA" target="_blank" class="btn-floating btn-large" id="btn_fb2"><img src="../imagenes/yt.png" alt="" id="redes"></a>
         </span>
       </div>
       <div class="col m5 s5">

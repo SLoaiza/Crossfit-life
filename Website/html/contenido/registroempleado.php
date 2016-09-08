@@ -3,10 +3,13 @@
 		<div class="col m10 s10 offset-m1 offset-s1">
 			<div class="card" id="registro">
 				<div class="card-title">
-					<h5>Datos Personales</h5>
+					<h4>Registro de Nuevo Empleado</h4>
 				</div>
 				<div class="card-content">
 					<table>
+						<thead>
+							<h5>Datos Personales</h5>
+						</thead>
 						<tbody>
 							<tr>
 								<td>
@@ -15,7 +18,7 @@
 								</td>
 								<td>
 									<label for="edad">Edad</label>
-									<input type="text" name="edad" id="edad" >
+									<input type="text" name="edad" id="edad">
 								</td>
 							</tr>
 							<tr>

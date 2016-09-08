@@ -1,6 +1,7 @@
 <div class="row">
 	<div class="card" id="allusersJV">
 		<div class="m12 s12">
+			<span style="float:right;"><a href="" class="btn float red tooltipped" data-position="bottom" data-delay="50" data-tooltip="Agregar un nuevo cliente"><i class="fa fa-user-plus" aria-hidden="true"></i></a></span>
 			<table id="datatable" class="striped responsive-table">
 				<thead>
 					<tr><h3>Listado De Clientes...</h3></tr>
