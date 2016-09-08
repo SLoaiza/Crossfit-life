@@ -1,3 +1,4 @@
+<?php $datosempleado=GestionUsuario::verempleado(); ?>
 <div class="row">
 	<div class="card" id="empleados">
 		<div class="m12 s12">
@@ -12,14 +13,14 @@
 						<td>Apellidos</td>
 						<td>Telefono</td>
 						<td>Puesto<td>
-						<td>Estado</td>
 						<td>Acciones</td>
 					</tr>
 				</thead>
 				<tbody>
 					<?php 
+						
 						$item=1;
-						foreach ($todoslosusuarios as $row) {
+						foreach ($datosempleado as $row) {
 							$rol=$row["rol_cod"];
 							$numerodecontacto=$row["usu_tel"];
 							
@@ -35,7 +36,6 @@
 										<td>".$row["usu_ape"]."</td>
 										<td>".$numerodecontacto."</td>
 										<td>".$row["rol_nom"]."</td>
-										<td>".$row["usu_estado"]."</td>
 										<td><a href='SuperAdmin.php?S=VerUsuario&codigo_usuario=".$row["usu_cod"]."'>Ver Empleado</a>
 										</td>
 									</tr>";

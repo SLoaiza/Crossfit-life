@@ -17,6 +17,7 @@
   $datosdiagrama=GestionUsuario::DatosDiagrama();
   $acciones=GestionUsuario::ConsultarAcciones();
   $datostblplan=GestionUsuario::MostrartblPlanes();
+  
 ?>
 <!DOCTYPE html>
 <html>
@@ -67,16 +68,6 @@
           selectMonths: true, // Creates a dropdown to control month
           selectYears: 50, // Creates a dropdown of 15 years to control year
           format: 'yyyy/mm/dd',
-          // firstDay: 5,
-          // dayNamesMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
-          // dayNamesShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
-          // monthNames:
-          //     ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
-          //     "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-          // monthNamesShort:
-          //     ["Ene", "Feb", "Mar", "Abr", "May", "Jun",
-          //     "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
-
         });
 
 

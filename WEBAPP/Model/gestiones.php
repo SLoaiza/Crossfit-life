@@ -37,7 +37,7 @@
 		function verempleado(){
 			$pdo= ConexionDB::AbrirBD();
 		 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		 	$sql = "SELECT usuario.usu_cod, usuario.usu_nom, usuario.usu_ape, usuario.usu_tel, usuario.usu_edad, rol.rol_nom FROM usuario inner join rol on usuario.rol_cod=rol.rol_cod";
+		 	$sql = "select usuario.usu_cod, usuario.usu_nom, usuario.usu_ape, usuario.usu_tel, usuario.usu_cel, usuario.usu_edad, rol.rol_cod, rol.rol_nom from usuario inner join rol on usuario.rol_cod=rol.rol_cod";
 		 	$query= $pdo->prepare($sql);
 		 	$query->execute();
 		 	$result=$query->fetchALL(PDO::FETCH_BOTH);
@@ -80,6 +80,18 @@
 			$result=$query->fetchALL(PDO::FETCH_BOTH);
 			ConexionDB::CerrarBD();
 			return $result;
+		}
+		function verequipo($codigo){
+			$pdo= ConexionDB::AbrirBD();
+			$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql="SELECT * FROM recurso_fisico where rec_nom LIKE %?%";
+			$query= $pdo->prepare($sql);
+			$query->execute(array($codigo));
+			$result=$query->fetch(PDO::FETCH_BOTH);
+			ConexionDB::CerrarDB();
+			return $result;
+
+
 		}
 		function MostrarDatosPorcodigo($codigo){
 			$pdo= ConexionDB::AbrirBD();

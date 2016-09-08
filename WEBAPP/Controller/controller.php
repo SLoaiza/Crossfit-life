@@ -319,6 +319,15 @@
 			echo $e;
 		}
 	break;
+	case 'EQ':
+		$codigo=$_POST["codigo"];
+		try {
+			GestionUsuario::verequipo($codigo);
+			header("Location:../../Website/html/contenido/verequipo.php");
+		} catch (Exception $e) {
+			echo $e;
+		}
+		break;
 	}
 
 ?>
