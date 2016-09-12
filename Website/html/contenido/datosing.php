@@ -45,7 +45,7 @@
 						</tr>
 						<tr class="row">
 							<td>
-								<button type="submit" name="action" value="IngresoUsuAlGym" class="btn orange" >Ingresar Usuario</button>
+								<button type="submit" name="action" value="IngresoUsuAlGym" class="btn" id="terminar" >Ingresar Usuario</button>
 							</td>
 						</tr>
 					</tbody>

@@ -39,9 +39,9 @@
 					</table>
 				</div>
 				<center>
-					<button type="submit" name="action" class="btn" value="GuardarEqui" onclick="mensaje()">Guardar</button>
+					<button type="submit" name="action" class="btn deep-purple darken-3" value="GuardarEqui" onclick="mensaje()">Guardar</button>
 					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button type="reset" name="action" class="btn">Cancelar</button>
+					<button type="reset" name="action" class="btn" style="background-color:#90a4ae ; ">Cancelar</button>
 				</center>
 			</div>
 		</div>

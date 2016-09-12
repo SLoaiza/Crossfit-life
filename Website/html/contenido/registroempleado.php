@@ -54,7 +54,8 @@
 						</tbody>
 					</table>
 					<center>
-						<span class="btn orange" id="continuar" onclick="datos()">Continuar</span>
+						<span class="btn" style="background-color:#463f67;" id="continuar" onclick="datos()">Continuar</span>
+						<a href="SuperAdmin.php?S=RW1wbGVhZG9z" id="volver" class="btn" style="background-color: orange;" data-position="bottom" data-delay="50">Volver</a>
 					</center>
 				</div>
 			</div>
@@ -99,9 +100,9 @@
 					</table>
 				</div>
 				<center>
-					<button type="submit" name="action" class="btn orange" value="GuardarEmp" onclick="mensaje()">Guardar</button>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button type="reset" class="btn" onclick="habilitar()">Limpiar</button>
+					<button type="submit" class="btn" name="action" value="GuardarEmp" id="terminar" onclick="mensaje()">Registrar</button>
+					<button type="reset" class="btn" style="background-color:#90a4ae;" onclick="habilitar()">Limpiar</button>
+					<a href="SuperAdmin.php?S=QWxsVXNlcnM=" id="volver" class="btn" style="background-color: orange;" data-position="bottom" data-delay="50">Volver</a>
 				</center>
 			</div>
 		</div>
@@ -136,6 +137,7 @@
       	document.getElementById('nivelpass').style.color="#9e9d24";
       }
     });
+
     $("#cpass").focusout(function(){
       var pass=document.getElementById('pass').value;
       var coincidepass=document.getElementById('cpass').value;
@@ -143,9 +145,11 @@
       if (pass==coincidepass) {
       	$("#coincidepass").text("Coincide");
       	document.getElementById('coincidepass').style.color="#827717";
+      	$("#terminar").prop("disabled",false);
       }else{
       	$("#coincidepass").text("No Coincide");
       	document.getElementById('coincidepass').style.color="#f44336";
+      	$("#terminar").prop("disabled",true);
       }
 
 
@@ -166,6 +170,7 @@
 		}else{
 			$("#datoscuenta").slideDown("show");
 			document.getElementById("continuar").style.display="none";
+			document.getElementById("volver").style.display="none";
 			$("#nrodoc").prop("readonly",true);
 			$("#edad").prop("readonly",true);
 			$("#nombres").prop("readonly",true);
@@ -188,5 +193,7 @@
 		$("#dir").prop("readonly",false);
 		document.getElementById("datoscuenta").style.display="none";
 		document.getElementById("continuar").style.display="inline-block";
+		document.getElementById("volver").style.display="inline-block";
+
     }
 </script>

@@ -38,7 +38,7 @@
 							<br>
 							<input type="text" id="NdocIngresoUsuJV" name="NdocIngresoUsuJV" required="" style="text-align: center; font-size: 16px; width: 200px;" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;">
 							<br>
-							<button type="submit" class="btn orange">Consultar</button>
+							<button type="submit" class="btn" id="terminar">Consultar</button>
 						</form>
 					</div>
 				</div>
@@ -76,22 +76,22 @@
 					<form action="../../WEBAPP/Controller/controller.php" method="POST">
 						<div class="col m3 s6">
 							<label for="">Numero de Documento</label>
-							<input type="text" name="jvInvndoc" required="" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"></input>
+							<input type="text" name="jvInvndoc" id="jvInvndoc"  onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"></input>
 						</div>
 						<div class="col m3 s6">
 							<label for="">Nombres</label>
-							<input type="text" name="jvInvnom" required=""></input>
+							<input type="text" name="jvInvnom" id="jvInvnom" ></input>
 						</div>
 						<div class="col m3 s6">
 							<label for="">Apellidos</label>
-							<input type="text" name="jvInvape" required=""></input>
+							<input type="text" name="jvInvape" id="jvInvape" ></input>
 						</div>
 						<div class="col m3 s6">
 							<label for="">Telefono</label>
-							<input type="text" name="jvInvtel" required="" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"></input>
+							<input type="text" name="jvInvtel" id="jvInvtel" onKeypress="if (event.keyCode < 45 || event.keyCode > 57) event.returnValue = false;"></input>
 						</div>
 						<br>
-						<button type="submit" name="action" value="IngresoUsuarioCasual" onclick="mensaje()" class="btn orange">Ingresar</button>
+						<button type="submit" name="action" value="IngresoUsuarioCasual" onclick="mensaje()" class="btn" id="terminar">Ingresar</button>
 					</form>
 				</div>
 			</div>
@@ -100,6 +100,13 @@
 </div>
 <script>
 	function mensaje() {
+		var dato1=document.getElementById("jvInvndoc").value;
+    	var dato2=document.getElementById("jvInvnom").value;
+     	var dato3=document.getElementById("jvInvape").value;
+     	var dato4=document.getElementById("jvInvtel").value;
+		if (dato1=="" || dato2=="" || dato3=="" || dato4=="") {
+		 	swal("Faltan algunos campos por llenar.","Por favor verifica los campos.","");
+		}else{
 		swal({   
 			title: "Excelente", 
 			type: 'success', 
@@ -107,5 +114,6 @@
 			timer: 1900,   
 			showConfirmButton: false 
 		});
-	}
+		
+	}}
 </script>

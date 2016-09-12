@@ -55,7 +55,8 @@
 						</tbody>
 					</table>
 					<center>
-						<span class="btn orange" id="continuar" onclick="datos()">Continuar</span>
+						<span class="btn" style="background-color:#463f67;" id="continuar" onclick="datos()">Continuar</span>
+						<a href="SuperAdmin.php?S=QWxsVXNlcnM=" id="volver" class="btn" style="background-color: orange;" data-position="bottom" data-delay="50">Volver</a>
 					</center>
 				</div>
 			</div>
@@ -116,14 +117,13 @@
 					<input name="EstadoUsujv" value="Activo" hidden="">
 				</div>
 				<center>
-					<button type="submit" class="btn orange" name="action" value="RegistrarUsuario" id="terminar" onclick="mensaje()">Registrar</button>
-					&nbsp;&nbsp;&nbsp;&nbsp;
-					<button type="reset" class="btn" onclick="habilitar()">Limpiar</button>
+					<button type="submit" class="btn" name="action" value="RegistrarUsuario" id="terminar" onclick="mensaje()">Registrar</button>
+					
+					<button type="reset" class="btn" style="background-color:#90a4ae;" onclick="habilitar()">Limpiar</button>
+					<a href="SuperAdmin.php?S=QWxsVXNlcnM=" id="volver" class="btn" style="background-color: orange;" data-position="bottom" data-delay="50">Volver</a>
 				</center>
 			</div>
 		</div>
-
-
 	</form>
 </div>
 <script>
@@ -196,6 +196,7 @@
 		}else{
 			$("#datoscuenta").slideDown("show");
 			document.getElementById("continuar").style.display="none";
+			document.getElementById("volver").style.display="none";
 			$("#ndoc").prop("readonly",true);
 			$("#edad").prop("readonly",true);
 			$("#nombres").prop("readonly",true);
@@ -204,7 +205,6 @@
 			$("#celular").prop("readonly",true);
 			$("#correo").prop("readonly",true);
 			$("#direccion").prop("readonly",true);
-
 		}
     }
     function habilitar() {
@@ -218,5 +218,6 @@
 		$("#direccion").prop("readonly",false);
 		document.getElementById("datoscuenta").style.display="none";
 		document.getElementById("continuar").style.display="inline-block";
+		document.getElementById("volver").style.display="inline-block";
     }
 </script>

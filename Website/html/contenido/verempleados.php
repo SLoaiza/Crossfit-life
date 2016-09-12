@@ -2,6 +2,7 @@
 <div class="row">
 	<div class="card" id="empleados">
 		<div class="m12 s12">
+			<span style="float:right;"><a href="SuperAdmin.php?S=cmVnaWVtcGxl" class="btn float tooltipped" style="background-color: #463f67;" data-position="bottom" data-delay="50" data-tooltip="Agregar un nuevo cliente" ><i class="fa fa-user-plus" aria-hidden="true"></i></a></span>
 			<table id="datatable" class="striped responsive-table">
 				<thead>
 					<span><h3>Empleados</h3></span>

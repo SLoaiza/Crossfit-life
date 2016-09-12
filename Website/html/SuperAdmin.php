@@ -37,7 +37,8 @@
   <meta name="Description" content="">
   <meta name="viewport" content="width=400, initial-scale=1.0">
   <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <link rel="stylesheet" href="../../WEBAPP/Views/Assets/Plugins/materialize/css/materialize.min.css">
+    <script src="../../WEBAPP/Views/Assets/Plugins/materialize/js/materialize.min.js"></script>
 
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css">
 
@@ -78,16 +79,7 @@
           selectMonths: true, // Creates a dropdown to control month
           selectYears: 50, // Creates a dropdown of 15 years to control year
           format: 'yyyy/mm/dd',
-          // firstDay: 5,
-          // dayNamesMin: ["Do", "Lu", "Ma", "Mi", "Ju", "Vi", "Sa"],
-          // dayNamesShort: ["Dom", "Lun", "Mar", "Mie", "Jue", "Vie", "Sab"],
-          // monthNames:
-          //     ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
-          //     "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-          // monthNamesShort:
-          //     ["Ene", "Feb", "Mar", "Abr", "May", "Jun",
-          //     "Jul", "Ago", "Sep", "Oct", "Nov", "Dic"]
-
+          min: '<?php echo date("Y-m-d"); ?>'
         });
 
 
@@ -154,6 +146,6 @@
 
 
 
-
+<script src="../../WEBAPP/Views/Assets/Plugins/materialize/js/materialize.min.js"></script>
 </body>
 </html>

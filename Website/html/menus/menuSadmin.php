@@ -1,12 +1,12 @@
-<nav class="z-depth-2 m12 s12 menu" >
+<nav class="z-depth-1 m12 s12 menu" >
 	<div class="nav-wrapper  z-depth-1" color:"#424242">
 		<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons fa fa-bars"></i></a>
 		<a href="#!" class="dropdown-button black-text right" data-activates="dropdown2" style="margin-right: 20px;"><i class="fa fa-cog fa-3x"></i></a>
 		<ul class="hide-on-med-and-down">
 			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("inicio");?>" class="whithe-text">Inicio</a></li>
 			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("ingreso");?>" class="whithe-text">Ingreso De Usuarios</a></li>
-			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("registro");?>" class="whithe-text">Registrar Cliente</a></li>
-			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("regiemple");?>" class="whithe-text">Registrar Empleados</a></li>
+			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("AllUsers");?>" class="white-text">Clientes</a></li>
+			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("Empleados");?>" class="white-text">Empleados</a></li>
 			<li><a class="dropdown-button white-text" href="#!" data-activates="dropdown1"><i class="fa fa-caret-down"></i>&nbsp;&nbsp;Gestiones</a></li>
 		</ul>
 		<ul class="side-nav" id="mobile-demo">
@@ -35,8 +35,8 @@
 			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("roles");?>" class="black-text">Roles</a></li>
 			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("planes");?>" class="black-text">Planes</a></li>
 			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("regirecur");?>" class="black-text">Recursos Fisicos</a></li>
-			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("AllUsers");?>" class="black-text">Ver Todos Los Clientes</a></li>
-			<li><a href="SuperAdmin.php?S=<?php echo base64_encode("Empleados");?>" class="black-text">Ver Empleados</a></li>
+			
+			
 		</ul>
 	</div>
 </nav>
